@@ -1,10 +1,4 @@
 {
-  "rewrites": [
-    { "source": "/about", "destination": "/about.html" },
-    { "source": "/courses", "destination": "/courses.html" },
-    { "source": "/faculty", "destination": "/faculty.html" },
-    { "source": "/gallery", "destination": "/gallery.html" },
-    { "source": "/blog", "destination": "/blog.html" },
-    { "source": "/contact", "destination": "/contact.html" }
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }
