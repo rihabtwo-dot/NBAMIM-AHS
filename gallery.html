@@ -1,0 +1,2167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Gallery | NBAMIM &amp; AHS</title>
+    
+    <!-- Google Fonts: Editorial Selection -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- All Styles - Pure CSS, Premium Editorial Palette -->
+    <style>
+      :root {
+        --primary: #0f2d5e;
+        --secondary: #5ba3d9;
+        --accent: #c8860a;
+        --accent-hover: #b07408;
+        --bg-white: #ffffff;
+        --bg-light: #f4f7fb;
+        --bg-navy-dark: #071730;
+        --text-dark: #11223f;
+        --text-muted: #536685;
+        --text-light: #ffffff;
+        --border-color: rgba(15, 45, 94, 0.12);
+        
+        --font-heading: 'Playfair Display', Georgia, serif;
+        --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        --transition-slow: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      /* CSS Resets & Foundations */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        height: 100%;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background-color: var(--bg-white);
+        color: var(--text-dark);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        color: var(--primary);
+        line-height: 1.25;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+        width: 100%;
+      }
+
+      /* TOp-BAR Styles */
+      .top-bar {
+        background-color: var(--primary);
+        color: var(--text-light);
+        padding: 12px 0;
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .top-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .top-bar-left {
+        display: flex;
+        gap: 32px;
+      }
+
+      .top-bar-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        opacity: 0.9;
+      }
+
+      .top-bar-item a {
+        border-bottom: 1px solid rgba(200, 134, 10, 0.4);
+        padding-bottom: 2px;
+      }
+
+      .top-bar-item a:hover {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+      }
+
+      .top-bar-right {
+        display: flex;
+        gap: 12px;
+      }
+
+      .social-circle-btn {
+        width: 28px;
+        height: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        transition: var(--transition);
+      }
+
+      .social-circle-btn:hover {
+        background-color: var(--accent);
+        border-color: var(--accent);
+        transform: translateY(-2px);
+      }
+
+      .social-icon {
+        width: 14px;
+        height: 14px;
+        fill: currentColor;
+      }
+
+      /* NAVBAR Styles */
+      .navbar {
+        background-color: var(--bg-white);
+        padding: 24px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: var(--transition);
+      }
+
+      .navbar.scrolled {
+        padding: 16px 0;
+        box-shadow: 0 4px 20px rgba(15, 45, 94, 0.06);
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar-logo-area {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .navbar-logo-badge {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: var(--primary);
+        border: 2px solid var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 0.85rem;
+        letter-spacing: -0.05em;
+      }
+
+      .navbar-logo-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .navbar-logo-title {
+        font-family: var(--font-heading);
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--primary);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      .navbar-logo-tagline {
+        font-family: var(--font-body);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-top: 4px;
+      }
+
+      .navbar-menu {
+        display: flex;
+        list-style: none;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .navbar-link {
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--primary);
+        padding: 6px 0;
+        position: relative;
+      }
+
+      .navbar-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--accent);
+        transition: var(--transition);
+      }
+
+      .navbar-link.active::after,
+      .navbar-link:hover::after {
+        width: 100%;
+      }
+
+      .navbar-link.active,
+      .navbar-link:hover {
+        color: var(--accent);
+      }
+
+      .hamburger-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--primary);
+        padding: 4px;
+      }
+
+      /* PAGE HERO BANNER */
+      .page-hero {
+        position: relative;
+        background: 
+          radial-gradient(circle at 20% 50%, rgba(200, 134, 10, 0.08) 0%, transparent 60%),
+          radial-gradient(circle at 80% 80%, rgba(91, 163, 217, 0.06) 0%, transparent 60%),
+          linear-gradient(135deg, #020b18 0%, #041428 50%, #061d3a 100%);
+        color: var(--text-light);
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        border-bottom: none;
+        padding: 60px 0;
+      }
+
+      .hero-pattern {
+        display: none;
+      }
+
+      .page-hero .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .page-hero-left {
+        max-width: 600px;
+      }
+
+      .hero-tag {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        color: #f0c040;
+        margin-bottom: 12px;
+        display: inline-block;
+      }
+
+      .hero-title {
+        color: #ffffff;
+        font-size: 3.2rem;
+        font-family: var(--font-heading);
+        line-height: 1.15;
+        margin-bottom: 16px;
+        letter-spacing: -0.01em;
+      }
+
+      .breadcrumbs {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        color: rgba(255, 255, 255, 0.75);
+      }
+
+      .breadcrumbs a {
+        color: rgba(255, 255, 255, 0.75);
+        transition: var(--transition);
+      }
+
+      .breadcrumbs a:hover {
+        color: #f0c040;
+      }
+
+      .breadcrumbs li::after {
+        content: '\203A';
+        margin-left: 8px;
+        font-size: 1rem;
+        color: #f0c040;
+      }
+
+      .breadcrumbs li:last-child::after {
+        display: none;
+      }
+
+      .breadcrumbs li:last-child {
+        color: #ffffff;
+        font-weight: 700;
+      }
+
+      /* Page Hero Stat Badges */
+      .hero-stats-badges {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .stat-badge {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 14px 22px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        backdrop-filter: blur(8px);
+        transform: translateY(0);
+        transition: var(--transition);
+      }
+
+      .stat-badge:hover {
+        transform: translateX(6px);
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.25);
+      }
+
+      .stat-badge-icon {
+        width: 34px;
+        height: 34px;
+        background-color: rgba(240, 192, 64, 0.1);
+        border-radius: 50%;
+        color: #f0c040;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .stat-badge-icon svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .stat-badge-text {
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+
+      .stat-badge-text strong {
+        color: #ffffff;
+        font-size: 1.15rem;
+        font-family: var(--font-heading);
+        margin-right: 4px;
+      }
+
+      /* 4. FILTER TABS BAR */
+      .filter-tabs-section {
+        background-color: var(--bg-white);
+        padding: 50px 0 25px 0;
+        border-bottom: none;
+        text-align: center;
+      }
+
+      .filter-intro {
+        max-width: 650px;
+        margin: 0 auto 35px auto;
+      }
+
+      .filter-intro h2 {
+        font-size: 2.2rem;
+        margin-bottom: 12px;
+        font-weight: 700;
+      }
+
+      .filter-intro p {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+      }
+
+      .filter-tabs-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .filter-tab-pill {
+        border: 1px solid var(--primary);
+        background-color: var(--bg-white);
+        color: var(--primary);
+        padding: 10px 24px;
+        font-family: var(--font-body);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .filter-tab-pill.active {
+        background-color: var(--accent);
+        border-color: var(--accent);
+        color: var(--text-light);
+        box-shadow: 0 6px 16px rgba(200, 134, 10, 0.25);
+      }
+
+      .filter-tab-pill:hover:not(.active) {
+        background-color: var(--accent);
+        border-color: var(--accent);
+        color: var(--text-light);
+      }
+
+      /* 5. MASONRY PHOTO GALLERY GRID */
+      .gallery-grid-section {
+        background-color: var(--bg-white);
+        padding: 30px 0 70px 0;
+        border-bottom: none;
+      }
+
+      .gallery-masonry {
+        column-count: 4;
+        column-gap: 24px;
+        width: 100%;
+      }
+
+      @media (max-width: 1024px) {
+        .gallery-masonry {
+          column-count: 3;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .gallery-masonry {
+          column-count: 2;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .gallery-masonry {
+          column-count: 1;
+        }
+      }
+
+      /* Gallery Item */
+      .gallery-item {
+        break-inside: avoid;
+        margin-bottom: 24px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(15, 45, 94, 0.05);
+        display: block;
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 1s cubic-bezier(0.25, 0.8, 0.25, 1), transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+        will-change: opacity, transform;
+      }
+
+      .gallery-item.animation-active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Gallery Item Hover Overlay */
+      .gallery-item-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(15, 45, 94, 0.9);
+        opacity: 0;
+        transform: translateY(100%);
+        transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 24px;
+        box-sizing: border-box;
+        color: var(--text-light);
+        text-align: center;
+      }
+
+      .gallery-item:hover .gallery-item-overlay {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .gallery-item-title {
+        font-family: var(--font-heading);
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin-top: 8px;
+        line-height: 1.35;
+      }
+
+      .gallery-item-category {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--secondary);
+        margin-top: 4px;
+      }
+
+      .placeholder-emblem {
+        font-family: var(--font-heading);
+        font-size: 3rem;
+        opacity: 0.05;
+        color: var(--text-light);
+        font-weight: 700;
+        user-select: none;
+      }
+
+      /* 6. LIGHTBOX */
+      .lightbox-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.93);
+        z-index: 2000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.35s ease;
+      }
+
+      .lightbox-modal.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .lightbox-content-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        max-width: 800px;
+        box-sizing: border-box;
+      }
+
+      .lightbox-gradient-box {
+        width: 100%;
+        height: 480px;
+        border-radius: 12px;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transition: transform 0.3s ease;
+      }
+
+      @media (max-width: 768px) {
+        .lightbox-gradient-box {
+          height: 320px;
+        }
+      }
+
+      .lightbox-title {
+        color: #ffffff;
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-top: 24px;
+        text-align: center;
+        line-height: 1.3;
+      }
+
+      .lightbox-category {
+        color: var(--secondary);
+        font-size: 0.8rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-top: 6px;
+        font-weight: 700;
+      }
+
+      .lightbox-close-btn {
+        position: absolute;
+        top: -50px;
+        right: 0;
+        background: none;
+        border: none;
+        color: #ffffff;
+        cursor: pointer;
+        padding: 8px;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .lightbox-close-btn:hover {
+        color: var(--accent);
+        transform: scale(1.1);
+      }
+
+      .lightbox-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition);
+        z-index: 2100;
+      }
+
+      .lightbox-arrow:hover {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--primary);
+      }
+
+      .lightbox-arrow.prev {
+        left: -80px;
+      }
+
+      .lightbox-arrow.next {
+        right: -80px;
+      }
+
+      @media (max-width: 1024px) {
+        .lightbox-arrow.prev {
+          left: -20px;
+          background: rgba(0, 0, 0, 0.6);
+        }
+        .lightbox-arrow.next {
+          right: -20px;
+          background: rgba(0, 0, 0, 0.6);
+        }
+      }
+
+      /* 7. LOAD MORE SECTION */
+      .load-more-section {
+        background-color: var(--bg-white);
+        padding: 20px 0 80px 0;
+        border-bottom: none;
+        text-align: center;
+      }
+
+      .showing-text {
+        font-size: 0.88rem;
+        color: var(--text-muted);
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
+
+      .load-more-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: 1.5px dashed var(--accent);
+        background-color: var(--bg-light);
+        color: var(--text-muted);
+        padding: 16px 40px;
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        border-radius: 0;
+        cursor: not-allowed;
+        opacity: 0.8;
+        transition: var(--transition);
+      }
+
+      .social-follow-prompt {
+        margin-top: 50px;
+      }
+
+      .social-follow-prompt p {
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--primary);
+        margin-bottom: 20px;
+      }
+
+      .social-follow-row {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .follow-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--bg-light);
+        border: 1px solid var(--border-color);
+        color: var(--primary);
+        transition: var(--transition);
+      }
+
+      .follow-btn:hover.fb { background-color: #3b5998; border-color: #3b5998; color: #fff; transform: translateY(-3px); }
+      .follow-btn:hover.yt { background-color: #ff0000; border-color: #ff0000; color: #fff; transform: translateY(-3px); }
+      .follow-btn:hover.ig { background-color: #e1306c; border-color: #e1306c; color: #fff; transform: translateY(-3px); }
+      .follow-btn:hover.tk { background-color: #000000; border-color: #000000; color: #fff; transform: translateY(-3px); }
+
+      /* 8. CTA BANNER Styles */
+      .cta-section {
+        padding: 0;
+        border-bottom: none;
+        overflow: hidden;
+      }
+
+      .cta-wrapper {
+        position: relative;
+        min-height: 280px;
+        display: flex;
+      }
+
+      .cta-bg-left {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: var(--primary);
+        z-index: 1;
+      }
+
+      .cta-bg-right {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: var(--accent);
+        clip-path: polygon(78% 0, 100% 0, 100% 100%, 62% 100%);
+        z-index: 2;
+        transition: var(--transition-slow);
+      }
+
+      .cta-section:hover .cta-bg-right {
+        clip-path: polygon(74% 0, 100% 0, 100% 100%, 58% 100%);
+      }
+
+      .cta-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 72px 24px;
+        z-index: 3;
+      }
+
+      .cta-text-left {
+        max-width: 650px;
+      }
+
+      .cta-text-left h2 {
+        font-size: 2.8rem;
+        color: var(--text-light);
+        margin-bottom: 12px;
+      }
+
+      .cta-text-left p {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.85);
+        font-weight: 300;
+      }
+
+      .cta-buttons-right {
+        display: flex;
+        gap: 16px;
+        flex-shrink: 0;
+      }
+
+      .btn-cta-solid {
+        padding: 16px 36px;
+        background-color: var(--text-light);
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 0.72rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        border: 1px solid var(--text-light);
+      }
+
+      .btn-cta-solid:hover {
+        background-color: transparent;
+        color: var(--text-light);
+        transform: translateY(-2px);
+      }
+
+      .btn-cta-outline {
+        padding: 16px 36px;
+        background-color: transparent;
+        color: var(--text-light);
+        font-weight: 700;
+        font-size: 0.72rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+
+      .btn-cta-outline:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+        border-color: #ffffff;
+        transform: translateY(-2px);
+      }
+
+      /* 9. FOOTER Styles */
+      .footer {
+        background-color: var(--primary);
+        color: var(--text-light);
+        padding: 90px 0 0 0;
+        border-bottom: none;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr 1fr 1fr;
+        gap: 50px;
+        margin-bottom: 75px;
+      }
+
+      .footer-col-1 {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer-logo-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .footer-logo-badge {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.04);
+        border: 1.5px solid var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        font-family: var(--font-heading);
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .footer-logo-text {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-light);
+        line-height: 1;
+      }
+
+      .footer-logo-text span {
+        font-family: var(--font-body);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        color: var(--accent);
+        text-transform: uppercase;
+        display: block;
+        margin-top: 4px;
+      }
+
+      .footer .tagline {
+        font-size: 0.88rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 28px;
+        line-height: 1.6;
+      }
+
+      .footer-social-row {
+        display: flex;
+        gap: 12px;
+      }
+
+      .footer-title {
+        font-family: var(--font-body);
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--text-light);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        margin-bottom: 28px;
+      }
+
+      .footer-title::after {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 1px;
+        background-color: var(--accent);
+        margin-top: 10px;
+      }
+
+      .footer-links-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        font-size: 0.9rem;
+      }
+
+      .footer-links-list a {
+        color: rgba(255, 255, 255, 0.65);
+      }
+
+      .footer-links-list a::before {
+        content: '◈';
+        color: var(--accent);
+        font-size: 0.6rem;
+        opacity: 0;
+        transform: translateX(-4px);
+        transition: var(--transition);
+        display: inline-block;
+        margin-right: 8px;
+      }
+
+      .footer-links-list a:hover {
+        color: var(--text-light);
+        padding-left: 4px;
+      }
+
+      .footer-links-list a:hover::before {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .footer-contact-block {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 0.9rem;
+      }
+
+      .footer-contact-row {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+
+      .footer-contact-row svg {
+        width: 18px;
+        height: 18px;
+        color: var(--accent);
+        flex-shrink: 0;
+        margin-top: 3px;
+      }
+
+      .footer-contact-label {
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.6;
+      }
+
+      .footer-googlemap-link {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-top: 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .footer-googlemap-link:hover {
+        color: var(--text-light);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 30px 0;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.15);
+      }
+
+      .footer-bottom p {
+        font-size: 0.75rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+      }
+
+      /* MEDIA QUERIES (RESPONSIVENESS) */
+      @media screen and (max-width: 1024px) {
+        .page-hero .container {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 40px;
+        }
+
+        .hero-stats-badges {
+          max-width: 100%;
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+
+        .stat-badge {
+          flex: 1 1 250px;
+        }
+
+        .cta-container {
+          flex-direction: column;
+          text-align: center;
+          gap: 40px;
+        }
+
+        .cta-bg-right {
+          clip-path: polygon(0 80%, 100% 60%, 100% 100%, 0% 100%);
+        }
+
+        .cta-section:hover .cta-bg-right {
+          clip-path: polygon(0 75%, 100% 55%, 100% 100%, 0% 100%);
+        }
+
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 40px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .top-bar {
+          display: none;
+        }
+
+        .hamburger-toggle {
+          display: block;
+        }
+
+        .navbar-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: var(--bg-white);
+          flex-direction: column;
+          gap: 0;
+          padding: 16px 0;
+          box-shadow: 0 10px 30px rgba(15, 45, 94, 0.08);
+          z-index: 999;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+          border-top: 1px solid var(--border-color);
+        }
+
+        .navbar-menu.menu-active {
+          max-height: 440px;
+        }
+
+        .navbar-menu li {
+          width: 100%;
+          text-align: center;
+        }
+
+        .navbar-link {
+          display: block;
+          padding: 14px 24px;
+          border-bottom: 1px solid rgba(15, 45, 94, 0.03);
+          font-size: 0.8rem;
+          letter-spacing: 0.15em;
+        }
+
+        .navbar-link::after {
+          display: none;
+        }
+
+        .hero-title {
+          font-size: 2.6rem;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+          gap: 48px;
+        }
+
+        .footer-col-1 {
+          align-items: center;
+        }
+
+        .footer-logo-row {
+          justify-content: center;
+        }
+
+        .footer-title::after {
+          margin: 10px auto 0 auto;
+        }
+
+        .footer-contact-row {
+          justify-content: center;
+        }
+      }
+
+      /* --- PREMIUM DESIGN UPGRADE --- */
+      /* 1. Frosted Glass Navbar Background */
+      .navbar {
+        background-color: rgba(255, 255, 255, 0.92) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+      }
+      .navbar.scrolled {
+        background-color: rgba(255, 255, 255, 0.92) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+      }
+
+      /* 2. Interactive Navigation underlines */
+      .navbar-link::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: -4px !important;
+        left: 0 !important;
+        width: 0 !important;
+        height: 2px !important;
+        background-color: #c8860a !important;
+        transition: 0.3s ease !important;
+      }
+      .navbar-link.active::after,
+      .navbar-link:hover::after {
+        width: 100% !important;
+      }
+
+      /* 3. Global Pill Shaped Buttons (50px border-radius) */
+      button, 
+      .btn, 
+      .btn-enroll, 
+      .btn-explore, 
+      .filter-tab, 
+      .submit-btn, 
+      .button, 
+      .load-more-btn, 
+      .prev-btn, 
+      .next-btn,
+      .cta-button,
+      .courses-filter-btn {
+        border-radius: 50px !important;
+      }
+
+      /* 4. Two-Layer Card Shadows (default vs hover) */
+      .dept-card, 
+      .course-card, 
+      .blog-card, 
+      .blog-post-card, 
+      .facility-card, 
+      .stat-card, 
+      .feature-card, 
+      .benefit-card, 
+      .story-card, 
+      .gallery-item, 
+      .instructor-card, 
+      .contact-info-card,
+      .director-profile-box {
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -1px rgba(0,0,0,0.06) !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease !important;
+      }
+      .dept-card:hover, 
+      .course-card:hover, 
+      .blog-card:hover, 
+      .blog-post-card:hover, 
+      .facility-card:hover, 
+      .stat-card:hover, 
+      .feature-card:hover, 
+      .benefit-card:hover, 
+      .story-card:hover, 
+      .gallery-item:hover, 
+      .instructor-card:hover, 
+      .contact-info-card:hover,
+      .director-profile-box:hover {
+        box-shadow: 0 20px 40px -5px rgba(0,0,0,0.20), 0 10px 15px -5px rgba(0,0,0,0.08) !important;
+      }
+
+      /* 5. Heading 2 Adjustments */
+      h2, 
+      .section-header-centered h2, 
+      section h2 {
+        letter-spacing: -0.5px !important;
+        line-height: 1.15 !important;
+      }
+
+      /* 6. Gold label pills above headings */
+      .section-label {
+        letter-spacing: 2.5px !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- 1. TOP BAR -->
+    <div class="top-bar">
+      <div class="container">
+        <div class="top-bar-left">
+          <div class="top-bar-item">
+            <!-- Mail Icon -->
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <a href="mailto:nbamimahs@gmail.com">nbamimahs@gmail.com</a>
+          </div>
+          <div class="top-bar-item">
+            <!-- Phone Icon -->
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>+923239595643</span>
+          </div>
+        </div>
+        <div class="top-bar-right">
+          <a href="#" class="social-circle-btn" aria-label="Facebook">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="YouTube">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="Instagram">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="TikTok">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. NAVBAR -->
+    <nav class="navbar" id="main-navigation">
+      <div class="container">
+        <div class="navbar-logo-area">
+          <div class="navbar-logo-badge">NB</div>
+          <div class="navbar-logo-text">
+            <span class="navbar-logo-title">New Bab-Al-Madina Institute</span>
+            <span class="navbar-logo-tagline">Pioneering Professional Excellence</span>
+          </div>
+        </div>
+        
+        <ul class="navbar-menu" id="nav-dropdown">
+          <li><a href="index.html" class="navbar-link">Home</a></li>
+          <li><a href="about.html" class="navbar-link">About</a></li>
+          <li><a href="courses.html" class="navbar-link">Courses</a></li>
+          <li><a href="faculty.html" class="navbar-link">Faculty</a></li>
+          <li><a href="gallery.html" class="navbar-link active">Gallery</a></li>
+          <li><a href="blog.html" class="navbar-link">Blog</a></li>
+          <li><a href="contact.html" class="navbar-link">Contact</a></li>
+        </ul>
+
+        <button class="hamburger-toggle" id="menu-btn" aria-label="Toggle mobile menu">
+          <svg style="width: 26px; height: 26px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- 3. PAGE HERO BANNER -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-left">
+          <span class="hero-tag">OUR MOMENTS</span>
+          <h1 class="hero-title">Photo Gallery</h1>
+          <ul class="breadcrumbs">
+            <li><a href="index.html">Home</a></li>
+            <li>Gallery</li>
+          </ul>
+        </div>
+        
+        <div class="hero-stats-badges">
+          <!-- Stat Badge 1 -->
+          <div class="stat-badge">
+            <div class="stat-badge-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+            </div>
+            <div class="stat-badge-text">
+              <strong>100+</strong> Photos Published
+            </div>
+          </div>
+          <!-- Stat Badge 2 -->
+          <div class="stat-badge">
+            <div class="stat-badge-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="stat-badge-text">
+              <strong>Campus</strong> Life &amp; Vibe
+            </div>
+          </div>
+          <!-- Stat Badge 3 -->
+          <div class="stat-badge">
+            <div class="stat-badge-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div class="stat-badge-text">
+              <strong>Events</strong> &amp; Activities
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FILTER TABS BAR -->
+    <section class="filter-tabs-section">
+      <div class="container">
+        <div class="filter-intro">
+          <h2>Explore Our Gallery</h2>
+          <p>Glimpses of life, learning, and achievements at New Bab-Al-Madina Institute of Management and Allied Health Sciences (NBAMIM &amp; AHS)</p>
+        </div>
+        
+        <div class="filter-tabs-row">
+          <button class="filter-tab-pill active" data-filter="all">All Photos</button>
+          <button class="filter-tab-pill" data-filter="campus-life">Campus Life</button>
+          <button class="filter-tab-pill" data-filter="classes-learning">Classes &amp; Learning</button>
+          <button class="filter-tab-pill" data-filter="events-ceremonies">Events &amp; Ceremonies</button>
+          <button class="filter-tab-pill" data-filter="student-activities">Student Activities</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. MASONRY PHOTO GALLERY GRID -->
+    <section class="gallery-grid-section">
+      <div class="container">
+        <div class="gallery-masonry" id="gallery-container">
+          
+          <!-- ITEM 1: Campus Life -->
+          <div class="gallery-item" data-category="campus-life" data-category-name="Campus Life" data-title="Main Entrance — Hashtnagri Campus" style="background: linear-gradient(135deg, #0f2d5e 0%, #5ba3d9 100%); height: 250px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">Main Entrance — Hashtnagri Campus</h4>
+              <span class="gallery-item-category">Campus Life</span>
+            </div>
+          </div>
+
+          <!-- ITEM 2: Campus Life -->
+          <div class="gallery-item" data-category="campus-life" data-category-name="Campus Life" data-title="Campus Corridor" style="background: linear-gradient(135deg, #071730 0%, #0d7f62 100%); height: 300px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">Campus Corridor</h4>
+              <span class="gallery-item-category">Campus Life</span>
+            </div>
+          </div>
+
+          <!-- ITEM 3: Campus Life -->
+          <div class="gallery-item" data-category="campus-life" data-category-name="Campus Life" data-title="Reception Area" style="background: linear-gradient(135deg, #5ba3d9 0%, #0f2d5e 100%); height: 180px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">Reception Area</h4>
+              <span class="gallery-item-category">Campus Life</span>
+            </div>
+          </div>
+
+          <!-- ITEM 4: Campus Life -->
+          <div class="gallery-item" data-category="campus-life" data-category-name="Campus Life" data-title="Computer Lab" style="background: linear-gradient(135deg, #0f2d5e 0%, #064e3b 100%); height: 200px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">Computer Lab</h4>
+              <span class="gallery-item-category">Campus Life</span>
+            </div>
+          </div>
+
+          <!-- ITEM 5: Campus Life -->
+          <div class="gallery-item" data-category="campus-life" data-category-name="Campus Life" data-title="Classroom View" style="background: linear-gradient(135deg, #0a1f3d 0%, #5ba3d9 100%); height: 250px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">Classroom View</h4>
+              <span class="gallery-item-category">Campus Life</span>
+            </div>
+          </div>
+
+          <!-- ITEM 6: Classes & Learning -->
+          <div class="gallery-item" data-category="classes-learning" data-category-name="Classes &amp; Learning" data-title="Allied Health Sciences Lecture" style="background: linear-gradient(135deg, #7b0d0d 0%, #0f2d5e 100%); height: 300px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">Allied Health Sciences Lecture</h4>
+              <span class="gallery-item-category">Classes &amp; Learning</span>
+            </div>
+          </div>
+
+          <!-- ITEM 7: Classes & Learning -->
+          <div class="gallery-item" data-category="classes-learning" data-category-name="Classes &amp; Learning" data-title="English Language Session" style="background: linear-gradient(135deg, #5ba3d9 0%, #0f2d5e 100%); height: 180px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">English Language Session</h4>
+              <span class="gallery-item-category">Classes &amp; Learning</span>
+            </div>
+          </div>
+
+          <!-- ITEM 8: Classes & Learning -->
+          <div class="gallery-item" data-category="classes-learning" data-category-name="Classes &amp; Learning" data-title="IT Lab Practical" style="background: linear-gradient(135deg, #0d7f62 0%, #0f2d5e 100%); height: 200px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">IT Lab Practical</h4>
+              <span class="gallery-item-category">Classes &amp; Learning</span>
+            </div>
+          </div>
+
+          <!-- ITEM 9: Classes & Learning -->
+          <div class="gallery-item" data-category="classes-learning" data-category-name="Classes &amp; Learning" data-title="IELTS Preparation Class" style="background: linear-gradient(135deg, #155d9d 0%, #5ba3d9 100%); height: 250px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">IELTS Preparation Class</h4>
+              <span class="gallery-item-category">Classes &amp; Learning</span>
+            </div>
+          </div>
+
+          <!-- ITEM 10: Classes & Learning -->
+          <div class="gallery-item" data-category="classes-learning" data-category-name="Classes &amp; Learning" data-title="Safety Course Training" style="background: linear-gradient(135deg, #c8860a 0%, #0f2d5e 100%); height: 300px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">Safety Course Training</h4>
+              <span class="gallery-item-category">Classes &amp; Learning</span>
+            </div>
+          </div>
+
+          <!-- ITEM 11: Events & Ceremonies -->
+          <div class="gallery-item" data-category="events-ceremonies" data-category-name="Events &amp; Ceremonies" data-title="Graduation Ceremony 2024" style="background: linear-gradient(135deg, #c8860a 0%, #071730 100%); height: 180px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">Graduation Ceremony 2024</h4>
+              <span class="gallery-item-category">Events &amp; Ceremonies</span>
+            </div>
+          </div>
+
+          <!-- ITEM 12: Events & Ceremonies -->
+          <div class="gallery-item" data-category="events-ceremonies" data-category-name="Events &amp; Ceremonies" data-title="Prize Distribution Event" style="background: linear-gradient(135deg, #0f2d5e 0%, #c8860a 100%); height: 200px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">Prize Distribution Event</h4>
+              <span class="gallery-item-category">Events &amp; Ceremonies</span>
+            </div>
+          </div>
+
+          <!-- ITEM 13: Events & Ceremonies -->
+          <div class="gallery-item" data-category="events-ceremonies" data-category-name="Events &amp; Ceremonies" data-title="Certificate Ceremony" style="background: linear-gradient(135deg, #aa1212 0%, #0f2d5e 100%); height: 250px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">Certificate Ceremony</h4>
+              <span class="gallery-item-category">Events &amp; Ceremonies</span>
+            </div>
+          </div>
+
+          <!-- ITEM 14: Events & Ceremonies -->
+          <div class="gallery-item" data-category="events-ceremonies" data-category-name="Events &amp; Ceremonies" data-title="Annual Day Celebration" style="background: linear-gradient(135deg, #5ba3d9 0%, #c8860a 100%); height: 300px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">Annual Day Celebration</h4>
+              <span class="gallery-item-category">Events &amp; Ceremonies</span>
+            </div>
+          </div>
+
+          <!-- ITEM 15: Events & Ceremonies -->
+          <div class="gallery-item" data-category="events-ceremonies" data-category-name="Events &amp; Ceremonies" data-title="Guest Speaker Session" style="background: linear-gradient(135deg, #0f2d5e 0%, #0d7f62 100%); height: 180px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">Guest Speaker Session</h4>
+              <span class="gallery-item-category">Events &amp; Ceremonies</span>
+            </div>
+          </div>
+
+          <!-- ITEM 16: Student Activities -->
+          <div class="gallery-item" data-category="student-activities" data-category-name="Student Activities" data-title="Student Presentations" style="background: linear-gradient(135deg, #5ba3d9 0%, #0f2d5e 100%); height: 200px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">Student Presentations</h4>
+              <span class="gallery-item-category">Student Activities</span>
+            </div>
+          </div>
+
+          <!-- ITEM 17: Student Activities -->
+          <div class="gallery-item" data-category="student-activities" data-category-name="Student Activities" data-title="Group Study Session" style="background: linear-gradient(135deg, #064e3b 0%, #071730 100%); height: 250px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">Group Study Session</h4>
+              <span class="gallery-item-category">Student Activities</span>
+            </div>
+          </div>
+
+          <!-- ITEM 18: Student Activities -->
+          <div class="gallery-item" data-category="student-activities" data-category-name="Student Activities" data-title="Awareness Campaign" style="background: linear-gradient(135deg, #0f2d5e 0%, #7b0d0d 100%); height: 300px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">Awareness Campaign</h4>
+              <span class="gallery-item-category">Student Activities</span>
+            </div>
+          </div>
+
+          <!-- ITEM 19: Student Activities -->
+          <div class="gallery-item" data-category="student-activities" data-category-name="Student Activities" data-title="Sports &amp; Recreation" style="background: linear-gradient(135deg, #c8860a 0%, #0d7f62 100%); height: 180px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">Sports &amp; Recreation</h4>
+              <span class="gallery-item-category">Student Activities</span>
+            </div>
+          </div>
+
+          <!-- ITEM 20: Student Activities -->
+          <div class="gallery-item" data-category="student-activities" data-category-name="Student Activities" data-title="Community Outreach" style="background: linear-gradient(135deg, #0f2d5e 0%, #5ba3d9 100%); height: 200px;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span class="placeholder-emblem">NBAM</span>
+            </div>
+            <div class="gallery-item-overlay">
+              <svg class="zoom-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h4 class="gallery-item-title">Community Outreach</h4>
+              <span class="gallery-item-category">Student Activities</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. LIGHTBOX MODULE -->
+    <div class="lightbox-modal" id="lightbox">
+      <div class="lightbox-content-wrapper">
+        <button class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close Lightbox">
+          <svg style="width: 36px; height: 36px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        
+        <button class="lightbox-arrow prev" id="lightbox-prev-btn" aria-label="Previous">
+          <svg style="width: 24px; height: 24px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        
+        <div class="lightbox-gradient-box" id="lightbox-gradient">
+          <span class="placeholder-emblem" style="font-size: 8rem; opacity: 0.08;">NBAM</span>
+        </div>
+        
+        <h3 class="lightbox-title" id="lightbox-title">Photo Title</h3>
+        <span class="lightbox-category" id="lightbox-category">Category</span>
+        
+        <button class="lightbox-arrow next" id="lightbox-next-btn" aria-label="Next">
+          <svg style="width: 24px; height: 24px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- 7. LOAD MORE SECTION -->
+    <section class="load-more-section">
+      <div class="container">
+        <p class="showing-text">Showing 20 of 20 photos</p>
+        <button class="load-more-btn" disabled>
+          Upload More Photos Coming Soon
+          <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        
+        <div class="social-follow-prompt">
+          <p>Follow us on social media for more updates</p>
+          <div class="social-follow-row">
+            <a href="#" class="follow-btn fb" aria-label="Facebook">
+              <svg class="social-icon" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="follow-btn yt" aria-label="YouTube">
+              <svg class="social-icon" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+            <a href="#" class="follow-btn ig" aria-label="Instagram">
+              <svg class="social-icon" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="follow-btn tk" aria-label="TikTok">
+              <svg class="social-icon" style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CTA BANNER -->
+    <section class="cta-section" id="register-trigger">
+      <div class="cta-wrapper">
+        <div class="cta-bg-left"></div>
+        <div class="cta-bg-right"></div>
+        <div class="cta-container">
+          <div class="cta-text-left">
+            <h2>Be Part of Our Story</h2>
+            <p>Join NBAMIM &amp; AHS and create memories that last a lifetime</p>
+          </div>
+          <div class="cta-buttons-right">
+            <a href="contact.html" class="btn btn-cta-solid">Enroll Now</a>
+            <a href="contact.html" class="btn btn-cta-outline">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <!-- Col 1 -->
+        <div class="footer-col-1">
+          <div class="footer-logo-row">
+            <div class="footer-logo-badge">NB</div>
+            <div class="footer-logo-text">
+              New Bab-Al-Madina Institute
+              <span>Pioneering Professional Excellence</span>
+            </div>
+          </div>
+          <p class="tagline">
+            Bringing elite clinical studies, technology advancements, and global masteries together to secure regional professional success.
+          </p>
+          <div class="footer-social-row">
+            <a href="#" class="social-circle-btn" aria-label="Facebook">
+              <svg class="social-icon" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-circle-btn" aria-label="YouTube">
+              <svg class="social-icon" viewBox="0 0 24 24">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+            <a href="#" class="social-circle-btn" aria-label="Instagram">
+              <svg class="social-icon" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-circle-btn" aria-label="TikTok">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div>
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div>
+          <h3 class="footer-title">Our Courses</h3>
+          <ul class="footer-links-list">
+            <li><a href="courses.html">Spoken English</a></li>
+            <li><a href="courses.html">English Diploma</a></li>
+            <li><a href="courses.html">IELTS Preparation</a></li>
+            <li><a href="courses.html">English Conversation</a></li>
+            <li><a href="courses.html">DIT (Information Tech)</a></li>
+            <li><a href="courses.html">Allied Health Sciences</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 -->
+        <div class="footer-contact-block">
+          <h3 class="footer-title">Contact Info</h3>
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <div class="footer-contact-label">
+              Hashtnagri BRT Station, Behind Rahim Medical Center, Peshawar, Pakistan
+            </div>
+          </div>
+          
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <div class="footer-contact-label">+923239595643</div>
+          </div>
+
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <div class="footer-contact-label">nbamimahs@gmail.com</div>
+          </div>
+
+          <a href="https://maps.google.com" target="_blank" class="footer-googlemap-link">
+            Open in Google Maps
+            <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <polyline points="9 6 18 6 18 15"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- bottom bar -->
+      <div class="footer-bottom">
+        <p>© 2025 NBAMIM &amp; AHS. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- INTERTACTIVE SCRIPTS -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const navbar = document.getElementById('main-navigation');
+        const hamburgerBtn = document.getElementById('menu-btn');
+        const navDropdown = document.getElementById('nav-dropdown');
+
+        // Sticky Navbar effect on scroll
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 40) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+
+        // Hamburger dropdown menu toggle
+        hamburgerBtn.addEventListener('click', () => {
+          navDropdown.classList.toggle('menu-active');
+        });
+
+        // Interactive Gallery Tab Filtering
+        const filterPills = document.querySelectorAll('.filter-tab-pill');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const showingText = document.querySelector('.showing-text');
+        
+        let visibleItemsArray = Array.from(galleryItems);
+        let activeIndex = 0;
+
+        filterPills.forEach(pill => {
+          pill.addEventListener('click', () => {
+            // Activating Active Tab Design
+            filterPills.forEach(btn => btn.classList.remove('active'));
+            pill.classList.add('active');
+
+            const filterValue = pill.getAttribute('data-filter');
+            let visibleCount = 0;
+
+            galleryItems.forEach(item => {
+              const category = item.getAttribute('data-category');
+              if (filterValue === 'all' || category === filterValue) {
+                item.style.display = 'block';
+                item.classList.remove('filtered-out');
+                // Re-trigger scroll observer entry or immediately show
+                setTimeout(() => {
+                  item.classList.add('animation-active');
+                }, 50);
+                visibleCount++;
+              } else {
+                item.style.display = 'none';
+                item.classList.add('filtered-out');
+                item.classList.remove('animation-active');
+              }
+            });
+
+            // Update showing counter dynamically
+            showingText.textContent = `Showing ${visibleCount} of 20 photos`;
+            
+            // Re-update the active array for lightbox transitions
+            updateActiveCarouselList();
+          });
+        });
+
+        // Lightbox Interactive Features
+        const lightbox = document.getElementById('lightbox');
+        const lightboxGradient = document.getElementById('lightbox-gradient');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxCategory = document.getElementById('lightbox-category');
+        const closeBtn = document.getElementById('lightbox-close-btn');
+        const prevBtn = document.getElementById('lightbox-prev-btn');
+        const nextBtn = document.getElementById('lightbox-next-btn');
+
+        let activeItems = Array.from(galleryItems);
+
+        function updateActiveCarouselList() {
+          activeItems = Array.from(galleryItems).filter(item => {
+            return !item.classList.contains('filtered-out');
+          });
+        }
+
+        // Initialize active items
+        updateActiveCarouselList();
+
+        // Attach click handlers to each gallery item
+        galleryItems.forEach(item => {
+          item.addEventListener('click', () => {
+            updateActiveCarouselList();
+            const index = activeItems.indexOf(item);
+            if (index !== -1) {
+              openLightbox(index);
+            }
+          });
+        });
+
+        function openLightbox(index) {
+          if (index < 0 || index >= activeItems.length) return;
+          activeIndex = index;
+          
+          const targetItem = activeItems[activeIndex];
+          const bgStyle = targetItem.getAttribute('style');
+          const title = targetItem.getAttribute('data-title');
+          const category = targetItem.getAttribute('data-category-name');
+          
+          lightboxGradient.setAttribute('style', bgStyle);
+          lightboxTitle.textContent = title;
+          lightboxCategory.textContent = category;
+          
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden'; // Lock scrolling
+        }
+
+        function closeLightbox() {
+          lightbox.classList.remove('active');
+          document.body.style.overflow = ''; // Unlock scrolling
+        }
+
+        function nextItem() {
+          if (activeItems.length <= 1) return;
+          let nextIdx = activeIndex + 1;
+          if (nextIdx >= activeItems.length) {
+            nextIdx = 0;
+          }
+          openLightbox(nextIdx);
+        }
+
+        function prevItem() {
+          if (activeItems.length <= 1) return;
+          let prevIdx = activeIndex - 1;
+          if (prevIdx < 0) {
+            prevIdx = activeItems.length - 1;
+          }
+          openLightbox(prevIdx);
+        }
+
+        // Lightbox Events
+        closeBtn.addEventListener('click', closeLightbox);
+        nextBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          nextItem();
+        });
+        prevBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          prevItem();
+        });
+
+        // Close on clicking outside container content box
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) {
+            closeLightbox();
+          }
+        });
+
+        // Keyboard Support
+        document.addEventListener('keydown', (e) => {
+          if (!lightbox.classList.contains('active')) return;
+          
+          if (e.key === 'Escape') {
+            closeLightbox();
+          } else if (e.key === 'ArrowRight') {
+            nextItem();
+          } else if (e.key === 'ArrowLeft') {
+            prevItem();
+          }
+        });
+
+        // Intersection Observer scroll staggering reveal logic for clean load
+        const observerOptionsReveal = {
+          root: null,
+          threshold: 0.05,
+          rootMargin: "0px 0px -20px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry, idx) => {
+            if (entry.isIntersecting) {
+              const element = entry.target;
+              // Determine active offset matching only visible index
+              const currentVisible = Array.from(activeItems);
+              const visibleIndex = currentVisible.indexOf(element);
+              
+              if (visibleIndex !== -1) {
+                element.style.transitionDelay = `${(visibleIndex % 4) * 80}ms`;
+              }
+              
+              element.classList.add('animation-active');
+              revealObserver.unobserve(element);
+            }
+          });
+        }, observerOptionsReveal);
+
+        galleryItems.forEach(el => {
+          revealObserver.observe(el);
+        });
+      });
+    </script>
+  </body>
+</html>

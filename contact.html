@@ -1,0 +1,2567 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | NBAMIM &amp; AHS</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        --primary: #0f2d5e;
+        --secondary: #5ba3d9;
+        --accent: #c8860a;
+        --accent-hover: #b07408;
+        --bg-white: #ffffff;
+        --bg-light: #f0f4f9;
+        --bg-navy-dark: #071730;
+        --text-dark: #2d3748;
+        --text-navy: #0f2d5e;
+        --text-muted: #536685;
+        --text-light: #ffffff;
+        --border-color: rgba(15, 45, 94, 0.12);
+        
+        --font-heading: 'Playfair Display', Georgia, serif;
+        --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        --transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background-color: var(--bg-white);
+        color: var(--text-dark);
+        line-height: 1.65;
+        overflow-x: hidden;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        color: var(--text-navy);
+        line-height: 1.25;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+        width: 100%;
+      }
+
+      section {
+        padding: 90px 0;
+        position: relative;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      /* 1. TOP BAR */
+      .top-bar {
+        background-color: var(--primary);
+        color: var(--text-light);
+        padding: 12px 0;
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .top-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .top-bar-left {
+        display: flex;
+        gap: 32px;
+      }
+
+      .top-bar-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        opacity: 0.9;
+      }
+
+      .top-bar-item a:hover {
+        color: var(--accent);
+      }
+
+      .top-bar-right {
+        display: flex;
+        gap: 12px;
+      }
+
+      .social-circle-btn {
+        width: 28px;
+        height: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        transition: var(--transition);
+      }
+
+      .social-circle-btn:hover {
+        background-color: var(--accent);
+        border-color: var(--accent);
+        transform: translateY(-2px);
+      }
+
+      .social-icon {
+        width: 14px;
+        height: 14px;
+        fill: currentColor;
+      }
+
+      /* 2. NAVBAR */
+      .navbar {
+        background-color: var(--bg-white);
+        padding: 24px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: var(--transition);
+      }
+
+      .navbar.scrolled {
+        padding: 16px 0;
+        box-shadow: 0 4px 20px rgba(15, 30, 94, 0.06);
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar-logo-area {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .navbar-logo-badge {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: var(--primary);
+        border: 2px solid var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 0.85rem;
+      }
+
+      .navbar-logo-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .navbar-logo-title {
+        font-family: var(--font-heading);
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--primary);
+        line-height: 1.1;
+      }
+
+      .navbar-logo-tagline {
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-top: 4px;
+      }
+
+      .navbar-menu {
+        display: flex;
+        list-style: none;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .navbar-link {
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--primary);
+        padding: 6px 0;
+        position: relative;
+      }
+
+      .navbar-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--accent);
+        transition: var(--transition);
+      }
+
+      .navbar-link.active::after,
+      .navbar-link:hover::after {
+        width: 100%;
+      }
+
+      .navbar-link.active,
+      .navbar-link:hover {
+        color: var(--accent);
+      }
+
+      .hamburger-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--primary);
+        padding: 4px;
+      }
+
+      /* 3. PAGE HERO */
+      .page-hero {
+        position: relative;
+        background: 
+          radial-gradient(circle at 20% 50%, rgba(200, 134, 10, 0.08) 0%, transparent 60%),
+          radial-gradient(circle at 80% 80%, rgba(91, 163, 217, 0.06) 0%, transparent 60%),
+          linear-gradient(135deg, #020b18 0%, #041428 50%, #061d3a 100%);
+        color: var(--text-light);
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        border-bottom: none;
+        padding: 60px 0;
+      }
+
+      .hero-pattern {
+        display: none;
+      }
+
+      .page-hero .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .page-hero-left {
+        max-width: 600px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: heroFadeIn 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+      }
+
+      .hero-tag {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        color: #f0c040;
+        margin-bottom: 12px;
+        display: inline-block;
+      }
+
+      .hero-title {
+        color: #ffffff;
+        font-size: 3.2rem;
+        margin-bottom: 16px;
+      }
+
+      .breadcrumbs {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.75);
+      }
+
+      .breadcrumbs a {
+        color: rgba(255, 255, 255, 0.75);
+        transition: var(--transition);
+      }
+
+      .breadcrumbs a:hover {
+        color: #f0c040;
+      }
+
+      .breadcrumbs li::after {
+        content: '\203A';
+        margin-left: 8px;
+        color: #f0c040;
+      }
+
+      .breadcrumbs li:last-child::after {
+        display: none;
+      }
+
+      .breadcrumbs li:last-child {
+        color: #ffffff;
+        font-weight: 700;
+      }
+
+      .hero-stats-badges {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        width: 100%;
+        max-width: 320px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: heroFadeIn 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) 0.15s forwards;
+      }
+
+      @keyframes heroFadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .stat-badge {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 14px 22px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        backdrop-filter: blur(8px);
+        transition: var(--transition);
+      }
+
+      .stat-badge:hover {
+        transform: translateX(6px);
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.25);
+      }
+
+      .stat-badge-icon {
+        width: 34px;
+        height: 34px;
+        background-color: rgba(240, 192, 64, 0.1);
+        border-radius: 50%;
+        color: #f0c040;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .stat-badge-text {
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+
+      .stat-badge-text strong {
+        color: #ffffff;
+        font-size: 1.1rem;
+        font-family: var(--font-heading);
+        margin-right: 4px;
+      }
+
+      /* Scroll Animation Base Elements */
+      .scroll-element-animation {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      .scroll-element-animation.animation-active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* 4. CONTACT QUICK INFO CARDS */
+      .quick-info-section {
+        background-color: var(--bg-white);
+        text-align: center;
+      }
+
+      .section-heading-block {
+        margin-bottom: 60px;
+      }
+
+      .section-heading-block h2 {
+        font-size: 2.8rem;
+        margin-bottom: 16px;
+      }
+
+      .heading-gold-line {
+        width: 60px;
+        height: 2px;
+        background-color: var(--accent);
+        margin: 0 auto;
+      }
+
+      .quick-info-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+
+      .info-card {
+        background-color: var(--bg-white);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 40px 24px;
+        box-shadow: 0 10px 30px rgba(15, 30, 94, 0.04);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: var(--transition);
+      }
+
+      .info-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 40px rgba(15, 30, 94, 0.08);
+        border-color: rgba(200, 134, 10, 0.3);
+      }
+
+      .info-icon-circle {
+        width: 64px;
+        height: 64px;
+        background-color: rgba(200, 134, 10, 0.08);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+        color: var(--accent);
+        transition: var(--transition);
+      }
+
+      .info-card:hover .info-icon-circle {
+        background-color: var(--accent);
+        color: var(--bg-white);
+      }
+
+      .info-icon-circle svg {
+        width: 26px;
+        height: 26px;
+      }
+
+      .info-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+        font-family: var(--font-heading);
+      }
+
+      .info-card p {
+        font-size: 0.9rem;
+        color: var(--text-dark);
+        margin-bottom: 8px;
+        line-height: 1.5;
+        font-weight: 500;
+      }
+
+      .info-card .info-small-sub {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+      }
+
+      /* WhatsApp Specific */
+      .whatsapp-card .info-icon-circle {
+        background-color: rgba(37, 211, 102, 0.1);
+        color: #25d366;
+      }
+
+      .whatsapp-card:hover .info-icon-circle {
+        background-color: #25d366;
+        color: var(--bg-white);
+      }
+
+      .whatsapp-link-btn {
+        margin-top: 16px;
+        border: 1px solid var(--accent);
+        color: var(--accent);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 8px 18px;
+        transition: var(--transition);
+      }
+
+      .whatsapp-link-btn:hover {
+        background-color: var(--accent);
+        color: var(--bg-white);
+      }
+
+      /* 5. FORM + MAP SECTION */
+      .form-map-section {
+        background-color: var(--bg-light);
+      }
+
+      .form-map-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        align-items: stretch;
+      }
+
+      /* Contact Form Card */
+      .form-card {
+        background-color: var(--bg-white);
+        border-radius: 16px;
+        padding: 50px;
+        box-shadow: 0 16px 45px rgba(15, 30, 94, 0.04);
+        border: 1px solid var(--border-color);
+        position: relative;
+      }
+
+      .form-label-top {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 12px;
+        display: block;
+      }
+
+      .form-card h3 {
+        font-size: 2.1rem;
+        margin-bottom: 12px;
+      }
+
+      .form-subtext {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        margin-bottom: 36px;
+      }
+
+      /* Form styling */
+      .form-fields-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .form-group-full {
+        grid-column: span 2;
+      }
+
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        position: relative;
+      }
+
+      .input-group label {
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      .required-asterisk {
+        color: var(--accent);
+        font-weight: 700;
+        margin-left: 2px;
+      }
+
+      .input-wrapper {
+        position: relative;
+        width: 100%;
+      }
+
+      .input-wrapper input,
+      .input-wrapper select,
+      .input-wrapper textarea {
+        width: 100%;
+        padding: 14px 16px 14px 44px;
+        border: 1.5px solid rgba(15, 45, 94, 0.15);
+        background-color: var(--bg-white);
+        color: var(--text-dark);
+        font-family: var(--font-body);
+        font-size: 0.92rem;
+        border-radius: 8px;
+        outline: none;
+        transition: var(--transition);
+      }
+
+      .input-wrapper textarea {
+        padding-left: 16px;
+        resize: none;
+      }
+
+      .input-wrapper input:focus,
+      .input-wrapper select:focus,
+      .input-wrapper textarea:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(15, 45, 94, 0.08);
+      }
+
+      .input-wrapper .input-icon {
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 18px;
+        height: 18px;
+        color: var(--text-muted);
+        pointer-events: none;
+        transition: var(--transition);
+      }
+
+      .input-wrapper input:focus + .input-icon,
+      .input-wrapper select:focus + .input-icon {
+        color: var(--accent);
+      }
+
+      .error-msg {
+        color: #cc0000;
+        font-size: 0.74rem;
+        font-weight: 600;
+        margin-top: 4px;
+        display: none;
+      }
+
+      .input-wrapper.error-state input,
+      .input-wrapper.error-state select,
+      .input-wrapper.error-state textarea {
+        border-color: #cc0000;
+        background-color: #fffafb;
+      }
+
+      /* Submit button */
+      .form-submit-btn {
+        width: 100%;
+        margin-top: 24px;
+        background-color: var(--primary);
+        color: var(--text-light);
+        border: 1px solid var(--primary);
+        font-family: var(--font-body);
+        font-weight: 700;
+        font-size: 0.8rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .form-submit-btn:hover {
+        background-color: var(--accent);
+        border-color: var(--accent);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(200, 134, 10, 0.25);
+      }
+
+      /* success block */
+      .form-success-card {
+        display: none;
+        text-align: center;
+        padding: 60px 20px;
+        animation: successEntrance 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+      }
+
+      @keyframes successEntrance {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .success-checkmark-circle {
+        width: 80px;
+        height: 80px;
+        background-color: rgba(200, 134, 10, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent);
+        margin: 0 auto 28px auto;
+        border: 2px dashed var(--accent);
+      }
+
+      .success-checkmark-circle svg {
+        width: 40px;
+        height: 40px;
+      }
+
+      .form-success-card h3 {
+        font-size: 2.2rem;
+        color: var(--primary);
+        margin-bottom: 12px;
+      }
+
+      .form-success-card p {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        max-width: 480px;
+        margin: 0 auto;
+      }
+
+      /* MAP COLUMN */
+      .map-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .map-iframe-container {
+        flex-grow: 1;
+        min-height: 400px;
+        border: 2px solid var(--accent);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(15, 30, 94, 0.04);
+      }
+
+      .map-iframe-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+      }
+
+      .map-detail-card {
+        background-color: var(--bg-white);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(15, 30, 94, 0.04);
+      }
+
+      .map-detail-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      .map-detail-header svg {
+        width: 22px;
+        height: 22px;
+        color: var(--accent);
+      }
+
+      .map-detail-header h4 {
+        font-size: 1.15rem;
+        font-family: var(--font-heading);
+      }
+
+      .map-detail-card p {
+        font-size: 0.88rem;
+        color: var(--text-dark);
+        margin-bottom: 18px;
+        line-height: 1.5;
+      }
+
+      .map-open-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--accent);
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .map-open-link:hover {
+        color: var(--primary);
+      }
+
+      /* 6. OFFICE HOURS SECTION */
+      .hours-section {
+        background-color: var(--bg-white);
+      }
+
+      .hours-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .hours-left h3 {
+        font-size: 2.5rem;
+        margin-bottom: 16px;
+      }
+
+      .hours-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 36px;
+      }
+
+      .hours-table tr {
+        border-bottom: 1px solid rgba(15, 45, 94, 0.08);
+        transition: var(--transition);
+      }
+
+      .hours-table tr:hover {
+        background-color: rgba(15, 45, 94, 0.02);
+      }
+
+      .hours-table td {
+        padding: 18px 12px;
+        font-size: 0.95rem;
+      }
+
+      .hours-day-td {
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .hours-time-td {
+        color: var(--text-dark);
+      }
+
+      .hours-badge-td {
+        text-align: right;
+      }
+
+      .status-pill {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 4px 12px;
+        border-radius: 50px;
+      }
+
+      .status-pill.open {
+        background-color: rgba(37, 211, 102, 0.12);
+        color: rgb(30, 150, 75);
+      }
+
+      .status-pill.closed {
+        background-color: rgba(229, 62, 62, 0.1);
+        color: rgb(197, 30, 30);
+      }
+
+      /* Right CTA Box */
+      .hours-cta-box {
+        background-color: var(--primary);
+        color: var(--text-light);
+        border-radius: 16px;
+        padding: 50px;
+        text-align: center;
+        border-left: 5px solid var(--accent);
+        box-shadow: 0 16px 40px rgba(15, 30, 94, 0.1);
+      }
+
+      .hours-cta-icon {
+        width: 60px;
+        height: 60px;
+        background-color: rgba(255, 255, 255, 0.06);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px auto;
+        color: var(--accent);
+      }
+
+      .hours-cta-icon svg {
+        width: 28px;
+        height: 28px;
+        fill: currentColor;
+      }
+
+      .hours-cta-box h4 {
+        color: var(--text-light);
+        font-size: 1.8rem;
+        margin-bottom: 14px;
+        font-family: var(--font-heading);
+      }
+
+      .hours-cta-box p {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+
+      .hours-cta-phone {
+        display: block;
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--accent);
+        margin-bottom: 30px;
+        transition: var(--transition);
+      }
+
+      .hours-cta-phone:hover {
+        color: var(--text-light);
+      }
+
+      .hours-cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .btn-cta-whatsapp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background-color: #25d366;
+        color: var(--text-light);
+        padding: 14px 28px;
+        font-weight: 700;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .btn-cta-whatsapp:hover {
+        background-color: #20ba59;
+        transform: translateY(-2px);
+      }
+
+      .btn-cta-phone-call {
+        display: block;
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: var(--text-light);
+        padding: 14px 28px;
+        font-weight: 700;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .btn-cta-phone-call:hover {
+        border-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.05);
+        transform: translateY(-2px);
+      }
+
+      /* 7. FAQ QUICK ANSWERS */
+      .faq-section {
+        background-color: var(--bg-light);
+      }
+
+      .faq-accordion-block {
+        max-width: 820px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .faq-item {
+        background-color: var(--bg-white);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(15, 30, 94, 0.02);
+      }
+
+      .faq-header {
+        width: 100%;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 24px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        color: var(--text-navy);
+        transition: var(--transition);
+      }
+
+      .faq-header h4 {
+        font-size: 1.1rem;
+        font-family: var(--font-heading);
+        color: var(--primary);
+        font-weight: 700;
+        padding-right: 20px;
+      }
+
+      .faq-arrow {
+        width: 18px;
+        height: 18px;
+        color: var(--accent);
+        transition: transform 0.35s ease;
+        flex-shrink: 0;
+      }
+
+      .faq-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      .faq-body-inner {
+        padding: 0 30px 30px 30px;
+        font-size: 0.92rem;
+        color: #4a5568;
+        line-height: 1.65;
+        border-top: 1px dashed rgba(15, 45, 94, 0.08);
+        padding-top: 20px;
+      }
+
+      /* Active FAQ item */
+      .faq-item.active {
+        border-color: rgba(200, 134, 10, 0.3);
+        box-shadow: 0 10px 25px rgba(15, 30, 94, 0.05);
+      }
+
+      .faq-item.active .faq-arrow {
+        transform: rotate(180deg);
+      }
+
+      /* 8. SOCIAL MEDIA SECTION */
+      .socials-section {
+        background-color: var(--primary);
+        color: var(--text-light);
+        text-align: center;
+      }
+
+      .socials-section .section-heading-block h2 {
+        color: var(--text-light);
+      }
+
+      .socials-subtext {
+        font-size: 1.05rem;
+        color: rgba(255, 255, 255, 0.75);
+        max-width: 600px;
+        margin: -10px auto 45px auto;
+        font-weight: 300;
+      }
+
+      .social-media-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+
+      .platform-card {
+        background-color: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 40px 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: var(--transition);
+      }
+
+      .platform-card:hover {
+        transform: translateY(-8px);
+        background-color: rgba(255, 255, 255, 0.06);
+      }
+
+      /* Hover brand colors */
+      .platform-card.facebook-card:hover { border-color: #3b5998; border-bottom: 4px solid #3b5998; }
+      .platform-card.youtube-card:hover { border-color: #ff0000; border-bottom: 4px solid #ff0000; }
+      .platform-card.instagram-card:hover { border-color: #e1306c; border-bottom: 4px solid #e1306c; }
+      .platform-card.tiktok-card:hover { border-color: #010101; border-bottom: 4px solid #00f2fe; }
+
+      .platform-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.04);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        color: var(--text-light);
+        transition: var(--transition);
+      }
+
+      .platform-card:hover .platform-icon {
+        color: var(--accent);
+        transform: scale(1.1);
+      }
+
+      .platform-icon svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .platform-name {
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin-bottom: 4px;
+        font-family: var(--font-heading);
+      }
+
+      .platform-handle {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 24px;
+        font-weight: 500;
+      }
+
+      .platform-follow-btn {
+        display: block;
+        width: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: var(--text-light);
+        padding: 10px 16px;
+        font-size: 0.72rem;
+        font-weight: 700;
+         text-transform: uppercase;
+        letter-spacing: 0.05em;
+        text-align: center;
+        transition: var(--transition);
+      }
+
+      .platform-card:hover .platform-follow-btn {
+        background-color: var(--accent);
+        border-color: var(--accent);
+      }
+
+      /* 9. CTA BANNER */
+      .cta-section {
+        padding: 0;
+        border-bottom: none;
+        overflow: hidden;
+      }
+
+      .cta-wrapper {
+        position: relative;
+        min-height: 280px;
+        display: flex;
+      }
+
+      .cta-bg-left {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: var(--primary);
+        z-index: 1;
+      }
+
+      .cta-bg-right {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: var(--accent);
+        clip-path: polygon(78% 0, 100% 0, 100% 100%, 62% 100%);
+        z-index: 2;
+        transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      .cta-section:hover .cta-bg-right {
+        clip-path: polygon(74% 0, 100% 0, 100% 100%, 58% 100%);
+      }
+
+      .cta-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 72px 24px;
+        z-index: 3;
+      }
+
+      .cta-text-left {
+        max-width: 650px;
+      }
+
+      .cta-text-left h2 {
+        font-size: 2.8rem;
+        color: var(--text-light);
+        margin-bottom: 12px;
+      }
+
+      .cta-text-left p {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.85);
+        font-weight: 300;
+      }
+
+      .cta-buttons-right {
+        display: flex;
+        gap: 16px;
+        flex-shrink: 0;
+      }
+
+      .btn-cta-solid {
+        padding: 16px 36px;
+        background-color: var(--text-light);
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 0.72rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        border: 1px solid var(--text-light);
+        display: inline-block;
+      }
+
+      .btn-cta-solid:hover {
+        background-color: transparent;
+        color: var(--text-light);
+        transform: translateY(-2px);
+      }
+
+      .btn-cta-outline {
+        padding: 16px 36px;
+        background-color: transparent;
+        color: var(--text-light);
+        font-weight: 700;
+        font-size: 0.72rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        display: inline-block;
+      }
+
+      .btn-cta-outline:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+        border-color: #ffffff;
+        transform: translateY(-2px);
+      }
+
+      /* 10. FOOTER */
+      .footer {
+        background-color: var(--bg-navy-dark);
+        color: var(--text-light);
+        padding: 90px 0 0 0;
+        border-bottom: none;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr 1fr 1fr;
+        gap: 50px;
+        margin-bottom: 75px;
+      }
+
+      .footer-col-1 {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer-logo-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .footer-logo-badge {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.04);
+        border: 1.5px solid var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        font-family: var(--font-heading);
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .footer-logo-text {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-light);
+        line-height: 1;
+      }
+
+      .footer-logo-text span {
+        font-family: var(--font-body);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        color: var(--accent);
+        text-transform: uppercase;
+        display: block;
+        margin-top: 4px;
+      }
+
+      .footer .tagline {
+        font-size: 0.88rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 28px;
+        line-height: 1.6;
+      }
+
+      .footer-social-row {
+        display: flex;
+        gap: 12px;
+      }
+
+      .footer-title {
+        font-family: var(--font-body);
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--text-light);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        margin-bottom: 28px;
+      }
+
+      .footer-title::after {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 1px;
+        background-color: var(--accent);
+        margin-top: 10px;
+      }
+
+      .footer-links-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        font-size: 0.9rem;
+      }
+
+      .footer-links-list a {
+        color: rgba(255, 255, 255, 0.65);
+      }
+
+      .footer-links-list a::before {
+        content: '◈';
+        color: var(--accent);
+        font-size: 0.6rem;
+        opacity: 0;
+        transform: translateX(-4px);
+        transition: var(--transition);
+        display: inline-block;
+        margin-right: 8px;
+      }
+
+      .footer-links-list a:hover {
+        color: var(--text-light);
+        padding-left: 4px;
+      }
+
+      .footer-links-list a:hover::before {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .footer-contact-block {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 0.9rem;
+      }
+
+      .footer-contact-row {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+
+      .footer-contact-row svg {
+        width: 18px;
+        height: 18px;
+        color: var(--accent);
+        flex-shrink: 0;
+        margin-top: 3px;
+      }
+
+      .footer-contact-label {
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.6;
+      }
+
+      .footer-googlemap-link {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-top: 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .footer-googlemap-link:hover {
+        color: var(--text-light);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 30px 0;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.15);
+      }
+
+      .footer-bottom p {
+        font-size: 0.75rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+      }
+
+      /* RESPONSIVENESS */
+      @media screen and (max-width: 1024px) {
+        .page-hero .container {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 40px;
+        }
+
+        .hero-stats-badges {
+          max-width: 100%;
+          flex-direction: row;
+        }
+
+        .stat-badge {
+          flex: 1 1 200px;
+        }
+
+        .quick-info-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .form-map-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hours-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .social-media-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .cta-container {
+          flex-direction: column;
+          text-align: center;
+          gap: 40px;
+        }
+
+        .cta-bg-right {
+          clip-path: polygon(0 80%, 100% 60%, 100% 100%, 0% 100%);
+        }
+
+        .cta-section:hover .cta-bg-right {
+          clip-path: polygon(0 75%, 100% 55%, 100% 100%, 0% 100%);
+        }
+
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 40px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .top-bar {
+          display: none;
+        }
+
+        section {
+          padding: 80px 0;
+        }
+
+        .hamburger-toggle {
+          display: block;
+        }
+
+        .navbar-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: var(--bg-white);
+          flex-direction: column;
+          gap: 0;
+          padding: 16px 0;
+          box-shadow: 0 10px 30px rgba(15, 30, 94, 0.08);
+          z-index: 999;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+          border-top: 1px solid var(--border-color);
+        }
+
+        .navbar-menu.menu-active {
+          max-height: 440px;
+        }
+
+        .navbar-menu li {
+          width: 100%;
+          text-align: center;
+        }
+
+        .navbar-link {
+          display: block;
+          padding: 14px 24px;
+          border-bottom: 1px solid rgba(15, 45, 94, 0.03);
+          font-size: 0.8rem;
+          letter-spacing: 0.15em;
+        }
+
+        .navbar-link::after {
+          display: none;
+        }
+
+        .hero-title {
+          font-size: 2.6rem;
+        }
+
+        .quick-info-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .form-card {
+          padding: 30px 20px;
+        }
+
+        .form-fields-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .form-group-full {
+          grid-column: span 1;
+        }
+
+        .hours-cta-box {
+          padding: 30px 20px;
+        }
+
+        .social-media-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+          gap: 48px;
+        }
+
+        .footer-col-1 {
+          align-items: center;
+        }
+
+        .footer-logo-row {
+          justify-content: center;
+        }
+
+        .footer-title::after {
+          margin: 10px auto 0 auto;
+        }
+
+        .footer-contact-row {
+          justify-content: center;
+        }
+      }
+
+      /* --- PREMIUM DESIGN UPGRADE --- */
+      /* 1. Frosted Glass Navbar Background */
+      .navbar {
+        background-color: rgba(255, 255, 255, 0.92) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+      }
+      .navbar.scrolled {
+        background-color: rgba(255, 255, 255, 0.92) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+      }
+
+      /* 2. Interactive Navigation underlines */
+      .navbar-link::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: -4px !important;
+        left: 0 !important;
+        width: 0 !important;
+        height: 2px !important;
+        background-color: #c8860a !important;
+        transition: 0.3s ease !important;
+      }
+      .navbar-link.active::after,
+      .navbar-link:hover::after {
+        width: 100% !important;
+      }
+
+      /* 3. Global Pill Shaped Buttons (50px border-radius) */
+      button, 
+      .btn, 
+      .btn-enroll, 
+      .btn-explore, 
+      .filter-tab, 
+      .submit-btn, 
+      .button, 
+      .load-more-btn, 
+      .prev-btn, 
+      .next-btn,
+      .cta-button,
+      .courses-filter-btn {
+        border-radius: 50px !important;
+      }
+
+      /* 4. Two-Layer Card Shadows (default vs hover) */
+      .dept-card, 
+      .course-card, 
+      .blog-card, 
+      .blog-post-card, 
+      .facility-card, 
+      .stat-card, 
+      .feature-card, 
+      .benefit-card, 
+      .story-card, 
+      .gallery-item, 
+      .instructor-card, 
+      .contact-info-card,
+      .director-profile-box {
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -1px rgba(0,0,0,0.06) !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease !important;
+      }
+      .dept-card:hover, 
+      .course-card:hover, 
+      .blog-card:hover, 
+      .blog-post-card:hover, 
+      .facility-card:hover, 
+      .stat-card:hover, 
+      .feature-card:hover, 
+      .benefit-card:hover, 
+      .story-card:hover, 
+      .gallery-item:hover, 
+      .instructor-card:hover, 
+      .contact-info-card:hover,
+      .director-profile-box:hover {
+        box-shadow: 0 20px 40px -5px rgba(0,0,0,0.20), 0 10px 15px -5px rgba(0,0,0,0.08) !important;
+      }
+
+      /* 5. Heading 2 Adjustments */
+      h2, 
+      .section-header-centered h2, 
+      section h2 {
+        letter-spacing: -0.5px !important;
+        line-height: 1.15 !important;
+      }
+
+      /* 6. Gold label pills above headings */
+      .section-label {
+        letter-spacing: 2.5px !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- 1. TOP BAR -->
+    <div class="top-bar">
+      <div class="container">
+        <div class="top-bar-left">
+          <div class="top-bar-item">
+            <!-- Mail Icon -->
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <a href="mailto:nbamimahs@gmail.com">nbamimahs@gmail.com</a>
+          </div>
+          <div class="top-bar-item">
+            <!-- Phone Icon -->
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>+923239595643</span>
+          </div>
+        </div>
+        <div class="top-bar-right">
+          <a href="#" class="social-circle-btn" aria-label="Facebook">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="YouTube">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="Instagram">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="TikTok">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. NAVBAR -->
+    <nav class="navbar" id="main-navigation">
+      <div class="container">
+        <div class="navbar-logo-area">
+          <div class="navbar-logo-badge">NB</div>
+          <div class="navbar-logo-text">
+            <span class="navbar-logo-title">New Bab-Al-Madina Institute</span>
+            <span class="navbar-logo-tagline">Pioneering Professional Excellence</span>
+          </div>
+        </div>
+        
+        <ul class="navbar-menu" id="nav-dropdown">
+          <li><a href="index.html" class="navbar-link">Home</a></li>
+          <li><a href="about.html" class="navbar-link">About</a></li>
+          <li><a href="courses.html" class="navbar-link">Courses</a></li>
+          <li><a href="faculty.html" class="navbar-link">Faculty</a></li>
+          <li><a href="gallery.html" class="navbar-link">Gallery</a></li>
+          <li><a href="blog.html" class="navbar-link">Blog</a></li>
+          <li><a href="contact.html" class="navbar-link active">Contact</a></li>
+        </ul>
+
+        <button class="hamburger-toggle" id="menu-btn" aria-label="Toggle mobile menu">
+          <svg style="width: 26px; height: 26px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- 3. PAGE HERO BANNER -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-left">
+          <span class="hero-tag">GET IN TOUCH</span>
+          <h1 class="hero-title">Contact Us</h1>
+          <ul class="breadcrumbs">
+            <li><a href="index.html">Home</a></li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        
+        <div class="hero-stats-badges">
+          <!-- Stat Badge 1 -->
+          <div class="stat-badge">
+            <div class="stat-badge-icon">
+              <!-- Calendar Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <div class="stat-badge-text">
+              <strong>Open</strong> 6 Days A Week
+            </div>
+          </div>
+          <!-- Stat Badge 2 -->
+          <div class="stat-badge">
+            <div class="stat-badge-icon">
+              <!-- Message Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <div class="stat-badge-text">
+              <strong>Fast</strong> Digital Response
+            </div>
+          </div>
+          <!-- Stat Badge 3 -->
+          <div class="stat-badge">
+            <div class="stat-badge-icon">
+              <!-- Users Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="stat-badge-text">
+              <strong>Welcoming</strong> Advisory Team
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CONTACT QUICK INFO CARDS -->
+    <section class="quick-info-section" id="reach-us-shortcuts">
+      <div class="container">
+        <div class="section-heading-block">
+          <h2>How to Reach Us</h2>
+          <div class="heading-gold-line"></div>
+        </div>
+        
+        <div class="quick-info-grid">
+          <!-- Card 1: Address -->
+          <div class="info-card scroll-element-animation" id="card-visit-address">
+            <div class="info-icon-circle">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <h3>Visit Us</h3>
+            <p>Hashtnagri BRT Station, Behind Rahim Medical Center, Peshawar, KPK</p>
+            <span class="info-small-sub">Main Peshawar Campus</span>
+          </div>
+
+          <!-- Card 2: Phone -->
+          <div class="info-card scroll-element-animation" id="card-call-phone" style="transition-delay: 0.1s;">
+            <div class="info-icon-circle">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <h3>Call Us</h3>
+            <p>+923239595643</p>
+            <span class="info-small-sub">Mon–Sat: 8AM–6PM</span>
+          </div>
+
+          <!-- Card 3: Mail -->
+          <div class="info-card scroll-element-animation" id="card-email-inbound" style="transition-delay: 0.2s;">
+            <div class="info-icon-circle">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <h3>Email Us</h3>
+            <p>nbamimahs@gmail.com</p>
+            <span class="info-small-sub">Reply within 24 hours</span>
+          </div>
+
+          <!-- Card 4: WhatsApp -->
+          <div class="info-card whatsapp-card scroll-element-animation" id="card-whatsapp-chat" style="transition-delay: 0.3s;">
+            <div class="info-icon-circle">
+              <!-- WhatsApp SVG -->
+              <svg fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.031 3c-4.965 0-9.011 4.05-9.011 9.01 0 1.59.413 3.14 1.2 4.51L3 21l4.636-1.217a8.96 8.96 0 0 0 4.395 1.151c4.966 0 9.014-4.05 9.014-9.011C21.045 7.05 16.997 3 12.031 3zm4.569 12.793c-.248.699-1.238 1.282-1.705 1.347-.468.065-.921.266-2.956-.563-2.597-1.061-4.246-3.704-4.377-3.877-.13-.173-1.059-1.408-1.059-2.684 0-1.275.666-1.902.902-2.163.235-.261.52-.327.693-.327.173 0 .346.003.496.01.153.007.359-.057.562.44.209.509.718 1.748.78 1.88.063.13.104.281.018.451-.085.17-.127.281-.255.424-.127.144-.268.32-.382.43-.127.124-.261.261-.111.519.15.258.666 1.099 1.428 1.777.98.874 1.801 1.144 2.062 1.275.261.13.411.11.562-.059.153-.173.656-.761.833-1.022.176-.261.353-.219.598-.13.245.088 1.559.735 1.827.869.268.134.448.2.513.313.065.114.065.66-.183 1.359z"/>
+              </svg>
+            </div>
+            <h3>WhatsApp Us</h3>
+            <p>+923239595643</p>
+            <a href="https://wa.me/923239595643" target="_blank" class="whatsapp-link-btn" id="btn-wa-shortcut">Chat Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CONTACT FORM + MAP SECTION -->
+    <section class="form-map-section" id="form-and-navigation">
+      <div class="container">
+        <div class="form-map-grid">
+          
+          <!-- LEFT: Form Card -->
+          <div class="form-card scroll-element-animation" id="form-container-card">
+            <div id="contact-form-layout">
+              <span class="form-label-top">SEND US A MESSAGE</span>
+              <h3>We'd Love to Hear From You</h3>
+              <p class="form-subtext">Fill out the form below and our admissions team will get back to you within 24 hours.</p>
+              
+              <form id="institute-contact-form" novalidate>
+                <div class="form-fields-grid">
+                  
+                  <!-- Full Name -->
+                  <div class="input-group">
+                    <label for="form-name">Full Name<span class="required-asterisk">*</span></label>
+                    <div class="input-wrapper" id="wrapper-name">
+                      <svg class="input-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                      </svg>
+                      <input type="text" id="form-name" placeholder="Enter your full name" required />
+                    </div>
+                    <span class="error-msg" id="error-name">Full name is required.</span>
+                  </div>
+
+                  <!-- Email Address -->
+                  <div class="input-group">
+                    <label for="form-email">Email Address<span class="required-asterisk">*</span></label>
+                    <div class="input-wrapper" id="wrapper-email">
+                      <svg class="input-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                      <input type="email" id="form-email" placeholder="name@example.com" required />
+                    </div>
+                    <span class="error-msg" id="error-email">Please enter a valid email address.</span>
+                  </div>
+
+                  <!-- Phone Number -->
+                  <div class="input-group">
+                    <label for="form-phone">Phone Number<span class="required-asterisk">*</span></label>
+                    <div class="input-wrapper" id="wrapper-phone">
+                      <svg class="input-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                      </svg>
+                      <input type="tel" id="form-phone" placeholder="e.g. 03001234567" required />
+                    </div>
+                    <span class="error-msg" id="error-phone">Phone number is required.</span>
+                  </div>
+
+                  <!-- Course Interested In -->
+                  <div class="input-group">
+                    <label for="form-course">Course Interested In</label>
+                    <div class="input-wrapper" id="wrapper-course">
+                      <svg class="input-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                      <select id="form-course">
+                        <option value="">Select a Course</option>
+                        <option value="health">Allied Health Sciences</option>
+                        <option value="english">English Language</option>
+                        <option value="safety">Safety Courses</option>
+                        <option value="it">Computer &amp; IT</option>
+                        <option value="general">General Inquiry</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Subject -->
+                  <div class="form-group-full input-group">
+                    <label for="form-subject">Subject<span class="required-asterisk">*</span></label>
+                    <div class="input-wrapper" id="wrapper-subject">
+                      <svg class="input-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                      </svg>
+                      <input type="text" id="form-subject" placeholder="What is your message regarding?" required />
+                    </div>
+                    <span class="error-msg" id="error-subject">Subject is required.</span>
+                  </div>
+
+                  <!-- Message -->
+                  <div class="form-group-full input-group">
+                    <label for="form-message">Message<span class="required-asterisk">*</span></label>
+                    <div class="input-wrapper" id="wrapper-message">
+                      <textarea id="form-message" rows="5" placeholder="Write your message detail here..." required></textarea>
+                    </div>
+                    <span class="error-msg" id="error-message">Message body is required.</span>
+                  </div>
+
+                </div>
+
+                <button type="submit" class="form-submit-btn" id="btn-submit-contact">Send Message</button>
+              </form>
+            </div>
+
+            <!-- SUCCESS LAYOUT -->
+            <div id="contact-form-success" class="form-success-card">
+              <div class="success-checkmark-circle">
+                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <h3>Message Sent Successfully!</h3>
+              <p>Thank you for reaching out to NBAMIM &amp; AHS. Our academic coordinators will contact you shortly.</p>
+            </div>
+          </div>
+
+          <!-- RIGHT: Map Area -->
+          <div class="map-wrapper scroll-element-animation" id="map-container-area" style="transition-delay: 0.15s;">
+            <!-- Embedded Maps Container -->
+            <div class="map-iframe-container" id="iframe-map-box">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.1!2d71.5197!3d34.0151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d917c5b6a9d4b3%3A0x8a2b5c6d7e8f9a0b!2sRahim%20Medical%20Center%2C%20Hashtnagri%2C%20Peshawar!5e0!3m2!1sen!2spk!4v1234567890" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Google Maps Location of Hashtnagri BRT Station Peshawar">
+              </iframe>
+            </div>
+
+            <!-- Below map campus panel -->
+            <div class="map-detail-card" id="card-map-pinpoint">
+              <div class="map-detail-header">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <h4>Hashtnagri BRT Station Campus</h4>
+              </div>
+              <p>Hashtnagri BRT Station, Behind Rahim Medical Center, Peshawar, KPK</p>
+              <a href="https://maps.google.com" target="_blank" class="map-open-link" id="link-direct-googlemaps">
+                Open in Google Maps &rarr;
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. OFFICE HOURS SECTION -->
+    <section class="hours-section" id="office-timing-blocks">
+      <div class="container overflow-hidden">
+        <div class="hours-grid">
+          
+          <!-- LEFT: Timing Table -->
+          <div class="hours-left scroll-element-animation" id="left-schedule-table">
+            <h3>Office Hours</h3>
+            <div class="heading-gold-line" style="margin: 0 0 24px 0;"></div>
+            <p>Our Peshawar administrative and counseling staff is ready to help you during the following schedule:</p>
+            
+            <table class="hours-table">
+              <tbody>
+                <tr>
+                  <td class="hours-day-td">Monday – Friday</td>
+                  <td class="hours-time-td">8:00 AM – 6:00 PM</td>
+                  <td class="hours-badge-td"><span class="status-pill open">Open</span></td>
+                </tr>
+                <tr>
+                  <td class="hours-day-td">Saturday</td>
+                  <td class="hours-time-td">9:00 AM – 2:00 PM</td>
+                  <td class="hours-badge-td"><span class="status-pill open">Open</span></td>
+                </tr>
+                <tr>
+                  <td class="hours-day-td">Sunday</td>
+                  <td class="hours-time-td">Closed</td>
+                  <td class="hours-badge-td"><span class="status-pill closed">Closed</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- RIGHT: CTA Inquiry Box -->
+          <div class="hours-cta-box scroll-element-animation" id="right-inquiry-box" style="transition-delay: 0.15s;">
+            <div class="hours-cta-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path>
+              </svg>
+            </div>
+            <h4>Quick Admissions Inquiry</h4>
+            <p>Want to know more about our certification, fee plans, or the enrollment deadlines of upcoming 2025 batches? Contact us directly.</p>
+            
+            <a href="tel:+923239595643" class="hours-cta-phone" id="btn-phone-trigger">+923239595643</a>
+            
+            <div class="hours-cta-buttons">
+              <a href="https://wa.me/923239595643" target="_blank" class="btn btn-cta-whatsapp" id="btn-direct-wa-chat">
+                <!-- WhatsApp Icon -->
+                <svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 24 24">
+                  <path d="M12.031 3c-4.965 0-9.011 4.05-9.011 9.01 0 1.59.413 3.14 1.2 4.51L3 21l4.636-1.217a8.96 8.96 0 0 0 4.395 1.151c4.966 0 9.014-4.05 9.014-9.011C21.045 7.05 16.997 3 12.031 3zm4.569 12.793c-.248.699-1.238 1.282-1.705 1.347-.468.065-.921.266-2.956-.563-2.597-1.061-4.246-3.704-4.377-3.877-.13-.173-1.059-1.408-1.059-2.684 0-1.275.666-1.902.902-2.163.235-.261.52-.327.693-.327.173 0 .346.003.496.01.153.007.359-.057.562.44.209.509.718 1.748.78 1.88.063.13.104.281.018.451-.085.17-.127.281-.255.424-.127.144-.268.32-.382.43-.127.124-.261.261-.111.519.15.258.666 1.099 1.428 1.777.98.874 1.801 1.144 2.062 1.275.261.13.411.11.562-.059.153-.173.656-.761.833-1.022.176-.261.353-.219.598-.13.245.088 1.559.735 1.827.869.268.134.448.2.513.313.065.114.065.66-.183 1.359z"/>
+                </svg>
+                Chat on WhatsApp
+              </a>
+              <a href="tel:+923239595643" class="btn btn-cta-phone-call" id="btn-raw-phone-call">Call Now</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ QUICK ANSWERS -->
+    <section class="faq-section" id="faq-accordions">
+      <div class="container">
+        <div class="section-heading-block" style="text-align: center;">
+          <h2>Frequently Asked Questions</h2>
+          <div class="heading-gold-line"></div>
+        </div>
+
+        <div class="faq-accordion-block">
+          
+          <!-- FAQ 1 -->
+          <div class="faq-item scroll-element-animation" id="faq-item-1">
+            <button class="faq-header" aria-expanded="false">
+              <h4>How do I apply for admission at NBAMIM &amp; AHS?</h4>
+              <svg class="faq-arrow" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Visit our campus at Hashtnagri BRT Station, Peshawar or contact us via phone or WhatsApp at +923239595643. Our admissions team will guide you through the process, evaluate your credentials, and help you finalize your application.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item scroll-element-animation" id="faq-item-2" style="transition-delay: 0.05s;">
+            <button class="faq-header" aria-expanded="false">
+              <h4>What documents are required for enrollment?</h4>
+              <svg class="faq-arrow" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                You will need your CNIC or B-Form, recent passport-size photographs, previous educational certificates (matric or intermediate transcripts), and a completed admission form available at our Hashtnagri office.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item scroll-element-animation" id="faq-item-3" style="transition-delay: 0.1s;">
+            <button class="faq-header" aria-expanded="false">
+              <h4>When does the next batch start?</h4>
+              <svg class="faq-arrow" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                New batches start regularly throughout the year (typically quarterly for long courses and monthly for language programs). Contact our admissions office via Call or WhatsApp to get the current schedule for your chosen module.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item scroll-element-animation" id="faq-item-4" style="transition-delay: 0.15s;">
+            <button class="faq-header" aria-expanded="false">
+              <h4>Are your certificates recognized?</h4>
+              <svg class="faq-arrow" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Yes, keeping professional standards first, all our course offerings are structured to meet national guidelines. The allied health science certificates and tech diplomas are fully aligned with industry requirements in Khyber Pakhtunkhwa.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item scroll-element-animation" id="faq-item-5" style="transition-delay: 0.2s;">
+            <button class="faq-header" aria-expanded="false">
+              <h4>Is there a fee installment option available?</h4>
+              <svg class="faq-arrow" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Absolutely. To ensure quality education and professional training are highly accessible, we offer flexible installments plans. Our office accounting coordinators can customize a schedule suited to you.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-item scroll-element-animation" id="faq-item-6" style="transition-delay: 0.25s;">
+            <button class="faq-header" aria-expanded="false">
+              <h4>Do you offer online classes?</h4>
+              <svg class="faq-arrow" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-body">
+              <div class="faq-body-inner">
+                Currently, our allied health and IT programs are highly clinical and hands-on, requiring in-person lectures and lab work at our Peshawar campus. Spoken English and IELTS occasionally have remote-learning exceptions; please inquire.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. SOCIAL MEDIA SECTION -->
+    <section class="socials-section" id="social-channels-rack">
+      <div class="container">
+        <div class="section-heading-block" style="text-align: center;">
+          <span class="form-label-top" style="color: var(--accent);">FOLLOW US</span>
+          <h2>Stay Connected</h2>
+          <div class="heading-gold-line" style="margin-top: 14px;"></div>
+        </div>
+        <p class="socials-subtext">Follow NBAMIM &amp; AHS on social media to watch student success documentaries, events, and important class updates.</p>
+        
+        <div class="social-media-grid">
+          <!-- Card 1: Facebook -->
+          <div class="platform-card facebook-card scroll-element-animation" id="social-fb">
+            <div class="platform-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </div>
+            <span class="platform-name">Facebook</span>
+            <span class="platform-handle">@NBAMIM.AHS</span>
+            <a href="#" class="platform-follow-btn" id="btn-follow-fb">Follow Page</a>
+          </div>
+
+          <!-- Card 2: YouTube -->
+          <div class="platform-card youtube-card scroll-element-animation" id="social-yt" style="transition-delay: 0.1s;">
+            <div class="platform-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </div>
+            <span class="platform-name">YouTube</span>
+            <span class="platform-handle">@NBAMIM_AHS</span>
+            <a href="#" class="platform-follow-btn" id="btn-follow-yt">Subscribe</a>
+          </div>
+
+          <!-- Card 3: Instagram -->
+          <div class="platform-card instagram-card scroll-element-animation" id="social-ig" style="transition-delay: 0.2s;">
+            <div class="platform-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+              </svg>
+            </div>
+            <span class="platform-name">Instagram</span>
+            <span class="platform-handle">@nbamim.ahs</span>
+            <a href="#" class="platform-follow-btn" id="btn-follow-ig">Follow</a>
+          </div>
+
+          <!-- Card 4: TikTok -->
+          <div class="platform-card tiktok-card scroll-element-animation" id="social-tk" style="transition-delay: 0.3s;">
+            <div class="platform-icon">
+              <!-- Custom TikTok representation representing a Music Note -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+              </svg>
+            </div>
+            <span class="platform-name">TikTok</span>
+            <span class="platform-handle">@nbamim.ahs</span>
+            <a href="#" class="platform-follow-btn" id="btn-follow-tk">Follow</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. CTA BANNER -->
+    <section class="cta-section" id="register-trigger">
+      <div class="cta-wrapper">
+        <div class="cta-bg-left"></div>
+        <div class="cta-bg-right"></div>
+        <div class="cta-container">
+          <div class="cta-text-left">
+            <h2>Take the First Step Today</h2>
+            <p>Admissions are open for our premium allied health, technical computing, and executive English courses.</p>
+          </div>
+          <div class="cta-buttons-right">
+            <a href="courses.html" class="btn btn-cta-solid" id="cta-btn-one">View Our Courses</a>
+            <a href="contact.html" class="btn btn-cta-outline" id="cta-btn-two">Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. FOOTER -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <!-- Col 1 -->
+        <div class="footer-col-1">
+          <div class="footer-logo-row">
+            <div class="footer-logo-badge">NB</div>
+            <div class="footer-logo-text">
+              New Bab-Al-Madina Institute
+              <span>Pioneering Professional Excellence</span>
+            </div>
+          </div>
+          <p class="tagline">
+            Bringing elite clinical studies, technology advancements, and global masteries together to secure regional professional success.
+          </p>
+          <div class="footer-social-row">
+            <a href="#" class="social-circle-btn" aria-label="Facebook">
+              <svg class="social-icon" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-circle-btn" aria-label="YouTube">
+              <svg class="social-icon" viewBox="0 0 24 24">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+            <a href="#" class="social-circle-btn" aria-label="Instagram">
+              <svg class="social-icon" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-circle-btn" aria-label="TikTok">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div>
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div>
+          <h3 class="footer-title">Our Courses</h3>
+          <ul class="footer-links-list">
+            <li><a href="courses.html">Spoken English</a></li>
+            <li><a href="courses.html">English Diploma</a></li>
+            <li><a href="courses.html">IELTS Preparation</a></li>
+            <li><a href="courses.html">English Conversation</a></li>
+            <li><a href="courses.html">DIT (Information Tech)</a></li>
+            <li><a href="courses.html">Allied Health Sciences</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 -->
+        <div class="footer-contact-block">
+          <h3 class="footer-title">Contact Info</h3>
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <div class="footer-contact-label">
+              Hashtnagri BRT Station, Behind Rahim Medical Center, Peshawar, Pakistan
+            </div>
+          </div>
+          
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <div class="footer-contact-label">+923239595643</div>
+          </div>
+
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <div class="footer-contact-label">nbamimahs@gmail.com</div>
+          </div>
+
+          <a href="https://maps.google.com" target="_blank" class="footer-googlemap-link" id="footer-gmap-button">
+            Open in Google Maps
+            <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <polyline points="9 6 18 6 18 15"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- copyright bar -->
+      <div class="footer-bottom">
+        <p>© 2025 NBAMIM &amp; AHS. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Interactive JS code -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Sticky Navbar Scroll
+        const navbar = document.getElementById('main-navigation');
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 40) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+
+        // Responsive dropdown menu toggle
+        const hamburgerBtn = document.getElementById('menu-btn');
+        const navDropdown = document.getElementById('nav-dropdown');
+        hamburgerBtn.addEventListener('click', () => {
+          navDropdown.classList.toggle('menu-active');
+        });
+
+        // FAQ accordion toggle mechanics
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+          const header = item.querySelector('.faq-header');
+          header.addEventListener('click', () => {
+            const body = item.querySelector('.faq-body');
+            const isActive = item.classList.contains('active');
+
+            // Close all items
+            faqItems.forEach(faqItem => {
+              faqItem.classList.remove('active');
+              faqItem.querySelector('.faq-body').style.maxHeight = null;
+              faqItem.querySelector('.faq-header').setAttribute('aria-expanded', 'false');
+            });
+
+            // Toggle selected item
+            if (!isActive) {
+              item.classList.add('active');
+              body.style.maxHeight = body.scrollHeight + "px";
+              header.setAttribute('aria-expanded', 'true');
+            }
+          });
+        });
+
+        // Contact Form with detailed validation and high-contrast styling resets on typing
+        const formEl = document.getElementById('institute-contact-form');
+        const successCard = document.getElementById('contact-form-success');
+        const formLayout = document.getElementById('contact-form-layout');
+
+        // Fields to validate
+        const fields = [
+          { id: 'form-name', errorId: 'error-name', wrapperId: 'wrapper-name' },
+          { id: 'form-email', errorId: 'error-email', wrapperId: 'wrapper-email', isEmail: true },
+          { id: 'form-phone', errorId: 'error-phone', wrapperId: 'wrapper-phone' },
+          { id: 'form-subject', errorId: 'error-subject', wrapperId: 'wrapper-subject' },
+          { id: 'form-message', errorId: 'error-message', wrapperId: 'wrapper-message' }
+        ];
+
+        // Clean error display helper
+        function hideError(fieldInfo) {
+          const inputWrapper = document.getElementById(fieldInfo.wrapperId);
+          const errorMsg = document.getElementById(fieldInfo.errorId);
+          inputWrapper.classList.remove('error-state');
+          errorMsg.style.display = 'none';
+        }
+
+        // Show error helper
+        function showError(fieldInfo) {
+          const inputWrapper = document.getElementById(fieldInfo.wrapperId);
+          const errorMsg = document.getElementById(fieldInfo.errorId);
+          inputWrapper.classList.add('error-state');
+          errorMsg.style.display = 'block';
+        }
+
+        // Bind typing listener to remove error states instantly when corrected
+        fields.forEach(fieldInfo => {
+          const input = document.getElementById(fieldInfo.id);
+          ['input', 'change', 'blur'].forEach(evtName => {
+            input.addEventListener(evtName, () => {
+              let isValid = true;
+              if (input.value.trim() === '') {
+                isValid = false;
+              }
+              if (fieldInfo.isEmail && isValid) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                isValid = emailRegex.test(input.value.trim());
+              }
+              if (isValid) {
+                hideError(fieldInfo);
+              }
+            });
+          });
+        });
+
+        // Form Submit Handler
+        formEl.addEventListener('submit', (evt) => {
+          evt.preventDefault();
+          let formIsValid = true;
+          let firstErrorElement = null;
+
+          fields.forEach(fieldInfo => {
+            const input = document.getElementById(fieldInfo.id);
+            const value = input.value.trim();
+            let fieldIsValid = true;
+
+            if (value === '') {
+              fieldIsValid = false;
+            } else if (fieldInfo.isEmail) {
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              fieldIsValid = emailRegex.test(value);
+            }
+
+            if (!fieldIsValid) {
+              showError(fieldInfo);
+              formIsValid = false;
+              if (!firstErrorElement) {
+                firstErrorElement = input;
+              }
+            } else {
+              hideError(fieldInfo);
+            }
+          });
+
+          if (!formIsValid) {
+            // Scroll to study focus of the first empty field gracefully
+            firstErrorElement.focus();
+            firstErrorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            // Successful submit simulation: smooth fade out form, fade in premium feedback checkmark cards
+            formLayout.style.display = 'none';
+            successCard.style.display = 'block';
+            successCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        });
+
+        // Intersection Observer scroll fade effect
+        const animationElements = document.querySelectorAll('.scroll-element-animation');
+        const observerConfig = {
+          root: null,
+          threshold: 0.12,
+          rootMargin: "0px 0px -40px 0px"
+        };
+
+        const animationObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animation-active');
+              // Unobserve immediately after animation fires to maintain single entrance execution flow
+              animationObserver.unobserve(entry.target);
+            }
+          });
+        }, observerConfig);
+
+        animationElements.forEach(el => {
+          animationObserver.observe(el);
+        });
+      });
+    </script>
+  </body>
+</html>

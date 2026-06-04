@@ -1,0 +1,6 @@
+{
+  "name": "NBAMIM & AHS",
+  "description": "Premium landing page for New Bab-Al-Madina Institute of Management and Allied Health Sciences.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

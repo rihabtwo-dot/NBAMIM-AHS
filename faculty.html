@@ -1,0 +1,2437 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Faculty | NBAMIM &amp; AHS - New Bab-Al-Madina Institute</title>
+    
+    <!-- Google Fonts: Editorial & Modern Selection -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- All Styles - Pure CSS, Premium High-Contrast Palette -->
+    <style>
+      :root {
+        --primary: #0f2d5e;
+        --secondary: #5ba3d9;
+        --accent: #c8860a;
+        --accent-hover: #b07408;
+        --bg-white: #ffffff;
+        --bg-light: #f0f4f9;            /* Crisp premium gray */
+        --bg-sky-tint: #eaf4fb;         /* Fresh bright tint */
+        --bg-navy-dark: #0a1f3d;        /* Deep clean navy for footer */
+        --text-dark: #2d3748;          /* High contrast, extremely readable body */
+        --text-heading: #0f2d5e;       /* Deep sharp navy */
+        --text-muted: #4a5568;          /* Well-contrasted description text */
+        --text-light: #ffffff;
+        --border-color: rgba(15, 45, 94, 0.15);
+        
+        --font-heading: 'Playfair Display', Georgia, serif;
+        --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        --transition-slow: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        
+        /* Subtle beautiful gradient mesh for alternating sections */
+        --gradient-mesh: linear-gradient(135deg, rgba(15,45,94,0.015) 0%, rgba(91,163,217,0.025) 100%);
+      }
+
+      /* CSS Resets & Foundations */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        height: 100%;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background-color: var(--bg-white);
+        color: var(--text-dark);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        color: var(--text-heading);
+        line-height: 1.25;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+        width: 100%;
+      }
+
+      section {
+        padding: 100px 0;
+        position: relative;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      section.white-section {
+        background-color: var(--bg-white);
+      }
+
+      section.tint-section {
+        background-color: var(--bg-light);
+      }
+
+      /* Universal Component Styles */
+      .section-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        color: var(--accent);
+        margin-bottom: 16px;
+        display: inline-block;
+        position: relative;
+      }
+
+      .section-label::after {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 1px;
+        background-color: var(--accent);
+        margin-left: 12px;
+        vertical-align: middle;
+      }
+
+      .section-header-centered {
+        text-align: center;
+        max-width: 850px;
+        margin: 0 auto 60px auto;
+      }
+
+      .section-header-centered h2 {
+        font-size: 2.6rem;
+        margin-bottom: 16px;
+        font-weight: 700;
+        color: #0f2d5e !important;
+      }
+
+      .section-header-centered h2::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background-color: var(--accent);
+        margin: 16px auto 0 auto;
+        border-radius: 2px;
+      }
+
+      .section-header-centered p {
+        font-size: 1.1rem;
+        color: #374151 !important;
+        line-height: 1.6;
+      }
+
+      /* 1. TOP BAR Styles */
+      .top-bar {
+        background-color: var(--primary);
+        color: var(--text-light);
+        padding: 12px 0;
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .top-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .top-bar-left {
+        display: flex;
+        gap: 32px;
+      }
+
+      .top-bar-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        opacity: 0.9;
+      }
+
+      .top-bar-item a {
+        border-bottom: 1px solid rgba(200, 134, 10, 0.4);
+        padding-bottom: 2px;
+      }
+
+      .top-bar-item a:hover {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+      }
+
+      .top-bar-right {
+        display: flex;
+        gap: 12px;
+      }
+
+      .social-circle-btn {
+        width: 28px;
+        height: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        transition: var(--transition);
+      }
+
+      .social-circle-btn:hover {
+        background-color: var(--accent);
+        border-color: var(--accent);
+        transform: translateY(-2px);
+      }
+
+      .social-icon {
+        width: 14px;
+        height: 14px;
+        fill: currentColor;
+      }
+
+      /* 2. NAVBAR Styles */
+      .navbar {
+        background-color: var(--bg-white);
+        padding: 24px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: var(--transition);
+      }
+
+      .navbar.scrolled {
+        padding: 16px 0;
+        box-shadow: 0 4px 20px rgba(15, 45, 94, 0.06);
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar-logo-area {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .navbar-logo-badge {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: var(--primary);
+        border: 2px solid var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 0.85rem;
+        letter-spacing: -0.05em;
+      }
+
+      .navbar-logo-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .navbar-logo-title {
+        font-family: var(--font-heading);
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--primary);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      .navbar-logo-tagline {
+        font-family: var(--font-body);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-top: 4px;
+      }
+
+      .navbar-menu {
+        display: flex;
+        list-style: none;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .navbar-link {
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--primary);
+        padding: 6px 0;
+        position: relative;
+      }
+
+      .navbar-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--accent);
+        transition: var(--transition);
+      }
+
+      .navbar-link.active::after,
+      .navbar-link:hover::after {
+        width: 100%;
+      }
+
+      .navbar-link.active,
+      .navbar-link:hover {
+        color: var(--accent);
+      }
+
+      .hamburger-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--primary);
+        padding: 4px;
+      }
+
+      /* 3. HERO BANNER Styles */
+      @keyframes bannerFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-banner {
+        background: 
+          radial-gradient(circle at 20% 50%, rgba(200, 134, 10, 0.08) 0%, transparent 60%),
+          radial-gradient(circle at 80% 80%, rgba(91, 163, 217, 0.06) 0%, transparent 60%),
+          linear-gradient(135deg, #020b18 0%, #041428 50%, #061d3a 100%);
+        color: var(--text-light);
+        height: 320px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        border-bottom: none;
+      }
+
+      .hero-banner-pattern {
+        display: none;
+      }
+
+      .hero-banner .container {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        animation: bannerFadeIn 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+      }
+
+      .hero-banner-left {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero-banner-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        color: #f0c040;
+        margin-bottom: 12px;
+      }
+
+      .hero-banner-title {
+        font-family: var(--font-heading);
+        font-size: 3.2rem;
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 16px;
+        color: #ffffff;
+      }
+
+      .breadcrumbs {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.75);
+        letter-spacing: 0.05em;
+      }
+
+      .breadcrumbs a {
+        color: rgba(255, 255, 255, 0.75);
+        transition: var(--transition);
+      }
+
+      .breadcrumbs a:hover {
+        color: #f0c040;
+      }
+
+      .breadcrumbs span {
+        color: #f0c040;
+        margin: 0 8px;
+      }
+
+      .hero-banner-right {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-end;
+      }
+
+      /* Floating Stat Badges inside Hero Banner */
+      .stat-badge {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 8px;
+        padding: 12px 20px;
+        width: 100%;
+        max-width: 250px;
+        box-shadow: none;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        transition: var(--transition);
+        transform: scale(1);
+      }
+
+      .stat-badge:hover {
+        transform: translateY(-2px) scale(1.02);
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.25);
+      }
+
+      .stat-badge-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background-color: rgba(240, 192, 64, 0.1);
+        color: #f0c040;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .stat-badge-text {
+        font-family: var(--font-body);
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: #ffffff;
+        line-height: 1.25;
+      }
+
+      .stat-badge-sub {
+        font-size: 0.72rem;
+        color: rgba(255, 255, 255, 0.75);
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        margin-top: 1px;
+      }
+
+      /* 4. DIRECTOR SECTION Styles */
+      .director-section {
+        background-color: var(--bg-white);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Subtle geometric background decoration */
+      .director-section::before {
+        content: '';
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(91,163,217,0.06) 0%, transparent 70%);
+        top: -150px;
+        right: -150px;
+        pointer-events: none;
+      }
+
+      .director-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .director-card {
+        background: var(--bg-white);
+        border: 1px solid rgba(15, 45, 94, 0.08);
+        border-radius: 24px;
+        width: 100%;
+        max-width: 1100px;
+        box-shadow: 0 35px 70px rgba(15, 45, 94, 0.06);
+        padding: 56px;
+        display: grid;
+        grid-template-columns: 360px 1fr;
+        gap: 56px;
+        align-items: center;
+        position: relative;
+        background-image: linear-gradient(to bottom right, var(--bg-white) 70%, rgba(91,163,217,0.02) 100%);
+      }
+
+      .director-photo-col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 100%;
+      }
+
+      /* Modern premium portrait frame with offset accent plate */
+      .director-ring {
+        width: 100%;
+        max-width: 360px;
+        aspect-ratio: 1 / 1.1; /* Elegant portrait aspect ratio */
+        border-radius: 18px;
+        position: relative;
+        z-index: 2;
+        transition: var(--transition-slow);
+      }
+
+      /* Gold brand accent backdrop */
+      .director-ring::before {
+        content: '';
+        position: absolute;
+        top: 16px;
+        left: -16px;
+        width: 100%;
+        height: 100%;
+        border-radius: 18px;
+        border: 2px solid var(--accent);
+        z-index: -1;
+        transition: var(--transition-slow);
+      }
+
+      .director-ring:hover {
+        transform: translate(6px, -6px);
+      }
+
+      .director-ring:hover::before {
+        transform: translate(-12px, 12px);
+        background-color: rgba(200, 134, 10, 0.03);
+      }
+
+      .director-image-wrap {
+        width: 100%;
+        height: 100%;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid rgba(15, 45, 94, 0.12);
+        background: linear-gradient(135deg, var(--primary) 0%, var(--bg-navy-dark) 100%);
+        box-shadow: 0 15px 35px rgba(15, 45, 94, 0.12);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .director-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      .director-ring:hover .director-img {
+        transform: scale(1.06);
+      }
+
+      /* Fallback Div styled with letters WB */
+      .director-fallback {
+        width: 100%;
+        height: 100%;
+        display: none; /* JS toggles to 'flex' on load fail */
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-heading);
+        font-size: 4.5rem;
+        font-weight: 700;
+        color: var(--accent);
+        background: linear-gradient(135deg, var(--primary) 0%, rgb(10, 43, 91) 100%);
+        letter-spacing: -0.05em;
+      }
+
+      .director-info-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .director-tag {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+
+      .director-name {
+        font-family: var(--font-heading);
+        font-size: 2.8rem;
+        color: var(--primary);
+        font-weight: 700;
+        line-height: 1.15;
+        margin-bottom: 8px;
+        letter-spacing: -0.01em;
+      }
+
+      .director-title {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .director-title::before {
+        content: '';
+        display: inline-block;
+        width: 16px;
+        height: 2px;
+        background-color: var(--accent);
+      }
+
+      .director-divider {
+        width: 80px;
+        height: 3px;
+        background-color: var(--accent);
+        margin-bottom: 24px;
+        border-radius: 2px;
+      }
+
+      .director-bio {
+        font-size: 1.05rem;
+        color: var(--text-dark);
+        line-height: 1.8;
+         margin-bottom: 32px;
+        font-weight: 400;
+      }
+
+      .director-achievements {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .ach-badge {
+        background-color: var(--bg-sky-tint);
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 0.85rem;
+        padding: 10px 18px;
+        border-radius: 12px;
+        border: 1px solid rgba(15, 45, 94, 0.1);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 10px rgba(15, 45, 94, 0.02);
+        transition: var(--transition);
+      }
+
+      .ach-badge svg {
+        color: var(--accent);
+        transition: var(--transition);
+      }
+
+      .ach-badge:hover {
+        transform: translateY(-3px);
+        background-color: var(--primary);
+        color: var(--text-light);
+        border-color: var(--primary);
+        box-shadow: 0 10px 20px rgba(15, 45, 94, 0.12);
+      }
+
+      .ach-badge:hover svg {
+        color: #ffffff;
+        transform: scale(1.1);
+      }
+
+      /* 5. DEPARTMENT OVERVIEW Styles */
+      .departments-section {
+        background-color: var(--bg-light);
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .departments-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+
+      .dept-card {
+        background: var(--bg-white);
+        border-radius: 12px;
+        box-shadow: 0 12px 30px rgba(15, 45, 94, 0.04);
+        padding: 36px 28px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 330px;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Top border dynamic coloring */
+      .dept-card.allied-health { border-top: 4px solid #7b0d0d; }
+      .dept-card.english-lang  { border-top: 4px solid #0a3d6b; }
+      .dept-card.safety-course { border-top: 4px solid #8a5c00; }
+      .dept-card.computer-it   { border-top: 4px solid #064e3b; }
+
+      .dept-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 42px rgba(15, 45, 94, 0.12);
+      }
+
+      /* Border glows on hover */
+      .dept-card.allied-health:hover { border-color: #ef4444; }
+      .dept-card.english-lang:hover  { border-color: #3b82f6; }
+      .dept-card.safety-course:hover { border-color: #f59e0b; }
+      .dept-card.computer-it:hover   { border-color: #10b981; }
+
+      .dept-icon-circle {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 22px;
+        transition: var(--transition);
+      }
+
+      /* Light tinted inner circle background colors */
+      .allied-health .dept-icon-circle { background-color: rgba(123, 13, 13, 0.08); color: #7b0d0d; }
+      .english-lang  .dept-icon-circle { background-color: rgba(10, 61, 107, 0.08); color: #0a3d6b; }
+      .safety-course .dept-icon-circle { background-color: rgba(138, 92, 0, 0.08); color: #8a5c00; }
+      .computer-it   .dept-icon-circle { background-color: rgba(6, 78, 59, 0.08); color: #064e3b; }
+
+      .dept-card:hover .dept-icon-circle {
+        transform: scale(1.1);
+      }
+
+      .dept-name {
+        font-family: var(--font-heading);
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 12px;
+        line-height: 1.3;
+      }
+
+      .dept-desc {
+        font-size: 0.88rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .dept-hiring-badge {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 5px 12px;
+        border-radius: 20px;
+        display: inline-block;
+      }
+
+      .allied-health .dept-hiring-badge { background-color: rgba(123, 13, 13, 0.08); color: #7b0d0d; border: 1px solid rgba(123, 13, 13, 0.15); }
+      .english-lang  .dept-hiring-badge { background-color: rgba(10, 61, 107, 0.08); color: #0a3d6b; border: 1px solid rgba(10, 61, 107, 0.15); }
+      .safety-course .dept-hiring-badge { background-color: rgba(138, 92, 0, 0.08); color: #8a5c00; border: 1px solid rgba(138, 92, 0, 0.15); }
+      .computer-it   .dept-hiring-badge { background-color: rgba(6, 78, 59, 0.08); color: #064e3b; border: 1px solid rgba(6, 78, 59, 0.15); }
+
+      /* 6. FACULTY GRID SECTION Styles */
+      .faculty-section {
+        background-color: #0f2d5e !important;
+        padding: 100px 0 !important;
+      }
+
+      .faculty-section .section-header-centered h2 {
+        color: #ffffff !important;
+      }
+
+      .faculty-section .section-header-centered h2::after {
+        background-color: #f0c040 !important;
+      }
+
+      .faculty-section .section-header-centered p {
+        color: rgba(255, 255, 255, 0.80) !important;
+      }
+
+      .faculty-section .section-label {
+        color: #f0c040 !important;
+      }
+
+      .faculty-section .section-label::after {
+        background-color: #f0c040 !important;
+      }
+
+      /* Department filter tabs */
+      .filter-tabs-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+      }
+
+      .filter-tab {
+        padding: 12px 24px !important;
+        font-size: 0.8rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.15em !important;
+        text-transform: uppercase !important;
+        border-radius: 4px !important;
+        border: 1px solid rgba(255, 255, 255, 0.25) !important;
+        background-color: rgba(255, 255, 255, 0.08) !important;
+        color: #ffffff !important;
+        cursor: pointer !important;
+        transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease !important;
+      }
+
+      .filter-tab:hover {
+        background-color: #c8860a !important;
+        border-color: #c8860a !important;
+        color: #ffffff !important;
+      }
+
+      .filter-tab.active {
+        background-color: #c8860a !important;
+        border-color: #c8860a !important;
+        color: #ffffff !important;
+        box-shadow: 0 6px 15px rgba(200, 134, 10, 0.25) !important;
+      }
+
+      /* Faculty 3-column Card Grid */
+      .faculty-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+
+      .faculty-card-item {
+        border-radius: 16px !important;
+        border: none !important;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.25) !important;
+        padding: 32px 24px !important;
+        text-align: center !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 380px;
+        will-change: opacity, transform, filter, box-shadow;
+      }
+
+      /* Entrance scroll animation controls mapping (with 0.65s ease-out duration) */
+      .faculty-card-item.animate-card {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.65s ease-out, transform 0.65s ease-out, filter 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .faculty-card-item.animate-card.animation-active {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.65s ease-out, transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      /* Bold department colors */
+      .faculty-card-item[data-department="allied-health"] {
+        background-color: #7b0d0d !important;
+      }
+      .faculty-card-item[data-department="english"] {
+        background-color: #0a3d6b !important;
+      }
+      .faculty-card-item[data-department="safety"] {
+        background-color: #8a5c00 !important;
+      }
+      .faculty-card-item[data-department="computer-it"] {
+        background-color: #064e3b !important;
+      }
+
+      /* Hover states: translateY(-10px), shadow deepens, brightness increases */
+      .faculty-card-item.animation-active:hover {
+        transform: translateY(-10px) !important;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.35) !important;
+        filter: brightness(1.10) !important;
+      }
+
+      .faculty-avatar-circle {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #ffffff !important;
+        margin-bottom: 20px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+        background: rgba(255, 255, 255, 0.20) !important;
+        border: none !important;
+        outline: none !important;
+        transition: transform 0.3s ease !important;
+      }
+
+      .faculty-card-item:hover .faculty-avatar-circle {
+        transform: scale(1.05) !important;
+      }
+
+      .faculty-meta-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 16px;
+      }
+
+      .faculty-name-placeholder {
+        font-family: var(--font-heading);
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #ffffff !important;
+        line-height: 1.25;
+      }
+
+      .faculty-role-label {
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.85) !important;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      /* Pill department badge: opacity background, white text */
+      .faculty-dept-badge {
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 4px 14px;
+        border-radius: 20px;
+        display: inline-block;
+        margin-bottom: 14px;
+        letter-spacing: 0.02em;
+        background-color: rgba(255, 255, 255, 0.15) !important;
+        color: #ffffff !important;
+        border: none !important;
+      }
+
+      .faculty-qualification {
+        font-size: 0.88rem;
+        color: rgba(255, 255, 255, 0.75) !important;
+        line-height: 1.5;
+        font-weight: 500;
+        margin-bottom: 20px;
+        max-width: 220px;
+      }
+
+      .faculty-footer-bar {
+        width: 100%;
+        border-top: 1px dashed rgba(255, 255, 255, 0.15) !important;
+        padding-top: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .joining-soon-tag {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.60) !important;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .joining-soon-tag::before {
+        content: '';
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background-color: rgba(255, 255, 255, 0.6) !important;
+        border-radius: 50%;
+      }
+
+      /* 7. JOIN OUR TEAM SECTION Styles */
+      .jointeam-section {
+        background-color: var(--primary);
+        color: var(--text-light);
+        border-bottom: none;
+      }
+
+      .jointeam-section h2 {
+        color: var(--text-light) !important;
+      }
+
+      .jointeam-section .section-header-centered p {
+        color: rgba(255, 255, 255, 0.85) !important;
+      }
+
+      .career-boxes-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        max-width: 820px;
+        margin: 0 auto 50px auto;
+      }
+
+      .career-box-card {
+        background-color: var(--bg-white);
+        color: var(--primary);
+        border-radius: 12px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        padding: 30px 24px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        transition: var(--transition);
+      }
+
+      .career-box-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
+      }
+
+      .career-box-icon {
+        width: 44px;
+        height: 44px;
+        color: var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4px;
+      }
+
+      .career-box-title {
+        font-family: var(--font-body);
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--text-muted);
+      }
+
+      .career-box-info {
+        font-family: var(--font-heading);
+        font-size: 1.45rem;
+        font-weight: 700;
+        color: var(--primary);
+        word-break: break-all;
+      }
+
+      .career-apply-wrapper {
+        display: flex;
+        justify-content: center;
+      }
+
+      .btn-apply-gold {
+        padding: 16px 44px;
+        background-color: var(--accent);
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 0.78rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        border: 1px solid var(--accent);
+        cursor: pointer;
+        transition: var(--transition);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn-apply-gold:hover {
+        background-color: var(--accent-hover);
+        border-color: var(--accent-hover);
+        color: var(--text-light);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 22px rgba(200, 134, 10, 0.3);
+      }
+
+      /* 8. CTA BANNER Styles */
+      .cta-section {
+        padding: 0;
+        border-bottom: none;
+        overflow: hidden;
+      }
+
+      .cta-wrapper {
+        position: relative;
+        min-height: 280px;
+        display: flex;
+        background: linear-gradient(135deg, #0f2d5e 45%, #c8860a 100%);
+      }
+
+      .cta-bg-overlay {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-image: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 80%);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .cta-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 72px 24px;
+        z-index: 3;
+      }
+
+      .cta-text-left {
+        max-width: 650px;
+      }
+
+      .cta-text-left h2 {
+        font-size: 2.6rem;
+        color: var(--text-light);
+        margin-bottom: 12px;
+      }
+
+      .cta-text-left p {
+        font-size: 1.05rem;
+        color: rgba(255, 255, 255, 0.88);
+        font-weight: 300;
+        line-height: 1.5;
+      }
+
+      .cta-buttons-right {
+        display: flex;
+        gap: 16px;
+        flex-shrink: 0;
+      }
+
+      .btn-cta-solid {
+        padding: 16px 36px;
+        background-color: var(--text-light);
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 0.72rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        border: 1px solid var(--text-light);
+      }
+
+      .btn-cta-solid:hover {
+        background-color: transparent;
+        color: var(--text-light);
+        transform: translateY(-2px);
+      }
+
+      .btn-cta-outline {
+        padding: 16px 36px;
+        background-color: transparent;
+        color: var(--text-light);
+        font-weight: 700;
+        font-size: 0.72rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+
+      .btn-cta-outline:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+        border-color: #ffffff;
+        transform: translateY(-2px);
+      }
+
+      /* 9. FOOTER Styles */
+      .footer {
+        background-color: var(--primary);
+        color: var(--text-light);
+        padding: 90px 0 0 0;
+        border-bottom: none;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr 1fr 1fr;
+        gap: 50px;
+        margin-bottom: 75px;
+      }
+
+      .footer-col-1 {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer-logo-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .footer-logo-badge {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.04);
+        border: 1.5px solid var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        font-family: var(--font-heading);
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .footer-logo-text {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-light);
+        line-height: 1;
+      }
+
+      .footer-logo-text span {
+        font-family: var(--font-body);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        color: var(--accent);
+        text-transform: uppercase;
+        display: block;
+        margin-top: 4px;
+      }
+
+      .footer .tagline {
+        font-size: 0.88rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 28px;
+        line-height: 1.6;
+      }
+
+      .footer-social-row {
+        display: flex;
+        gap: 12px;
+      }
+
+      .footer-title {
+        font-family: var(--font-body);
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--text-light);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        margin-bottom: 28px;
+      }
+
+      .footer-title::after {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 1px;
+        background-color: var(--accent);
+        margin-top: 10px;
+      }
+
+      .footer-links-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        font-size: 0.9rem;
+      }
+
+      .footer-links-list a {
+        color: rgba(255, 255, 255, 0.65);
+      }
+
+      .footer-links-list a::before {
+        content: '◈';
+        color: var(--accent);
+        font-size: 0.6rem;
+        opacity: 0;
+        transform: translateX(-4px);
+        transition: var(--transition);
+        display: inline-block;
+        margin-right: 8px;
+      }
+
+      .footer-links-list a:hover {
+        color: var(--text-light);
+        padding-left: 4px;
+      }
+
+      .footer-links-list a:hover::before {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .footer-contact-block {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 0.9rem;
+      }
+
+      .footer-contact-row {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+
+      .footer-contact-row svg {
+        width: 18px;
+        height: 18px;
+        color: var(--accent);
+        flex-shrink: 0;
+        margin-top: 3px;
+      }
+
+      .footer-contact-label {
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.6;
+      }
+
+      .footer-googlemap-link {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-top: 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .footer-googlemap-link:hover {
+        color: var(--text-light);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 30px 0;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.15);
+      }
+
+      .footer-bottom p {
+        font-size: 0.75rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+      }
+
+      /* Stellar Scroll Animation Classes */
+      .animate-header {
+        opacity: 0;
+        transform: translateX(-60px);
+        transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        will-change: opacity, transform;
+      }
+
+      .animate-header.animation-active {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .animate-card {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+        transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: opacity, transform;
+      }
+
+      .animate-card.animation-active {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      .animate-cta {
+        opacity: 0;
+        transform: scale(0.97);
+        transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: opacity, transform;
+      }
+
+      .animate-cta.animation-active {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* Responsive rules */
+      @media screen and (max-width: 1024px) {
+        section {
+          padding: 80px 0;
+        }
+
+        .hero-banner {
+          height: auto;
+          padding: 60px 0;
+        }
+
+        .hero-banner .container {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          text-align: center;
+        }
+
+        .hero-banner-right {
+          align-items: center;
+          flex-direction: row;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .stat-badge {
+          max-width: 230px;
+        }
+
+        .director-card {
+          grid-template-columns: 1fr;
+          max-width: 680px;
+          padding: 44px 36px;
+          text-align: center;
+          gap: 40px;
+        }
+
+        .director-photo-col {
+          margin-bottom: 12px;
+          width: 100%;
+        }
+
+        .director-ring {
+          max-width: 320px;
+          margin: 0 auto;
+        }
+
+        .director-title {
+          justify-content: center;
+        }
+
+        .director-title::before {
+          display: none;
+        }
+
+        .director-divider {
+          margin: 0 auto 24px auto;
+        }
+
+        .director-achievements {
+          justify-content: center;
+          gap: 12px;
+        }
+
+        .departments-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+        }
+
+        .faculty-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+        }
+
+        .career-boxes-row {
+          grid-template-columns: 1fr;
+          max-width: 480px;
+        }
+
+        .cta-container {
+          flex-direction: column;
+          text-align: center;
+          gap: 40px;
+        }
+
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 40px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .top-bar {
+          display: none;
+        }
+
+        .hamburger-toggle {
+          display: block;
+        }
+
+        .navbar-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: var(--bg-white);
+          flex-direction: column;
+          gap: 0;
+          padding: 16px 0;
+          box-shadow: 0 10px 30px rgba(15, 45, 94, 0.08);
+          z-index: 999;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+          border-top: 1px solid var(--border-color);
+        }
+
+        .navbar-menu.menu-active {
+          max-height: 440px;
+        }
+
+        .navbar-menu li {
+          width: 100%;
+          text-align: center;
+        }
+
+        .navbar-link {
+          display: block;
+          padding: 14px 24px;
+          border-bottom: 1px solid rgba(15, 45, 94, 0.03);
+          font-size: 0.8rem;
+          letter-spacing: 0.15em;
+        }
+
+        .navbar-link::after {
+          display: none;
+        }
+
+        .hero-banner-title {
+          font-size: 2.4rem;
+        }
+
+        .director-card {
+          padding: 24px;
+        }
+
+        .director-name {
+          font-size: 1.8rem;
+        }
+
+        .departments-grid {
+          grid-template-columns: 1fr;
+          max-width: 440px;
+          margin: 0 auto;
+        }
+
+        .faculty-grid {
+          grid-template-columns: 1fr;
+          max-width: 440px;
+          margin: 0 auto;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+          gap: 48px;
+        }
+
+        .footer-col-1 {
+          align-items: center;
+        }
+
+        .footer-logo-row {
+          justify-content: center;
+        }
+
+        .footer-title::after {
+          margin: 10px auto 0 auto;
+        }
+
+        .footer-contact-row {
+          justify-content: center;
+        }
+      }
+
+      /* --- PREMIUM DESIGN UPGRADE --- */
+      /* 1. Frosted Glass Navbar Background */
+      .navbar {
+        background-color: rgba(255, 255, 255, 0.92) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+      }
+      .navbar.scrolled {
+        background-color: rgba(255, 255, 255, 0.92) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+      }
+
+      /* 2. Interactive Navigation underlines */
+      .navbar-link::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: -4px !important;
+        left: 0 !important;
+        width: 0 !important;
+        height: 2px !important;
+        background-color: #c8860a !important;
+        transition: 0.3s ease !important;
+      }
+      .navbar-link.active::after,
+      .navbar-link:hover::after {
+        width: 100% !important;
+      }
+
+      /* 3. Global Pill Shaped Buttons (50px border-radius) */
+      button, 
+      .btn, 
+      .btn-enroll, 
+      .btn-explore, 
+      .filter-tab, 
+      .submit-btn, 
+      .button, 
+      .load-more-btn, 
+      .prev-btn, 
+      .next-btn,
+      .cta-button,
+      .courses-filter-btn {
+        border-radius: 50px !important;
+      }
+
+      /* 4. Two-Layer Card Shadows (default vs hover) */
+      .dept-card, 
+      .course-card, 
+      .blog-card, 
+      .blog-post-card, 
+      .facility-card, 
+      .stat-card, 
+      .feature-card, 
+      .benefit-card, 
+      .story-card, 
+      .gallery-item, 
+      .instructor-card, 
+      .contact-info-card,
+      .director-profile-box {
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -1px rgba(0,0,0,0.06) !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease !important;
+      }
+      .dept-card:hover, 
+      .course-card:hover, 
+      .blog-card:hover, 
+      .blog-post-card:hover, 
+      .facility-card:hover, 
+      .stat-card:hover, 
+      .feature-card:hover, 
+      .benefit-card:hover, 
+      .story-card:hover, 
+      .gallery-item:hover, 
+      .instructor-card:hover, 
+      .contact-info-card:hover,
+      .director-profile-box:hover {
+        box-shadow: 0 20px 40px -5px rgba(0,0,0,0.20), 0 10px 15px -5px rgba(0,0,0,0.08) !important;
+      }
+
+      /* 5. Heading 2 Adjustments */
+      h2, 
+      .section-header-centered h2, 
+      section h2 {
+        letter-spacing: -0.5px !important;
+        line-height: 1.15 !important;
+      }
+
+      /* 6. Gold label pills above headings */
+      .section-label {
+        letter-spacing: 2.5px !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- 1. TOP BAR -->
+    <div class="top-bar">
+      <div class="container">
+        <div class="top-bar-left">
+          <div class="top-bar-item">
+            <!-- Mail Icon -->
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <a href="mailto:nbamimahs@gmail.com">nbamimahs@gmail.com</a>
+          </div>
+          <div class="top-bar-item">
+            <!-- Phone Icon -->
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>+923239595643</span>
+          </div>
+        </div>
+        <div class="top-bar-right">
+          <a href="#" class="social-circle-btn" aria-label="Facebook">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="YouTube">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="Instagram">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="TikTok">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. NAVBAR -->
+    <nav class="navbar" id="main-navigation">
+      <div class="container">
+        <div class="navbar-logo-area">
+          <div class="navbar-logo-badge">NB</div>
+          <div class="navbar-logo-text">
+            <span class="navbar-logo-title">New Bab-Al-Madina Institute</span>
+            <span class="navbar-logo-tagline">Pioneering Professional Excellence</span>
+          </div>
+        </div>
+        
+        <ul class="navbar-menu" id="nav-dropdown">
+          <li><a href="index.html" class="navbar-link">Home</a></li>
+          <li><a href="about.html" class="navbar-link">About</a></li>
+          <li><a href="courses.html" class="navbar-link">Courses</a></li>
+          <li><a href="faculty.html" class="navbar-link active">Faculty</a></li>
+          <li><a href="gallery.html" class="navbar-link">Gallery</a></li>
+          <li><a href="blog.html" class="navbar-link">Blog</a></li>
+          <li><a href="contact.html" class="navbar-link">Contact</a></li>
+        </ul>
+
+        <button class="hamburger-toggle" id="menu-btn" aria-label="Toggle mobile menu">
+          <!-- Hamburger icon -->
+          <svg style="width: 26px; height: 26px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- 3. PAGE HERO BANNER -->
+    <section class="hero-banner">
+      <div class="container">
+        <div class="hero-banner-left">
+          <span class="hero-banner-label">MEET OUR TEAM</span>
+          <h1 class="hero-banner-title">Our Faculty</h1>
+          <div class="breadcrumbs">
+            <a href="index.html">Home</a><span>&gt;</span>Faculty
+          </div>
+        </div>
+        <div class="hero-banner-right">
+          <!-- Stat Badge 1 -->
+          <div class="stat-badge">
+            <div class="stat-badge-icon">
+              <svg style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div>
+              <div class="stat-badge-text">1 Director</div>
+              <div class="stat-badge-sub">Leadership</div>
+            </div>
+          </div>
+          <!-- Stat Badge 2 -->
+          <div class="stat-badge">
+            <div class="stat-badge-icon">
+              <svg style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+            </div>
+            <div>
+              <div class="stat-badge-text">4 Departments</div>
+              <div class="stat-badge-sub">Specialties</div>
+            </div>
+          </div>
+          <!-- Stat Badge 3 -->
+          <div class="stat-badge">
+            <div class="stat-badge-icon">
+              <svg style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                <path d="M21 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M9 21v-2a4 4 0 0 0-4-4H3a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div>
+              <div class="stat-badge-text">Growing Team</div>
+              <div class="stat-badge-sub">hiring experts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. DIRECTOR SECTION -->
+    <section class="director-section scroll-element-animation">
+      <div class="container">
+        
+        <div style="text-align: center; margin-bottom: 50px;">
+          <div class="text-xs font-semibold tracking-widest text-amber-600 uppercase mb-4">LEADERSHIP & VISION</div>
+          <h2 class="text-4xl font-extrabold tracking-tight text-slate-900 mb-2">Meet Our Director</h2>
+          <div class="flex justify-center items-center gap-1 mt-3">
+            <div class="w-12 h-1 bg-amber-500 rounded-full"></div>
+            <div class="w-1 h-1 bg-slate-900 rounded-full"></div>
+          </div>
+        </div>
+
+        <div class="director-container">
+          <div class="director-card animate-director-card">
+            
+            <div class="director-photo-col">
+              <div class="director-ring">
+                <div class="director-image-wrap">
+                  <img src="director.jpg" alt="Wakeel Bacha" class="director-img" id="director-pic" onerror="handleDirectorImgError(this)" />
+                  <div class="director-fallback" id="director-init">WB</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="director-info-col">
+              <span class="director-tag">Founder &amp; Director</span>
+              <h3 class="director-name">Wakeel Bacha</h3>
+              <div class="director-title">Founder &amp; Director, NBAMIM &amp; AHS</div>
+              <div class="director-divider"></div>
+              <p class="director-bio">
+                Wakeel Bacha is the visionary founder and director of New Bab-Al-Madina Institute of Management and Allied Health Sciences. With a deep commitment to quality education and community development, he established NBAMIM &amp; AHS to provide accessible, career-focused education to the people of Peshawar and Khyber Pakhtunkhwa.
+              </p>
+              
+              <div class="director-achievements">
+                <div class="ach-badge">
+                  <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  Est. 2020
+                </div>
+                <div class="ach-badge">
+                  <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  500+ Students
+                </div>
+                <div class="ach-badge">
+                  <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  20+ Courses
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. DEPARTMENT OVERVIEW -->
+    <section class="departments-section scroll-element-animation">
+      <div class="container">
+        <div class="section-header-centered animate-header">
+          <span class="section-label">Avenues of Study</span>
+          <h2>Our Departments</h2>
+          <p>Meticulously structured academic divisions overseen by expert advisors and designed to empower students with career-ready skillsets.</p>
+        </div>
+
+        <div class="departments-grid">
+          
+          <!-- Allied Health -->
+          <div class="dept-card allied-health animate-card">
+            <div class="dept-icon-circle">
+              <!-- Stethoscope SVG -->
+              <svg style="width: 32px; height: 32px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4.8 2.3A.3.3 0 1 0 5 2.5v-.2M4.8 21.7a.3.3 0 1 0 .2.2v-.2m4.8-19.1A6.7 6.7 0 0 1 12 11a6.7 6.7 0 0 1-2.2 4.1M12 11a6.7 6.7 0 0 0 2.2-4.1M2 13h20M12 2v20"></path>
+                <circle cx="12" cy="12" r="3" stroke-width="2"></circle>
+                <path d="M19 5h-1.5a2.5 2.5 0 0 0-2.5 2.5v9a2.5 2.5 0 0 0 2.5 2.5H19M5 5h1.5A2.5 2.5 0 0 1 9 7.5v9A2.5 2.5 0 0 1 6.5 19H5"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="dept-name">Allied Health Sciences</h3>
+              <p class="dept-desc">Clinical &amp; healthcare programs focusing on diagnostics, lab technologies, and regional medical certifications.</p>
+            </div>
+            <span class="dept-hiring-badge">Hiring Soon</span>
+          </div>
+
+          <!-- English Language -->
+          <div class="dept-card english-lang animate-card">
+            <div class="dept-icon-circle">
+              <!-- Speech Bubble SVG -->
+              <svg style="width: 30px; height: 30px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="dept-name">English Language</h3>
+              <p class="dept-desc">Comprehensive language and immersive communication programs including Spoken English, IELTS, and Diploma tracks.</p>
+            </div>
+            <span class="dept-hiring-badge">Hiring Soon</span>
+          </div>
+
+          <!-- Safety Courses -->
+          <div class="dept-card safety-course animate-card">
+            <div class="dept-icon-circle">
+              <!-- Shield SVG -->
+              <svg style="width: 30px; height: 30px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="dept-name">Safety Courses</h3>
+              <p class="dept-desc">International safety certifications covering industrial hazards, risk inspection, HSE guidelines, and workplace compliance.</p>
+            </div>
+            <span class="dept-hiring-badge">Hiring Soon</span>
+          </div>
+
+          <!-- Computer & IT -->
+          <div class="dept-card computer-it animate-card">
+            <div class="dept-icon-circle">
+              <!-- Monitor SVG -->
+              <svg style="width: 30px; height: 30px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div>
+              <h3 class="dept-name">Computer &amp; IT</h3>
+              <p class="dept-desc">Modern technology &amp; digital skills covering software suites, database setups, web development, and the DIT curriculum.</p>
+            </div>
+            <span class="dept-hiring-badge">Hiring Soon</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FACULTY GRID SECTION -->
+    <section class="faculty-section scroll-element-animation">
+      <div class="container">
+        
+        <div class="section-header-centered animate-header">
+          <span class="section-label">Qualified Mentors</span>
+          <h2>Our Teaching Faculty</h2>
+          <p style="margin-bottom: 8px;">Our faculty positions are currently being filled with qualified professionals. Check back soon.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs-wrapper animate-header">
+          <button class="filter-tab active" data-filter="all">All</button>
+          <button class="filter-tab" data-filter="allied-health">Allied Health</button>
+          <button class="filter-tab" data-filter="english">English</button>
+          <button class="filter-tab" data-filter="safety">Safety</button>
+          <button class="filter-tab" data-filter="computer-it">Computer &amp; IT</button>
+        </div>        <div class="faculty-grid">
+          
+          <!-- Card 1 (Allied Health) -->
+          <div class="faculty-card-item animate-card" data-department="allied-health">
+            <div class="faculty-avatar-circle avatar-ah">AH</div>
+            <div class="faculty-meta-group">
+              <h4 class="faculty-name-placeholder">Faculty Member</h4>
+              <span class="faculty-role-label">Senior Instructor</span>
+            </div>
+            <span class="faculty-dept-badge badge-ah">Allied Health Sciences</span>
+            <p class="faculty-qualification">M.Phil in Clinical Microbiology &amp; Diagnostics</p>
+            <div class="faculty-footer-bar">
+              <span class="joining-soon-tag">Joining Soon</span>
+            </div>
+          </div>
+
+          <!-- Card 2 (Allied Health) -->
+          <div class="faculty-card-item animate-card" data-department="allied-health">
+            <div class="faculty-avatar-circle avatar-ah">NS</div>
+            <div class="faculty-meta-group">
+              <h4 class="faculty-name-placeholder">Faculty Member</h4>
+              <span class="faculty-role-label">Clinical Instructor</span>
+            </div>
+            <span class="faculty-dept-badge badge-ah">Allied Health Sciences</span>
+            <p class="faculty-qualification">BS Nursing / Licensed Healthcare Professional</p>
+            <div class="faculty-footer-bar">
+              <span class="joining-soon-tag">Joining Soon</span>
+            </div>
+          </div>
+
+          <!-- Card 3 (Allied Health) -->
+          <div class="faculty-card-item animate-card" data-department="allied-health">
+            <div class="faculty-avatar-circle" style="overflow: hidden; padding: 0;">
+              <img src="src/assets/images/tanzila_avatar_1780465385811.png" alt="Tanzila" style="width: 100%; height: 100%; object-fit: cover;" referrerpolicy="no-referrer">
+            </div>
+            <div class="faculty-meta-group">
+              <h4 class="faculty-name-placeholder">Tanzila</h4>
+              <span class="faculty-role-label">Psychology Instructor</span>
+            </div>
+            <span class="faculty-dept-badge badge-ah">Allied Health Sciences</span>
+            <p class="faculty-qualification">BS Psychology</p>
+            <div class="faculty-footer-bar">
+              <span class="joining-soon-tag">Joining Soon</span>
+            </div>
+          </div>
+
+          <!-- Card 3 (English) -->
+          <div class="faculty-card-item animate-card" data-department="english">
+            <div class="faculty-avatar-circle avatar-el">EL</div>
+            <div class="faculty-meta-group">
+              <h4 class="faculty-name-placeholder">Faculty Member</h4>
+              <span class="faculty-role-label">Linguistics Trainer</span>
+            </div>
+            <span class="faculty-dept-badge badge-el">English Language</span>
+            <p class="faculty-qualification">MA English Literature / IELTS 8.5 Certified</p>
+            <div class="faculty-footer-bar">
+              <span class="joining-soon-tag">Joining Soon</span>
+            </div>
+          </div>
+
+          <!-- Card 4 (English) -->
+          <div class="faculty-card-item animate-card" data-department="english">
+            <div class="faculty-avatar-circle avatar-el">CS</div>
+            <div class="faculty-meta-group">
+              <h4 class="faculty-name-placeholder">Faculty Member</h4>
+              <span class="faculty-role-label">Spoken English Coach</span>
+            </div>
+            <span class="faculty-dept-badge badge-el">English Language</span>
+            <p class="faculty-qualification">BS English Linguistics / TEFL Certified Trainer</p>
+            <div class="faculty-footer-bar">
+              <span class="joining-soon-tag">Joining Soon</span>
+            </div>
+          </div>
+
+          <!-- Card 5 (Safety) -->
+          <div class="faculty-card-item animate-card" data-department="safety">
+            <div class="faculty-avatar-circle avatar-sc">SO</div>
+            <div class="faculty-meta-group">
+              <h4 class="faculty-name-placeholder">Faculty Member</h4>
+              <span class="faculty-role-label">HSE Trainer</span>
+            </div>
+            <span class="faculty-dept-badge badge-sc">Safety Courses</span>
+            <p class="faculty-qualification">NEBOSH IGC Certified / OTHM Level 6 Specialist</p>
+            <div class="faculty-footer-bar">
+              <span class="joining-soon-tag">Joining Soon</span>
+            </div>
+          </div>
+
+          <!-- Card 6 (Safety) -->
+          <div class="faculty-card-item animate-card" data-department="safety">
+            <div class="faculty-avatar-circle avatar-sc">HS</div>
+            <div class="faculty-meta-group">
+              <h4 class="faculty-name-placeholder">Faculty Member</h4>
+              <span class="faculty-role-label">Safety Consultant</span>
+            </div>
+            <span class="faculty-dept-badge badge-sc">Safety Courses</span>
+            <p class="faculty-qualification">IOSH &amp; OSHA Trainer / Risk Assessment Expert</p>
+            <div class="faculty-footer-bar">
+              <span class="joining-soon-tag">Joining Soon</span>
+            </div>
+          </div>
+
+          <!-- Card 7 (Computer & IT) -->
+          <div class="faculty-card-item animate-card" data-department="computer-it">
+            <div class="faculty-avatar-circle avatar-it">IT</div>
+            <div class="faculty-meta-group">
+              <h4 class="faculty-name-placeholder">Faculty Member</h4>
+              <span class="faculty-role-label">Senior DIT Instructor</span>
+            </div>
+            <span class="faculty-dept-badge badge-it">Computer &amp; IT</span>
+            <p class="faculty-qualification">MCS / MS Computer Science &amp; Database Lead</p>
+            <div class="faculty-footer-bar">
+              <span class="joining-soon-tag">Joining Soon</span>
+            </div>
+          </div>
+
+          <!-- Card 8 (Computer & IT) -->
+          <div class="faculty-card-item animate-card" data-department="computer-it">
+            <div class="faculty-avatar-circle avatar-it">SD</div>
+            <div class="faculty-meta-group">
+              <h4 class="faculty-name-placeholder">Faculty Member</h4>
+              <span class="faculty-role-label">Software Instructor</span>
+            </div>
+            <span class="faculty-dept-badge badge-it">Computer &amp; IT</span>
+            <p class="faculty-qualification">BS Software Engineering / Full Stack Developer</p>
+            <div class="faculty-footer-bar">
+              <span class="joining-soon-tag">Joining Soon</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. JOIN OUR TEAM SECTION -->
+    <section class="jointeam-section scroll-element-animation">
+      <div class="container">
+        <div class="section-header-centered animate-header">
+          <span class="section-label">CAREERS</span>
+          <h2>Join Our Growing Team</h2>
+          <p>We are actively seeking passionate educators and healthcare professionals to join NBAMIM &amp; AHS. If you are qualified and committed to making a difference, we want to hear from you.</p>
+        </div>
+
+        <div class="career-boxes-row animate-header">
+          <!-- CV Box -->
+          <div class="career-box-card">
+            <div class="career-box-icon">
+              <!-- Briefcase Icon -->
+              <svg style="width: 32px; height: 32px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <span class="career-box-title">SEND YOUR CV TO</span>
+            <a href="mailto:nbamimahs@gmail.com" class="career-box-info">nbamimahs@gmail.com</a>
+          </div>
+
+          <!-- Phone Box -->
+          <div class="career-box-card">
+            <div class="career-box-icon">
+              <!-- Phone Call Icon -->
+              <svg style="width: 32px; height: 32px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <span class="career-box-title">CALL US FOR GENERAL QUERY</span>
+            <a href="tel:+923239595643" class="career-box-info">+923239595643</a>
+          </div>
+        </div>
+
+        <div class="career-apply-wrapper animate-cta">
+          <a href="contact.html?subject=career" class="btn-apply-gold">Apply Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CTA BANNER -->
+    <section class="cta-section scroll-element-animation">
+      <div class="cta-wrapper animate-cta">
+        <div class="cta-bg-overlay"></div>
+        <div class="cta-container">
+          <div class="cta-text-left">
+            <h2>Shape the Future of Education</h2>
+            <p>Partner with NBAMIM &amp; AHS in building the next generation of healthcare and technology professionals</p>
+          </div>
+          <div class="cta-buttons-right">
+            <a href="courses.html" class="btn-cta-solid">View Courses</a>
+            <a href="contact.html" class="btn-cta-outline">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <!-- Col 1 -->
+        <div class="footer-col-1">
+          <div class="footer-logo-row">
+            <div class="footer-logo-badge">NB</div>
+            <div class="footer-logo-text">
+              New Bab-Al-Madina Institute
+              <span>Pioneering Professional Excellence</span>
+            </div>
+          </div>
+          <p class="tagline">
+            Bringing elite clinical studies, technology advancements, and global masteries together to secure regional professional success.
+          </p>
+          <div class="footer-social-row">
+            <a href="#" class="social-circle-btn" aria-label="Facebook">
+              <svg class="social-icon" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-circle-btn" aria-label="YouTube">
+              <svg class="social-icon" viewBox="0 0 24 24">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+            <a href="#" class="social-circle-btn" aria-label="Instagram">
+              <svg class="social-icon" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-circle-btn" aria-label="TikTok">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div>
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div>
+          <h3 class="footer-title">Our Courses</h3>
+          <ul class="footer-links-list">
+            <li><a href="courses.html">Spoken English</a></li>
+            <li><a href="courses.html">English Diploma</a></li>
+            <li><a href="courses.html">IELTS Preparation</a></li>
+            <li><a href="courses.html">English Conversation</a></li>
+            <li><a href="courses.html">DIT (Information Tech)</a></li>
+            <li><a href="courses.html">Allied Health Sciences</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 -->
+        <div class="footer-contact-block">
+          <h3 class="footer-title">Contact Info</h3>
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <div class="footer-contact-label">
+              Hashtnagri BRT Station, Behind Rahim Medical Center, Peshawar, Pakistan
+            </div>
+          </div>
+          
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <div class="footer-contact-label">+923239595643</div>
+          </div>
+
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <div class="footer-contact-label">nbamimahs@gmail.com</div>
+          </div>
+
+          <a href="https://maps.google.com" target="_blank" class="footer-googlemap-link">
+            Open in Google Maps
+            <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <polyline points="9 6 18 6 18 15"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- bottom bar -->
+      <div class="footer-bottom" style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 30px 0; text-align: center; background-color: rgba(0, 0, 0, 0.15);">
+        <p>© 2025 NBAMIM &amp; AHS. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Interactive script (Dropdowns, active states, filtering and scroll animations) -->
+    <script>
+      // Director image error fallback trigger
+      function handleDirectorImgError(img) {
+        img.style.display = 'none';
+        document.getElementById('director-init').style.display = 'flex';
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const navbar = document.getElementById('main-navigation');
+        const hamburgerBtn = document.getElementById('menu-btn');
+        const navDropdown = document.getElementById('nav-dropdown');
+
+        // Sticky Navbar on scroll
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 40) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+
+        // Mobile dropdown toggle
+        hamburgerBtn.addEventListener('click', () => {
+          navDropdown.classList.toggle('menu-active');
+        });
+
+        // 1. Observe Section Animations for Viewport Staggered Entrada
+        const headerObserverOptions = {
+          root: null,
+          threshold: 0.10,
+          rootMargin: "0px 0px -40px 0px"
+        };
+
+        const headerObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animation-active');
+              headerObserver.unobserve(entry.target);
+            }
+          });
+        }, headerObserverOptions);
+
+        document.querySelectorAll('.animate-header').forEach(header => {
+          headerObserver.observe(header);
+        });
+
+        // 2. Observe Cards with Staggered Viewport Entrance
+        const cardObserverOptions = {
+          root: null,
+          threshold: 0.05,
+          rootMargin: "0px 0px -30px 0px"
+        };
+
+        const cardObserver = new IntersectionObserver((entries) => {
+          const intersecting = entries.filter(e => e.isIntersecting);
+          intersecting.forEach((entry, idx) => {
+            const card = entry.target;
+            const delay = idx * 100; // Stagger reveal: 100ms
+            setTimeout(() => {
+              card.classList.add('animation-active');
+            }, delay);
+            cardObserver.unobserve(card);
+          });
+        }, cardObserverOptions);
+
+        document.querySelectorAll('.animate-card').forEach(card => {
+          cardObserver.observe(card);
+        });
+
+        // 3. Observe CTA Zoom-In
+        const ctaObserverOptions = {
+          root: null,
+          threshold: 0.10
+        };
+
+        const ctaObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animation-active');
+              ctaObserver.unobserve(entry.target);
+            }
+          });
+        }, ctaObserverOptions);
+
+        document.querySelectorAll('.animate-cta').forEach(cta => {
+          ctaObserver.observe(cta);
+        });
+
+        // 4. Observe Director Card Scale Transition
+        const directorObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animation-active');
+              directorObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.10 });
+
+        const dirCard = document.querySelector('.animate-director-card');
+        if (dirCard) {
+          directorObserver.observe(dirCard);
+        }
+
+        // 5. Department filter tab handler
+        const tabs = document.querySelectorAll('.filter-tab');
+        const gridCards = document.querySelectorAll('.faculty-card-item');
+
+        tabs.forEach(tab => {
+          tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            const filter = tab.getAttribute('data-filter');
+
+            gridCards.forEach((card, idx) => {
+              // Fade out
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(24px) scale(0.95)';
+              
+              setTimeout(() => {
+                if (filter === 'all' || card.getAttribute('data-department') === filter) {
+                  card.style.display = 'flex';
+                  setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0) scale(1)';
+                  }, 50 + (idx % 3) * 60); // Small cascade effect on filter reveal
+                } else {
+                  card.style.display = 'none';
+                }
+              }, 250);
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

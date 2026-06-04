@@ -1,0 +1,2995 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NBAMIM & AHS | New Bab-Al-Madina Institute</title>
+    
+    <!-- Google Fonts: Editorial Selection -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- All Styles - Pure CSS, Premium Editorial Palette -->
+    <style>
+      :root {
+        --primary: #0f2d5e;
+        --secondary: #5ba3d9;
+        --accent: #c8860a;
+        --accent-hover: #b07408;
+        --bg-white: #ffffff;
+        --bg-light: #f4f7fb;
+        --bg-navy-dark: #071730;
+        --text-dark: #11223f;
+        --text-muted: #536685;
+        --text-light: #ffffff;
+        --border-color: rgba(15, 45, 94, 0.12);
+        
+        --font-heading: 'Playfair Display', Georgia, serif;
+        --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        --transition-slow: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      /* CSS Resets & Foundations */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        height: 100%;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background-color: var(--bg-white);
+        color: var(--text-dark);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        color: var(--primary);
+        line-height: 1.25;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+        width: 100%;
+      }
+
+      section {
+        padding: 100px 0;
+        position: relative;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      /* Universal Component Styles */
+      .section-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        color: var(--accent);
+        margin-bottom: 16px;
+        display: inline-block;
+        position: relative;
+      }
+
+      .section-label::after {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 1px;
+        background-color: var(--accent);
+        margin-left: 12px;
+        vertical-align: middle;
+      }
+
+      .section-header-centered {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto 70px auto;
+      }
+
+      .section-header-centered h2 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .section-header-centered h2::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 2px;
+        background-color: var(--accent);
+        margin: 20px auto 0 auto;
+      }
+
+      .section-header-centered p {
+        font-size: 1.05rem;
+        color: var(--text-muted);
+      }
+
+      /* 1. TOP BAR Styles */
+      .top-bar {
+        background-color: var(--primary);
+        color: var(--text-light);
+        padding: 12px 0;
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .top-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .top-bar-left {
+        display: flex;
+        gap: 32px;
+      }
+
+      .top-bar-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        opacity: 0.9;
+      }
+
+      .top-bar-item a {
+        border-bottom: 1px solid rgba(200, 134, 10, 0.4);
+        padding-bottom: 2px;
+      }
+
+      .top-bar-item a:hover {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+      }
+
+      .top-bar-right {
+        display: flex;
+        gap: 12px;
+      }
+
+      .social-circle-btn {
+        width: 28px;
+        height: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        transition: var(--transition);
+      }
+
+      .social-circle-btn:hover {
+        background-color: var(--accent);
+        border-color: var(--accent);
+        transform: translateY(-2px);
+      }
+
+      .social-icon {
+        width: 14px;
+        height: 14px;
+        fill: currentColor;
+      }
+
+      /* 2. NAVBAR Styles */
+      .navbar {
+        background-color: var(--bg-white);
+        padding: 24px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: var(--transition);
+      }
+
+      .navbar.scrolled {
+        padding: 16px 0;
+        box-shadow: 0 4px 20px rgba(15, 45, 94, 0.06);
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar-logo-area {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      /* Badge Logo */
+      .navbar-logo-badge {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: var(--primary);
+        border: 2px solid var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 0.85rem;
+        letter-spacing: -0.05em;
+      }
+
+      .navbar-logo-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .navbar-logo-title {
+        font-family: var(--font-heading);
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--primary);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      .navbar-logo-tagline {
+        font-family: var(--font-body);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #c8860a;
+        margin-top: 4px;
+      }
+
+      .navbar-menu {
+        display: flex;
+        list-style: none;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .navbar-link {
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--primary);
+        padding: 6px 0;
+        position: relative;
+      }
+
+      .navbar-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--accent);
+        transition: var(--transition);
+      }
+
+      .navbar-link.active::after,
+      .navbar-link:hover::after {
+        width: 100%;
+      }
+
+      .navbar-link.active,
+      .navbar-link:hover {
+        color: var(--accent);
+      }
+
+      /* Mobile Menu Toggle button */
+      .hamburger-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--primary);
+        padding: 4px;
+      }
+
+      /* 3. HERO SECTION Styles */
+      .hero {
+        background: linear-gradient(135deg, #020b18 0%, #041428 50%, #061d3a 100%);
+        color: var(--text-light);
+        padding: 130px 0;
+        min-height: calc(100vh - 120px);
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        border-bottom: none;
+        cursor: default;
+      }
+
+      /* Islamic pattern overlay */
+      .hero-pattern {
+        display: none;
+      }
+
+      .hero-gradient {
+        position: absolute;
+        top: -40px;
+        left: -40px;
+        right: -40px;
+        bottom: -40px;
+        background: 
+          radial-gradient(circle at 15% 25%, rgba(200, 134, 10, 0.08) 0%, transparent 45%),
+          radial-gradient(circle at 85% 75%, rgba(91, 163, 217, 0.06) 0%, transparent 40%);
+        pointer-events: none;
+        z-index: 1;
+        transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .hero .container {
+        display: grid;
+        grid-template-columns: 1.1fr auto 0.9fr;
+        gap: 60px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-label {
+        font-size: 13px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #f0c040;
+        margin-bottom: 20px;
+        display: inline-block;
+      }
+
+      .hero-title {
+        color: #ffffff;
+        font-size: 4.8rem;
+        font-family: var(--font-heading);
+        line-height: 1.05;
+        margin-bottom: 24px;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+      }
+
+      .hero-title-accent {
+        color: #f0c040 !important;
+        font-style: italic;
+        font-weight: 700;
+      }
+
+      .hero-subtext {
+        font-size: 1.15rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.88);
+        margin-bottom: 40px;
+        max-width: 580px;
+        line-height: 1.8;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      /* Enroll Button */
+      .btn-enroll {
+        background-color: #f0c040;
+        color: #0a0a0f;
+        font-weight: 700;
+        border-radius: 8px;
+        padding: 14px 32px;
+        border: none;
+        transition: background-color 0.25s ease, transform 0.25s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-enroll:hover {
+        background-color: #ffd700;
+        transform: scale(1.04);
+        color: #0a0a0f;
+      }
+
+      /* Explore Button */
+      .btn-explore {
+        background-color: transparent;
+        color: #ffffff;
+        border: 2px solid rgba(255, 255, 255, 0.7);
+        border-radius: 8px;
+        padding: 14px 32px;
+        transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-explore:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+        border-color: #ffffff;
+        transform: scale(1.03);
+        color: #ffffff;
+      }
+
+      /* Keyframe animations for Click Press */
+      @keyframes btnPressEnroll {
+        0% {
+          transform: scale(1);
+        }
+        34% {
+          transform: scale(0.93);
+        }
+        70% {
+          transform: scale(1.05);
+          background-color: #ffffff;
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes btnPressExplore {
+        0% {
+          transform: scale(1);
+        }
+        48% {
+          transform: scale(0.95);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .btn-press-enroll-animation {
+        animation: btnPressEnroll 350ms cubic-bezier(0.36, 0.07, 0.19, 0.97);
+      }
+
+      .btn-press-explore-animation {
+        animation: btnPressExplore 250ms cubic-bezier(0.36, 0.07, 0.19, 0.97);
+      }
+
+      /* Ripple Effect Styling */
+      .btn-ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.4);
+        transform: scale(0);
+        animation: rippleEffect 500ms linear;
+        pointer-events: none;
+      }
+
+      @keyframes rippleEffect {
+        to {
+          transform: scale(2.5);
+          opacity: 0;
+        }
+      }
+
+      /* Gold vertical divider line between hero content and stats card */
+      .hero-divider {
+        width: 3px;
+        align-self: stretch;
+        background-color: #f0c040;
+        box-shadow: 0 0 10px rgba(240, 192, 64, 0.4);
+      }
+
+      /* Frosted glass stats card box */
+      .hero-right {
+        display: flex;
+        justify-content: center;
+      }
+
+      .frosted-stats-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        padding: 44px;
+        width: 100%;
+        max-width: 440px;
+        backdrop-filter: blur(14px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      .hero-stat-row {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .hero-stat-icon {
+        width: 40px;
+        height: 40px;
+        color: #f0c040;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .hero-stat-info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero-stat-number {
+        font-family: var(--font-heading);
+        font-size: 2.6rem;
+        font-weight: 700;
+        color: #f0c040;
+        line-height: 1;
+      }
+
+      .hero-stat-text {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: rgba(255, 255, 255, 0.75);
+        margin-top: 4px;
+      }
+
+      /* Entrance animations keyframes */
+      @keyframes heroFadeDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes heroSlideLeftIn {
+        from {
+          opacity: 0;
+          transform: translateX(-40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes heroFadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes heroBtnRowFadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes heroStatsCardIn {
+        from {
+          opacity: 0;
+          transform: translateX(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes dividerDraw {
+        from {
+          height: 0%;
+        }
+        to {
+          height: 100%;
+        }
+      }
+
+      @keyframes statsFloat {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      /* Apply these to the markup */
+      .animate-label {
+        opacity: 0;
+        animation: heroFadeDown 0.6s ease-out 0.1s forwards;
+      }
+      
+      .animate-headline-1 {
+        opacity: 0;
+        animation: heroSlideLeftIn 0.7s ease-out 0.2s forwards;
+      }
+
+      .animate-headline-2 {
+        opacity: 0;
+        animation: heroSlideLeftIn 0.7s ease-out 0.35s forwards;
+      }
+
+      .animate-headline-3 {
+        opacity: 0;
+        animation: heroSlideLeftIn 0.7s ease-out 0.5s forwards;
+      }
+
+      .animate-subtext {
+        opacity: 0;
+        animation: heroFadeUp 0.6s ease-out 0.7s forwards;
+      }
+
+      .animate-buttons {
+        opacity: 0;
+        animation: heroBtnRowFadeUp 0.6s ease-out 0.9s forwards;
+      }
+
+      .animate-stats-card-container {
+        opacity: 0;
+        animation: heroStatsCardIn 0.8s ease-out 0.4s forwards;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .animate-divider {
+        height: 0%;
+        animation: dividerDraw 1s ease-out 0.3s forwards;
+      }
+
+      /* 4. ABOUT SNAPSHOT Styles */
+      .about-snapshot {
+        background-color: var(--bg-white);
+      }
+
+      .about-snapshot .container {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 80px;
+        align-items: center;
+      }
+
+      .about-placeholder-container {
+        position: relative;
+        padding: 20px;
+      }
+
+      .about-styled-placeholder {
+        width: 100%;
+        height: 480px;
+        background-color: #0f2d5e !important;
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(15, 45, 94, 0.08);
+      }
+
+      .about-placeholder-design {
+        display: none !important;
+      }
+
+      .about-placeholder-content {
+        position: absolute;
+        width: 100%; height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.4);
+        padding: 30px;
+        text-align: center;
+      }
+
+      .about-placeholder-content svg {
+        width: 48px;
+        height: 48px;
+        color: var(--accent);
+        margin-bottom: 16px;
+      }
+
+      .about-placeholder-content span {
+        font-family: var(--font-heading);
+        font-size: 1.25rem;
+        color: var(--text-light);
+        letter-spacing: 0.05em;
+        font-weight: 600;
+        opacity: 0.85;
+      }
+
+      .about-outer-gold-border {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 2px solid var(--accent);
+        transform: translate(12px, 12px);
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      /* Floating Established Badge */
+      .badge-est-tag {
+        position: absolute;
+        bottom: 40px;
+        left: -10px;
+        background-color: var(--accent);
+        color: var(--text-light);
+        padding: 12px 28px;
+        font-weight: 700;
+        font-size: 0.72rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        box-shadow: 0 10px 25px rgba(200, 134, 10, 0.15);
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .badge-est-tag span:last-child {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        margin-top: 2px;
+        letter-spacing: 0;
+        line-height: 1;
+      }
+
+      .about-content-right {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .about-content-right h2 {
+        font-size: 2.8rem;
+        color: var(--primary);
+        margin-bottom: 24px;
+        font-weight: 700;
+      }
+
+      .about-paragraphs p {
+        font-size: 1rem;
+        color: var(--text-muted);
+        margin-bottom: 22px;
+        line-height: 1.8;
+      }
+
+      .about-paragraphs p:last-child {
+        margin-bottom: 0;
+      }
+
+      .btn-readmore {
+        margin-top: 20px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+        font-size: 0.78rem;
+        letter-spacing: 0.15em;
+        color: #c8860a !important;
+        text-transform: uppercase;
+        align-self: flex-start;
+        padding-bottom: 6px;
+        position: relative;
+        text-decoration: none;
+      }
+
+      .btn-readmore::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #c8860a;
+        transition: width 0.3s ease;
+      }
+
+      .btn-readmore:hover::after {
+        width: 100%;
+      }
+
+      .readmore-arrow {
+        display: inline-block;
+        transition: transform 0.2s ease;
+        line-height: 1;
+      }
+
+      .btn-readmore:hover .readmore-arrow {
+        transform: translateX(4px);
+      }
+
+      /* 5. CAMPUS SECTION Styles */
+      .campus-section {
+        background-color: var(--bg-light);
+      }
+
+      .campus-grid-wrap {
+        display: flex;
+        justify-content: center;
+      }
+
+      .campus-card-wide {
+        width: 100%;
+        max-width: 900px;
+        background-color: var(--bg-white);
+        border: 1px solid var(--border-color);
+        box-shadow: 0 15px 40px rgba(15, 45, 94, 0.04);
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        overflow: hidden;
+      }
+
+      .campus-image-placeholder {
+        background-color: var(--primary);
+        position: relative;
+        overflow: hidden;
+        min-height: 320px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .campus-image-pattern {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        opacity: 0.08;
+        background-image: radial-gradient(#fff 2px, transparent 2px);
+        background-size: 24px 24px;
+      }
+
+      .campus-image-text {
+        color: var(--text-light);
+        font-family: var(--font-heading);
+        font-size: 1.35rem;
+        font-weight: 600;
+        text-align: center;
+        padding: 24px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .campus-image-text svg {
+        width: 36px;
+        height: 36px;
+        color: var(--accent);
+      }
+
+      .campus-content-side {
+        padding: 44px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .campus-title-block {
+        margin-bottom: 24px;
+      }
+
+      .campus-title-block h3 {
+        font-size: 1.6rem;
+        color: var(--primary);
+        margin-bottom: 4px;
+      }
+
+      .campus-title-block span {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--accent);
+      }
+
+      .campus-details {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+
+      .campus-detail-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        font-size: 0.92rem;
+        color: var(--text-muted);
+      }
+
+      .campus-detail-row svg {
+        width: 18px;
+        height: 18px;
+        color: var(--accent);
+        flex-shrink: 0;
+        margin-top: 3px;
+      }
+
+      .btn-map {
+        align-self: flex-start;
+        padding: 14px 28px;
+        background-color: var(--primary);
+        color: var(--text-light);
+        font-weight: 700;
+        font-size: 0.72rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        border: 1px solid var(--primary);
+      }
+
+      .btn-map:hover {
+        background-color: var(--accent);
+        border-color: var(--accent);
+        color: var(--primary);
+        transform: translateY(-2px);
+      }
+
+      /* 6. VISION / MISSION / OBJECTIVES Styles */
+      .vmo-section {
+        background-color: var(--bg-white);
+      }
+
+      .vmo-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        border: none !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+      }
+
+      .vmo-card {
+        padding: 40px 32px;
+        border: none !important;
+        border-radius: 16px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.15) !important;
+        background-color: transparent;
+        overflow: hidden;
+      }
+
+      /* Specific bold backgrounds for each card */
+      .vmo-card.vision {
+        background-color: #0f2d5e !important;
+      }
+
+      .vmo-card.mission {
+        background-color: #c8860a !important;
+      }
+
+      .vmo-card.objective {
+        background-color: #1a6b9a !important;
+      }
+
+      /* All text white across cards */
+      .vmo-card.vision h3, .vmo-card.vision p,
+      .vmo-card.mission h3, .vmo-card.mission p,
+      .vmo-card.objective h3, .vmo-card.objective p {
+        color: #ffffff !important;
+      }
+
+      .vmo-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 16px;
+        font-family: var(--font-heading);
+      }
+
+      .vmo-card p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+
+      /* Icons styling */
+      .vmo-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 !important;
+      }
+
+      .vmo-card.vision .vmo-icon {
+        color: #f0c040 !important;
+        background: transparent !important;
+      }
+
+      .vmo-card.mission .vmo-icon {
+        color: #ffffff !important;
+        background: transparent !important;
+      }
+
+      .vmo-card.objective .vmo-icon {
+        color: #f0c040 !important;
+        background: transparent !important;
+      }
+
+      .vmo-icon svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      /* Scroll entrance animations */
+      .vmo-card.vision.scroll-element-animation {
+        opacity: 0;
+        transform: translateX(-60px);
+        transition: opacity 0.7s ease-out 0ms, transform 0.7s ease-out 0ms, filter 0.3s ease, box-shadow 0.3s ease;
+      }
+      .vmo-card.vision.scroll-element-animation.animation-active {
+        opacity: 1;
+        transform: translateX(0);
+        transition: opacity 0.7s ease-out 0ms, transform 0.3s ease 0ms, filter 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .vmo-card.mission.scroll-element-animation {
+        opacity: 0;
+        transform: scale(0.9);
+        transition: opacity 0.7s ease-out 150ms, transform 0.7s ease-out 150ms, filter 0.3s ease, box-shadow 0.3s ease;
+      }
+      .vmo-card.mission.scroll-element-animation.animation-active {
+        opacity: 1;
+        transform: scale(1);
+        transition: opacity 0.7s ease-out 150ms, transform 0.3s ease 0ms, filter 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .vmo-card.objective.scroll-element-animation {
+        opacity: 0;
+        transform: translateX(60px);
+        transition: opacity 0.7s ease-out 300ms, transform 0.7s ease-out 300ms, filter 0.3s ease, box-shadow 0.3s ease;
+      }
+      .vmo-card.objective.scroll-element-animation.animation-active {
+        opacity: 1;
+        transform: translateX(0);
+        transition: opacity 0.7s ease-out 300ms, transform 0.3s ease 0ms, filter 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      /* Hover animations on each card */
+      .vmo-card.animation-active:hover {
+        transform: translateY(-12px) !important;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.22) !important;
+        filter: brightness(1.1) !important;
+      }
+
+      /* 7. FEATURED COURSES Styles */
+      .courses-section {
+        background-color: var(--bg-navy-dark);
+        color: var(--text-light);
+      }
+
+      .courses-section h2 {
+        color: var(--text-light);
+      }
+
+      .courses-section .section-header-centered p {
+        color: rgba(255, 255, 255, 0.75);
+      }
+
+      .courses-grid-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+        gap: 24px;
+        margin-bottom: 50px;
+      }
+
+      .course-block-card {
+        background-color: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 44px;
+        position: relative;
+        overflow: hidden;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 240px;
+      }
+
+      /* Diagonal Accent top-left */
+      .course-gold-stripe {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background-color: var(--accent);
+        transform: rotate(45deg) translate(-42px, -42px);
+        top: 0;
+        left: 0;
+        pointer-events: none;
+      }
+
+      .course-block-card h4 {
+        color: var(--text-light);
+        font-size: 1.35rem;
+        margin-bottom: 12px;
+        font-family: var(--font-heading);
+        z-index: 2;
+        line-height: 1.3;
+      }
+
+      .course-block-card p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.88rem;
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+
+      .course-block-card:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-color: var(--accent);
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+      }
+
+      .btn-course-learn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 700;
+        font-size: 0.72rem;
+        letter-spacing: 0.15em;
+        color: var(--accent);
+        text-transform: uppercase;
+        align-self: flex-start;
+      }
+
+      .btn-course-learn:hover {
+        color: var(--text-light);
+      }
+
+      .courses-footer-btn-wrapper {
+        display: flex;
+        justify-content: center;
+      }
+
+      .btn-viewall {
+        padding: 18px 44px;
+        background-color: var(--accent);
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .btn-viewall:hover {
+        background-color: var(--accent-hover);
+        color: var(--text-light);
+        transform: translateY(-2px);
+      }
+
+      /* 8. WHY CHOOSE US Styles */
+      .whychoose-section {
+        background-color: #ffffff !important;
+      }
+
+      .whychoose-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+
+      .whychoose-item {
+        padding: 36px 32px !important;
+        border: none !important;
+        border-radius: 16px !important;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.15) !important;
+        display: flex;
+        gap: 24px;
+        align-items: flex-start;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease !important;
+      }
+
+      /* Specific colors for the cards */
+      .whychoose-item.expert-faculty {
+        background-color: #0f2d5e !important;
+      }
+      .whychoose-item.certified-programs {
+        background-color: #c8860a !important;
+      }
+      .whychoose-item.modern-facilities {
+        background-color: #1a6b9a !important;
+      }
+      .whychoose-item.career-support {
+        background-color: #0a4d3a !important;
+      }
+
+      /* Why Choose Text and headings */
+      .whychoose-item.expert-faculty h3,
+      .whychoose-item.certified-programs h3,
+      .whychoose-item.modern-facilities h3,
+      .whychoose-item.career-support h3 {
+        color: #ffffff !important;
+      }
+
+      .whychoose-item.expert-faculty p,
+      .whychoose-item.certified-programs p,
+      .whychoose-item.modern-facilities p,
+      .whychoose-item.career-support p {
+        color: rgba(255, 255, 255, 0.85) !important;
+      }
+
+      /* Icons customization */
+      .whychoose-icon {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .whychoose-item.expert-faculty .whychoose-icon {
+        color: #f0c040 !important;
+      }
+      .whychoose-item.certified-programs .whychoose-icon {
+        color: #ffffff !important;
+      }
+      .whychoose-item.modern-facilities .whychoose-icon {
+        color: #f0c040 !important;
+      }
+      .whychoose-item.career-support .whychoose-icon {
+        color: #f0c040 !important;
+      }
+
+      .whychoose-icon svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .whychoose-info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .whychoose-info h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        font-family: var(--font-heading);
+      }
+
+      .whychoose-info p {
+        font-size: 0.9rem;
+        line-height: 1.65;
+      }
+
+      /* Entrance Animations on-scroll using Intersection Observer */
+      .whychoose-item.scroll-element-animation {
+        opacity: 0;
+        transform: translateY(40px);
+        will-change: opacity, transform;
+      }
+
+      /* Staggered transition delays with 0.65s ease-out duration */
+      .whychoose-item.expert-faculty.scroll-element-animation {
+        transition: opacity 0.65s cubic-bezier(0.25, 1, 0.5, 1) 0ms, transform 0.65s cubic-bezier(0.25, 1, 0.5, 1) 0ms, filter 0.3s ease, box-shadow 0.3s ease;
+      }
+      .whychoose-item.certified-programs.scroll-element-animation {
+        transition: opacity 0.65s cubic-bezier(0.25, 1, 0.5, 1) 120ms, transform 0.65s cubic-bezier(0.25, 1, 0.5, 1) 120ms, filter 0.3s ease, box-shadow 0.3s ease;
+      }
+      .whychoose-item.modern-facilities.scroll-element-animation {
+        transition: opacity 0.65s cubic-bezier(0.25, 1, 0.5, 1) 240ms, transform 0.65s cubic-bezier(0.25, 1, 0.5, 1) 240ms, filter 0.3s ease, box-shadow 0.3s ease;
+      }
+      .whychoose-item.career-support.scroll-element-animation {
+        transition: opacity 0.65s cubic-bezier(0.25, 1, 0.5, 1) 360ms, transform 0.65s cubic-bezier(0.25, 1, 0.5, 1) 360ms, filter 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      /* Active animation state resets translateY and opacity */
+      .whychoose-item.scroll-element-animation.animation-active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Transition overrides when hovering to make hover responsive and fast */
+      .whychoose-item.scroll-element-animation.animation-active.expert-faculty {
+        transition: opacity 0.65s cubic-bezier(0.25, 1, 0.5, 1) 0ms, transform 0.3s ease 0ms, filter 0.3s ease, box-shadow 0.3s ease;
+      }
+      .whychoose-item.scroll-element-animation.animation-active.certified-programs {
+        transition: opacity 0.65s cubic-bezier(0.25, 1, 0.5, 1) 120ms, transform 0.3s ease 0ms, filter 0.3s ease, box-shadow 0.3s ease;
+      }
+      .whychoose-item.scroll-element-animation.animation-active.modern-facilities {
+        transition: opacity 0.65s cubic-bezier(0.25, 1, 0.5, 1) 240ms, transform 0.3s ease 0ms, filter 0.3s ease, box-shadow 0.3s ease;
+      }
+      .whychoose-item.scroll-element-animation.animation-active.career-support {
+        transition: opacity 0.65s cubic-bezier(0.25, 1, 0.5, 1) 360ms, transform 0.3s ease 0ms, filter 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      /* Hover animation */
+      .whychoose-item.animation-active:hover {
+        transform: translateY(-10px) !important;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.22) !important;
+        filter: brightness(1.1) !important;
+      }
+
+      /* 9. FAQS SECTION Styles */
+      .faqs-section {
+        background-color: var(--bg-white);
+      }
+
+      .faqs-grid {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 80px;
+        align-items: stretch;
+      }
+
+      .faqs-image-placeholder {
+        background-color: var(--primary);
+        border: 1px solid var(--border-color);
+        position: relative;
+        overflow: hidden;
+        min-height: 420px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .faqs-image-pattern {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        opacity: 0.06;
+        background-image: repeating-radial-gradient(circle, #fff, #fff 1px, transparent 1px, transparent 20px);
+      }
+
+      .faqs-image-content {
+        position: absolute;
+        text-align: center;
+        padding: 30px;
+        color: var(--text-light);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .faqs-image-content svg {
+        width: 50px;
+        height: 50px;
+        color: var(--accent);
+      }
+
+      .faqs-image-content span {
+        font-family: var(--font-heading);
+        font-size: 1.4rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+      }
+
+      .faqs-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .faq-item {
+        border: 1px solid var(--border-color);
+        background-color: var(--bg-white);
+        transition: var(--transition);
+      }
+
+      .faq-item:hover {
+        border-color: rgba(15, 45, 94, 0.25);
+      }
+
+      .faq-header {
+        padding: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .faq-question {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--primary);
+        line-height: 1.4;
+      }
+
+      .faq-arrow {
+        width: 18px;
+        height: 18px;
+        color: var(--accent);
+        transition: transform 0.4s ease;
+        flex-shrink: 0;
+      }
+
+      .faq-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      .faq-answer {
+        padding: 0 24px 24px 24px;
+        font-size: 0.92rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+        border-top: 1px solid transparent;
+      }
+
+      /* Active FAQ item */
+      .faq-item.active {
+        border-color: var(--accent);
+        box-shadow: 0 10px 25px rgba(15, 45, 94, 0.03);
+      }
+
+      .faq-item.active .faq-arrow {
+        transform: rotate(180deg);
+      }
+
+      .faq-item.active .faq-answer {
+        border-top-color: var(--border-color);
+      }
+
+      /* 10. CTA BANNER Styles */
+      .cta-section {
+        padding: 0;
+        border-bottom: none;
+        overflow: hidden;
+      }
+
+      .cta-wrapper {
+        position: relative;
+        min-height: 280px;
+        display: flex;
+      }
+
+      .cta-bg-left {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: var(--primary);
+        z-index: 1;
+      }
+
+      /* CSS clip-path diagonal overlay split */
+      .cta-bg-right {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: var(--accent);
+        clip-path: polygon(78% 0, 100% 0, 100% 100%, 62% 100%);
+        z-index: 2;
+        transition: var(--transition-slow);
+      }
+
+      .cta-section:hover .cta-bg-right {
+        clip-path: polygon(74% 0, 100% 0, 100% 100%, 58% 100%);
+      }
+
+      .cta-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 72px 24px;
+        z-index: 3;
+      }
+
+      .cta-text-left {
+        max-width: 650px;
+      }
+
+      .cta-text-left h2 {
+        font-size: 2.8rem;
+        color: var(--text-light);
+        margin-bottom: 12px;
+      }
+
+      .cta-text-left p {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.85);
+        font-weight: 300;
+      }
+
+      .cta-buttons-right {
+        display: flex;
+        gap: 16px;
+        flex-shrink: 0;
+      }
+
+      .btn-cta-solid {
+        padding: 16px 36px;
+        background-color: var(--text-light);
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 0.72rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        border: 1px solid var(--text-light);
+      }
+
+      .btn-cta-solid:hover {
+        background-color: transparent;
+        color: var(--text-light);
+        transform: translateY(-2px);
+      }
+
+      .btn-cta-outline {
+        padding: 16px 36px;
+        background-color: transparent;
+        color: var(--text-light);
+        font-weight: 700;
+        font-size: 0.72rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+
+      .btn-cta-outline:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+        border-color: #ffffff;
+        transform: translateY(-2px);
+      }
+
+      /* 11. FOOTER Styles */
+      .footer {
+        background-color: var(--primary);
+        color: var(--text-light);
+        padding: 90px 0 0 0;
+        border-bottom: none;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr 1fr 1fr;
+        gap: 50px;
+        margin-bottom: 75px;
+      }
+
+      .footer-col-1 {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer-logo-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .footer-logo-badge {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.04);
+        border: 1.5px solid var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        font-family: var(--font-heading);
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .footer-logo-text {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-light);
+        line-height: 1;
+      }
+
+      .footer-logo-text span {
+        font-family: var(--font-body);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        color: var(--accent);
+        text-transform: uppercase;
+        display: block;
+        margin-top: 4px;
+      }
+
+      .footer .tagline {
+        font-size: 0.88rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 28px;
+        line-height: 1.6;
+      }
+
+      .footer-social-row {
+        display: flex;
+        gap: 12px;
+      }
+
+      .footer-title {
+        font-family: var(--font-body);
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--text-light);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        margin-bottom: 28px;
+      }
+
+      .footer-title::after {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 1px;
+        background-color: var(--accent);
+        margin-top: 10px;
+      }
+
+      .footer-links-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        font-size: 0.9rem;
+      }
+
+      .footer-links-list a {
+        color: rgba(255, 255, 255, 0.65);
+      }
+
+      .footer-links-list a::before {
+        content: '◈';
+        color: var(--accent);
+        font-size: 0.6rem;
+        opacity: 0;
+        transform: translateX(-4px);
+        transition: var(--transition);
+        display: inline-block;
+        margin-right: 8px;
+      }
+
+      .footer-links-list a:hover {
+        color: var(--text-light);
+        padding-left: 4px;
+      }
+
+      .footer-links-list a:hover::before {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* Contact Detail Cards */
+      .footer-contact-block {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 0.9rem;
+      }
+
+      .footer-contact-row {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+
+      .footer-contact-row svg {
+        width: 18px;
+        height: 18px;
+        color: var(--accent);
+        flex-shrink: 0;
+        margin-top: 3px;
+      }
+
+      .footer-contact-label {
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.6;
+      }
+
+      .footer-googlemap-link {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-top: 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .footer-googlemap-link:hover {
+        color: var(--text-light);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.08); /* thin top border */
+        padding: 30px 0;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.15);
+      }
+
+      .footer-bottom p {
+        font-size: 0.75rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+      }
+
+      /* Scroll Entrance Animation via Intersection Observer (Fade up) */
+      .scroll-element-animation {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 1s cubic-bezier(0.25, 0.8, 0.25, 1), transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+        will-change: opacity, transform;
+      }
+
+      .scroll-element-animation.animation-active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* --- MEDIA QUERIES (RESPONSIVENESS) --- */
+      @media screen and (max-width: 1024px) {
+        section {
+          padding: 80px 0;
+        }
+
+        .hero {
+          padding: 90px 4%;
+        }
+
+        .hero .container {
+          grid-template-columns: 1fr;
+          gap: 60px;
+          text-align: center;
+        }
+
+        .hero-divider {
+          display: none;
+        }
+
+        .hero-title {
+          font-size: 3.6rem;
+        }
+
+        .hero-subtext {
+          margin: 0 auto 40px auto;
+        }
+
+        .hero-buttons {
+          justify-content: center;
+        }
+
+        .frosted-stats-card {
+          max-width: 480px;
+          margin: 0 auto;
+        }
+
+        .about-snapshot .container {
+          grid-template-columns: 1fr;
+          gap: 50px;
+        }
+
+        .about-placeholder-container {
+          max-width: 500px;
+          margin: 0 auto;
+          width: 100%;
+        }
+
+        .about-content-right {
+          text-align: center;
+        }
+
+        .btn-readmore {
+          align-self: center;
+        }
+
+        .campus-card-wide {
+          grid-template-columns: 1fr;
+          max-width: 600px;
+        }
+
+        .campus-image-placeholder {
+          min-height: 240px;
+        }
+
+        .vmo-grid {
+          grid-template-columns: 1fr;
+          border: none;
+          gap: 24px;
+        }
+
+        .vmo-card {
+          border: none !important;
+          margin-bottom: 0;
+        }
+
+        .courses-grid-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .whychoose-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .faqs-grid {
+          grid-template-columns: 1fr;
+          gap: 50px;
+        }
+
+        .faqs-image-placeholder {
+          max-width: 500px;
+          margin: 0 auto;
+          width: 100%;
+          min-height: 240px;
+        }
+
+        .cta-container {
+          flex-direction: column;
+          text-align: center;
+          gap: 40px;
+        }
+
+        .cta-bg-right {
+          clip-path: polygon(0 80%, 100% 60%, 100% 100%, 0% 100%);
+        }
+
+        .cta-section:hover .cta-bg-right {
+          clip-path: polygon(0 75%, 100% 55%, 100% 100%, 0% 100%);
+        }
+
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 40px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .top-bar {
+          display: none; /* Neatly skip top bar elements for mobile density */
+        }
+
+        .hamburger-toggle {
+          display: block;
+        }
+
+        .navbar-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: var(--bg-white);
+          flex-direction: column;
+          gap: 0;
+          padding: 16px 0;
+          box-shadow: 0 10px 30px rgba(15, 45, 94, 0.08);
+          z-index: 999;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+          border-top: 1px solid var(--border-color);
+        }
+
+        .navbar-menu.menu-active {
+          max-height: 440px;
+        }
+
+        .navbar-menu li {
+          width: 100%;
+          text-align: center;
+        }
+
+        .navbar-link {
+          display: block;
+          padding: 14px 24px;
+          border-bottom: 1px solid rgba(15, 45, 94, 0.03);
+          font-size: 0.8rem;
+          letter-spacing: 0.15em;
+        }
+
+        .navbar-link::after {
+          display: none;
+        }
+
+        .hero-title {
+          font-size: 2.8rem;
+        }
+
+        .courses-grid-grid {
+          grid-template-columns: 1fr;
+          max-width: 440px;
+          margin: 0 auto 40px auto;
+        }
+
+        .whychoose-grid {
+          grid-template-columns: 1fr;
+          max-width: 440px;
+          margin: 0 auto;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+          gap: 48px;
+        }
+
+        .footer-col-1 {
+          align-items: center;
+        }
+
+        .footer-logo-row {
+          justify-content: center;
+        }
+
+        .footer-title::after {
+          margin: 10px auto 0 auto;
+        }
+
+        .footer-contact-row {
+          justify-content: center;
+        }
+
+        .badge-est-tag {
+          left: 10px;
+        }
+      }
+
+      /* --- PREMIUM DESIGN UPGRADE --- */
+      /* 1. Frosted Glass Navbar Background */
+      .navbar {
+        background-color: rgba(255, 255, 255, 0.92) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+      }
+      .navbar.scrolled {
+        background-color: rgba(255, 255, 255, 0.92) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+      }
+
+      /* 2. Interactive Navigation underlines */
+      .navbar-link::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: -4px !important;
+        left: 0 !important;
+        width: 0 !important;
+        height: 2px !important;
+        background-color: #c8860a !important;
+        transition: 0.3s ease !important;
+      }
+      .navbar-link.active::after,
+      .navbar-link:hover::after {
+        width: 100% !important;
+      }
+
+      /* 3. Global Pill Shaped Buttons (50px border-radius) */
+      button, 
+      .btn, 
+      .btn-enroll, 
+      .btn-explore, 
+      .filter-tab, 
+      .submit-btn, 
+      .button, 
+      .load-more-btn, 
+      .prev-btn, 
+      .next-btn,
+      .cta-button,
+      .courses-filter-btn {
+        border-radius: 50px !important;
+      }
+
+      /* 4. Two-Layer Card Shadows (default vs hover) */
+      .dept-card, 
+      .course-card, 
+      .blog-card, 
+      .blog-post-card, 
+      .facility-card, 
+      .stat-card, 
+      .feature-card, 
+      .benefit-card, 
+      .story-card, 
+      .gallery-item, 
+      .instructor-card, 
+      .contact-info-card,
+      .director-profile-box {
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -1px rgba(0,0,0,0.06) !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease !important;
+      }
+      .dept-card:hover, 
+      .course-card:hover, 
+      .blog-card:hover, 
+      .blog-post-card:hover, 
+      .facility-card:hover, 
+      .stat-card:hover, 
+      .feature-card:hover, 
+      .benefit-card:hover, 
+      .story-card:hover, 
+      .gallery-item:hover, 
+      .instructor-card:hover, 
+      .contact-info-card:hover,
+      .director-profile-box:hover {
+        box-shadow: 0 20px 40px -5px rgba(0,0,0,0.20), 0 10px 15px -5px rgba(0,0,0,0.08) !important;
+      }
+
+      /* 5. Heading 2 Adjustments */
+      h2, 
+      .section-header-centered h2, 
+      section h2 {
+        letter-spacing: -0.5px !important;
+        line-height: 1.15 !important;
+      }
+
+      /* 6. Gold label pills above headings */
+      .section-label {
+        letter-spacing: 2.5px !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- 1. TOP BAR -->
+    <div class="top-bar">
+      <div class="container">
+        <div class="top-bar-left">
+          <div class="top-bar-item">
+            <!-- Mail Icon -->
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <a href="mailto:nbamimahs@gmail.com">nbamimahs@gmail.com</a>
+          </div>
+          <div class="top-bar-item">
+            <!-- Phone Icon -->
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>+923239595643</span>
+          </div>
+        </div>
+        <div class="top-bar-right">
+          <a href="#" class="social-circle-btn" aria-label="Facebook">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="YouTube">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="Instagram">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="TikTok">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. NAVBAR -->
+    <nav class="navbar" id="main-navigation">
+      <div class="container">
+        <div class="navbar-logo-area">
+          <div class="navbar-logo-badge">NB</div>
+          <div class="navbar-logo-text">
+            <span class="navbar-logo-title">New Bab-Al-Madina Institute</span>
+            <span class="navbar-logo-tagline">Pioneering Professional Excellence</span>
+          </div>
+        </div>
+        
+        <ul class="navbar-menu" id="nav-dropdown">
+          <li><a href="index.html" class="navbar-link active">Home</a></li>
+          <li><a href="about.html" class="navbar-link">About</a></li>
+          <li><a href="courses.html" class="navbar-link">Courses</a></li>
+          <li><a href="faculty.html" class="navbar-link">Faculty</a></li>
+          <li><a href="gallery.html" class="navbar-link">Gallery</a></li>
+          <li><a href="blog.html" class="navbar-link">Blog</a></li>
+          <li><a href="contact.html" class="navbar-link">Contact</a></li>
+        </ul>
+
+        <button class="hamburger-toggle" id="menu-btn" aria-label="Toggle mobile menu">
+          <!-- Hamburger icon -->
+          <svg style="width: 26px; height: 26px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- 3. HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="hero-gradient"></div>
+      <div class="container">
+        <div class="hero-left">
+          <span class="hero-label animate-label">NBAMIM &amp; AHS — PESHAWAR</span>
+          <h1 class="hero-title">
+            <span class="animate-headline-1" style="display: block;">Know Yourself,</span>
+            <span class="animate-headline-2" style="display: block;">Grow Yourself,</span>
+            <span class="animate-headline-3" style="display: block;">&amp; <span class="hero-title-accent">Give Yourself.</span></span>
+          </h1>
+          <p class="hero-subtext animate-subtext">
+            Empowering students through Allied Health Sciences, English Language Programs, and Computer &amp; IT Courses in the heart of Peshawar.
+          </p>
+          <div class="hero-buttons animate-buttons">
+            <a href="contact.html" class="btn btn-enroll" id="enroll-btn-home">Enroll Now</a>
+            <a href="courses.html" class="btn btn-explore" id="explore-btn-home">Explore Courses</a>
+          </div>
+        </div>
+        <div class="hero-divider animate-divider"></div>
+        <div class="hero-right">
+          <div class="animate-stats-card-container">
+            <div class="frosted-stats-card">
+              <!-- Stat Item 1 -->
+              <div class="hero-stat-row">
+                <div class="hero-stat-icon">
+                  <!-- Graduate / Cap Icon -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+                  </svg>
+                </div>
+                <div class="hero-stat-info">
+                  <span class="hero-stat-number" data-target="500">0+</span>
+                  <span class="hero-stat-text">Active Students</span>
+                </div>
+              </div>
+              
+              <!-- Stat Item 2 -->
+              <div class="hero-stat-row">
+                <div class="hero-stat-icon">
+                  <!-- Book/Course Icon -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                  </svg>
+                </div>
+                <div class="hero-stat-info">
+                  <span class="hero-stat-number" data-target="20">0+</span>
+                  <span class="hero-stat-text">Courses Offered</span>
+                </div>
+              </div>
+              
+              <!-- Stat Item 3 -->
+              <div class="hero-stat-row">
+                <div class="hero-stat-icon">
+                  <!-- Award Icon -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="8" r="7"></circle>
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                  </svg>
+                </div>
+                <div class="hero-stat-info">
+                  <span class="hero-stat-number" data-target="5">0+</span>
+                  <span class="hero-stat-text">Years of Excellence</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ABOUT SNAPSHOT -->
+    <section class="about-snapshot scroll-element-animation" id="about-intro">
+      <div class="container">
+        <div class="about-placeholder-container">
+          <div class="about-styled-placeholder">
+            <div class="about-placeholder-design"></div>
+            <div class="about-placeholder-content">
+              <!-- Book Icon representing Knowledge -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M12 21c-1.2-1.2-3-2-5-2s-3.8.8-5 2V4c1.2-1.2 3-2 5-2s3.8.8 5 2"></path>
+                <path d="M12 21c1.2-1.2 3-2 5-2s3.8.8 5 2V4c-1.2-1.2-3-2-5-2s-3.8.8-5 2"></path>
+              </svg>
+              <span>NBAMIM &amp; AHS Campus Gateway</span>
+            </div>
+          </div>
+          <div class="about-outer-gold-border"></div>
+          <div class="badge-est-tag">
+            <span>Established</span>
+            <span>2020</span>
+          </div>
+        </div>
+        
+        <div class="about-content-right">
+          <span class="section-label">Who Are We</span>
+          <h2>A Premier Gateway to Professional Growth</h2>
+          <div class="about-paragraphs">
+            <p>
+              New Bab-Al-Madina Institute of Management and Allied Health Sciences (NBAMIM &amp; AHS) stands as a prominent educational lighthouse in Peshawar. Located strategically by Hashtnagri BRT Station, we bridge the gap between academic education and successful industrial careers.
+            </p>
+            <p>
+              We provide meticulously designed degrees and certifications across Allied Health Sciences, highly immersive English Language Programs, and modern computer applications. With an elegant mix of seasoned medical instructors, tech-expert developers, and certified linguists, our campus is recognized for turning aspiring candidates into successful, globally capable professionals.
+            </p>
+          </div>
+          <a href="about.html" class="btn-readmore">
+            Read Our Legacy <span class="readmore-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CAMPUS SECTION -->
+    <section class="campus-section scroll-element-animation" id="campus-tour">
+      <div class="container">
+        <div class="section-header-centered">
+          <span class="section-label">Our Location</span>
+          <h2>Our Campus</h2>
+          <p>Conveniently located in the bustling center of Peshawar, providing easy accessibility for all students.</p>
+        </div>
+        
+        <div class="campus-grid-wrap">
+          <div class="campus-card-wide">
+            <div class="campus-image-placeholder">
+              <div class="campus-image-pattern"></div>
+              <div class="campus-image-text">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span>Peshawar Campus Quadrangle</span>
+              </div>
+            </div>
+            
+            <div class="campus-content-side">
+              <div class="campus-title-block">
+                <span>Central Peshawar Campus</span>
+                <h3>Hashtnagri BRT Station Campus</h3>
+              </div>
+              
+              <div class="campus-details">
+                <div class="campus-detail-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Hashtnagri BRT Station, Behind Rahim Medical Center, Peshawar, KP, Pakistan</span>
+                </div>
+                
+                <div class="campus-detail-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <span>+923239595643</span>
+                </div>
+
+                <div class="campus-detail-row">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <span>nbamimahs@gmail.com</span>
+                </div>
+              </div>
+              
+              <a href="https://maps.google.com" target="_blank" class="btn btn-map">View on Map</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. VISION / MISSION / OBJECTIVES -->
+    <section class="vmo-section" id="philosophy">
+      <div class="container">
+        <div class="vmo-grid">
+          <!-- Vision Card -->
+          <div class="vmo-card vision scroll-element-animation">
+            <div class="vmo-icon">
+              <!-- Outline star/eye symbol represent Vision -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <h3>Our Vision</h3>
+            <p>To become the leading institute of allied health and professional education in Khyber Pakhtunkhwa, establishing benchmarks of certified skill integration.</p>
+          </div>
+          
+          <!-- Mission Card -->
+          <div class="vmo-card mission scroll-element-animation">
+            <div class="vmo-icon">
+              <!-- Mountain Peak representation for Mission -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3>Our Mission</h3>
+            <p>To empower individuals with certified, career-ready skills in health sciences, English language, and information technology with hands-on labs.</p>
+          </div>
+          
+          <!-- Objective Card -->
+          <div class="vmo-card objective scroll-element-animation">
+            <div class="vmo-icon">
+              <!-- Dartboard / Target for Objectives -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="6"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+            </div>
+            <h3>Our Objective</h3>
+            <p>To foster academic excellence, professional development, and community health awareness through responsive quality training and mentorship.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FEATURED COURSES -->
+    <section class="courses-section scroll-element-animation" id="featured-modules">
+      <div class="container">
+        <div class="section-header-centered">
+          <span class="section-label">Professional Pathways</span>
+          <h2>Featured Courses</h2>
+          <p>Discover specialized certified courses structured on comprehensive lab sessions, spoken fluency modules, and modern programming foundations.</p>
+        </div>
+        
+        <div class="courses-grid-grid">
+          <!-- Course Card 1 -->
+          <div class="course-block-card">
+            <div class="course-gold-stripe"></div>
+            <div>
+              <h4>Spoken English Crash Course</h4>
+              <p>Develop native clarity and structural confidence to communicate fluidly in professional industries.</p>
+            </div>
+            <a href="courses.html" class="btn-course-learn">
+              Learn More
+              <svg style="width: 12px; height: 12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Course Card 2 -->
+          <div class="course-block-card">
+            <div class="course-gold-stripe"></div>
+            <div>
+              <h4>English Diploma Program</h4>
+              <p>An extensive academic and comprehensive grammar studies course spanning speech forms and writing.</p>
+            </div>
+            <a href="courses.html" class="btn-course-learn">
+              Learn More
+              <svg style="width: 12px; height: 12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Course Card 3 -->
+          <div class="course-block-card">
+            <div class="course-gold-stripe"></div>
+            <div>
+              <h4>IELTS Preparation</h4>
+              <p>Intensive modules aimed at securing 7.5+ band marks for certified emigration and admissions.</p>
+            </div>
+            <a href="courses.html" class="btn-course-learn">
+              Learn More
+              <svg style="width: 12px; height: 12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Course Card 4 -->
+          <div class="course-block-card">
+            <div class="course-gold-stripe"></div>
+            <div>
+              <h4>English Conversation &amp; Communication Skills</h4>
+              <p>Practical communication exercises, debates, and accent neutralization for business sectors.</p>
+            </div>
+            <a href="courses.html" class="btn-course-learn">
+              Learn More
+              <svg style="width: 12px; height: 12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Course Card 5 -->
+          <div class="course-block-card">
+            <div class="course-gold-stripe"></div>
+            <div>
+              <h4>Diploma in Information Technology (DIT)</h4>
+              <p>Practical syllabus covering database management, office automation, web coding, and systems security.</p>
+            </div>
+            <a href="courses.html" class="btn-course-learn">
+              Learn More
+              <svg style="width: 12px; height: 12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Course Card 6 -->
+          <div class="course-block-card">
+            <div class="course-gold-stripe"></div>
+            <div>
+              <h4>Allied Health Sciences Program</h4>
+              <p>Certified clinical lab technology instruction, diagnostics, pharmacy, and patient assistance routines.</p>
+            </div>
+            <a href="courses.html" class="btn-course-learn">
+              Learn More
+              <svg style="width: 12px; height: 12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="courses-footer-btn-wrapper">
+          <a href="courses.html" class="btn btn-viewall">View All Courses</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. WHY CHOOSE US -->
+    <section class="whychoose-section" id="pillars">
+      <div class="container">
+        <div class="section-header-centered">
+          <span class="section-label">Why NBAMIM &amp; AHS</span>
+          <h2>Key Institutional Pillars</h2>
+          <p>We combine modern labs with structured learning pathways to cultivate absolute professional readiness.</p>
+        </div>
+        
+        <div class="whychoose-grid">
+          <!-- Item 1 -->
+          <div class="whychoose-item scroll-element-animation expert-faculty">
+            <div class="whychoose-icon">
+              <!-- Expert Faculty Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="whychoose-info">
+              <h3>Expert Faculty</h3>
+              <p>Learn from fully experienced health experts, registered university educators, and software engineers with direct corporate experiences.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="whychoose-item scroll-element-animation certified-programs">
+            <div class="whychoose-icon">
+              <!-- Certified Programs Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="9 11 12 14 22 4"></polyline>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+              </svg>
+            </div>
+            <div class="whychoose-info">
+              <h3>Certified Programs</h3>
+              <p>Receive completely certified qualifications recognized across national medical councils and global licensing systems.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="whychoose-item scroll-element-animation modern-facilities">
+            <div class="whychoose-icon">
+              <!-- Modern Academic Labs Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div class="whychoose-info">
+              <h3>Modern Facilities</h3>
+              <p>Our campus possesses air-conditioned visual rooms and optimized clinical labs containing standard clinical analysis devices.</p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="whychoose-item scroll-element-animation career-support">
+            <div class="whychoose-icon">
+              <!-- Career Support Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <div class="whychoose-info">
+              <h3>Career Support</h3>
+              <p>Benefit from our robust placement connections, real internships, and custom job prep counseling to build smooth careers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FAQS -->
+    <section class="faqs-section scroll-element-animation" id="registry-faqs">
+      <div class="container">
+        <div class="faqs-grid">
+          <div class="faqs-image-placeholder">
+            <div class="faqs-image-pattern"></div>
+            <div class="faqs-image-content">
+              <!-- Message Question icon symbol -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+              <span>Admission FAQs</span>
+            </div>
+          </div>
+          
+          <div class="faqs-right">
+            <span class="section-label">Got Questions?</span>
+            <div class="faqs-list">
+              <!-- Question 1 -->
+              <div class="faq-item">
+                <div class="faq-header">
+                  <span class="faq-question">How do I apply for admission?</span>
+                  <div class="faq-arrow">
+                    <svg style="width:100%; height:100%;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </div>
+                </div>
+                <div class="faq-body">
+                  <div class="faq-answer">
+                    You can initiate registration in person by visiting our Peshawar Hashtnagri campus, or via the online form inside contact.html. Walk into our counselor office with copies of your latest certificates to select your batches.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Question 2 -->
+              <div class="faq-item">
+                <div class="faq-header">
+                  <span class="faq-question">When does the next batch start?</span>
+                  <div class="faq-arrow">
+                    <svg style="width:100%; height:100%;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </div>
+                </div>
+                <div class="faq-body">
+                  <div class="faq-answer">
+                    New cohorts commence twice annually during Spring and Autumn semesters. Admissions are currently open for current sessions, and classes are filled in linear order.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Question 3 -->
+              <div class="faq-item">
+                <div class="faq-header">
+                  <span class="faq-question">What documents are required for enrollment?</span>
+                  <div class="faq-arrow">
+                    <svg style="width:100%; height:100%;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </div>
+                </div>
+                <div class="faq-body">
+                  <div class="faq-answer">
+                    You need to bring photocopies of your matriculation or secondary high school mark transcripts, your CNIC or B-Form, 3 passport-sized background photos, and completed registration fees.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Question 4 -->
+              <div class="faq-item">
+                <div class="faq-header">
+                  <span class="faq-question">How many classes are there per week?</span>
+                  <div class="faq-arrow">
+                    <svg style="width:100%; height:100%;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </div>
+                </div>
+                <div class="faq-body">
+                  <div class="faq-answer">
+                    The general stream holds classes 4 to 5 days weekly. Our English speed classes run on intensive alternating schedules to provide flexible morning or evening combinations.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Question 5 -->
+              <div class="faq-item">
+                <div class="faq-header">
+                  <span class="faq-question">Are certificates government recognized?</span>
+                  <div class="faq-arrow">
+                    <svg style="width:100%; height:100%;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </div>
+                </div>
+                <div class="faq-body">
+                  <div class="faq-answer">
+                    Yes, all clinical Allied Health programs and IT diplomas are governed under recognized state licensing bureaus and fully support valid registration processes.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Question 6 -->
+              <div class="faq-item">
+                <div class="faq-header">
+                  <span class="faq-question">Is there a fee installment option?</span>
+                  <div class="faq-arrow">
+                    <svg style="width:100%; height:100%;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </div>
+                </div>
+                <div class="faq-body">
+                  <div class="faq-answer">
+                    To make premium training accessible, our accounts desk offers flexible partial installments covering monthly partitions. Consult with accounts during registration to select your layout.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. CTA BANNER -->
+    <section class="cta-section" id="register-trigger">
+      <div class="cta-wrapper">
+        <div class="cta-bg-left"></div>
+        <div class="cta-bg-right"></div>
+        <div class="cta-container">
+          <div class="cta-text-left">
+            <h2>Ready to Begin Your Journey?</h2>
+            <p>Join hundreds of students building their future at NBAMIM &amp; AHS with certified systems.</p>
+          </div>
+          <div class="cta-buttons-right">
+            <a href="contact.html" class="btn btn-cta-solid">Apply Now</a>
+            <a href="contact.html" class="btn btn-cta-outline">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. FOOTER -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <!-- Col 1 -->
+        <div class="footer-col-1">
+          <div class="footer-logo-row">
+            <div class="footer-logo-badge">NB</div>
+            <div class="footer-logo-text">
+              New Bab-Al-Madina Institute
+              <span>Pioneering Professional Excellence</span>
+            </div>
+          </div>
+          <p class="tagline">
+            Bringing elite clinical studies, technology advancements, and global masteries together to secure regional professional success.
+          </p>
+          <div class="footer-social-row">
+            <a href="#" class="social-circle-btn" aria-label="Facebook">
+              <svg class="social-icon" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-circle-btn" aria-label="YouTube">
+              <svg class="social-icon" viewBox="0 0 24 24">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+            <a href="#" class="social-circle-btn" aria-label="Instagram">
+              <svg class="social-icon" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-circle-btn" aria-label="TikTok">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div>
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div>
+          <h3 class="footer-title">Our Courses</h3>
+          <ul class="footer-links-list">
+            <li><a href="courses.html">Spoken English</a></li>
+            <li><a href="courses.html">English Diploma</a></li>
+            <li><a href="courses.html">IELTS Preparation</a></li>
+            <li><a href="courses.html">English Conversation</a></li>
+            <li><a href="courses.html">DIT (Information Tech)</a></li>
+            <li><a href="courses.html">Allied Health Sciences</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 -->
+        <div class="footer-contact-block">
+          <h3 class="footer-title">Contact Info</h3>
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <div class="footer-contact-label">
+              Hashtnagri BRT Station, Behind Rahim Medical Center, Peshawar, Pakistan
+            </div>
+          </div>
+          
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <div class="footer-contact-label">+923239595643</div>
+          </div>
+
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <div class="footer-contact-label">nbamimahs@gmail.com</div>
+          </div>
+
+          <a href="https://maps.google.com" target="_blank" class="footer-googlemap-link">
+            Open in Google Maps
+            <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <polyline points="9 6 18 6 18 15"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- bottom bar -->
+      <div class="footer-bottom">
+        <p>© 2025 NBAMIM &amp; AHS. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Interactive script for dynamic components -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const navbar = document.getElementById('main-navigation');
+        const hamburgerBtn = document.getElementById('menu-btn');
+        const navDropdown = document.getElementById('nav-dropdown');
+        const faqHeaders = document.querySelectorAll('.faq-header');
+
+        // Sticky Navbar effect on scroll
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 40) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+
+        // Hamburger dropdown menu toggle
+        hamburgerBtn.addEventListener('click', () => {
+          navDropdown.classList.toggle('menu-active');
+        });
+
+        // Interactive FAQs Accordion (rotate arrows and smooth slide)
+        faqHeaders.forEach(header => {
+          header.addEventListener('click', () => {
+            const parentItem = header.parentElement;
+            const bodyContent = parentItem.querySelector('.faq-body');
+            const isActive = parentItem.classList.contains('active');
+
+            // Close all other items
+            document.querySelectorAll('.faq-item').forEach(item => {
+              item.classList.remove('active');
+              item.querySelector('.faq-body').style.maxHeight = null;
+            });
+
+            if (!isActive) {
+              parentItem.classList.add('active');
+              bodyContent.style.maxHeight = bodyContent.scrollHeight + "px";
+            }
+          });
+        });
+
+        // Scroll Entrance Animation (fade-in-up triggering on scroll viewport entrance)
+        const scrollAnimateElements = document.querySelectorAll('.scroll-element-animation');
+        
+        const observerOptions = {
+          root: null,
+          threshold: 0.15,
+          rootMargin: "0px 0px -40px 0px"
+        };
+
+        const scrollObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animation-active');
+              scrollObserver.unobserve(entry.target); // Animate only once per load
+            }
+          });
+        }, observerOptions);
+
+        scrollAnimateElements.forEach(el => {
+          scrollObserver.observe(el);
+        });
+
+        // 1. Subtle Parallax effect on mouse move over hero section
+        const heroSection = document.getElementById('home');
+        const heroGradient = document.querySelector('.hero-gradient');
+        
+        if (heroSection && heroGradient) {
+          heroSection.addEventListener('mousemove', (e) => {
+            const rect = heroSection.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+            const y = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+            
+            // Move range: max 20px
+            const moveX = x * 20;
+            const moveY = y * 20;
+            
+            heroGradient.style.transform = `translate(${moveX}px, ${moveY}px)`;
+          });
+          
+          heroSection.addEventListener('mouseleave', () => {
+            heroGradient.style.transform = `translate(0px, 0px)`;
+          });
+        }
+
+        // 2. Counter Animation triggering when the section enters the viewport
+        const statsCard = document.querySelector('.frosted-stats-card');
+        const counters = document.querySelectorAll('.hero-stat-number');
+        
+        const animateCounters = () => {
+          const duration = 2000; // 2 seconds
+          const intervalTime = 20; // roughly 50fps
+          
+          counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            let elapsed = 0;
+            
+            const interval = setInterval(() => {
+              elapsed += intervalTime;
+              const progress = Math.min(elapsed / duration, 1);
+              
+              // Easing function: ease-out quad
+              const easeProgress = progress * (2 - progress);
+              const currentValue = Math.floor(easeProgress * target);
+              
+              counter.textContent = currentValue + '+';
+              
+              if (progress >= 1) {
+                counter.textContent = target + '+';
+                clearInterval(interval);
+              }
+            }, intervalTime);
+          });
+        };
+
+        if (statsCard) {
+          const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                animateCounters();
+                statsObserver.unobserve(entry.target);
+              }
+            });
+          }, {
+            root: null,
+            threshold: 0.1
+          });
+          statsObserver.observe(statsCard);
+        } else {
+          // Fallback if element not found
+          setTimeout(animateCounters, 1200);
+        }
+
+        // 3. Button Click Press Animation and Ripple Effect on click
+        const enrollBtn = document.getElementById('enroll-btn-home');
+        const exploreBtn = document.getElementById('explore-btn-home');
+        
+        [enrollBtn, exploreBtn].forEach(btn => {
+          if (!btn) return;
+          btn.addEventListener('click', function(e) {
+            const isEnroll = btn.classList.contains('btn-enroll');
+            const animClass = isEnroll ? 'btn-press-enroll-animation' : 'btn-press-explore-animation';
+            const animDuration = isEnroll ? 350 : 250;
+            
+            btn.classList.remove(animClass);
+            void btn.offsetWidth; // force reflow
+            btn.classList.add(animClass);
+            
+            setTimeout(() => {
+              btn.classList.remove(animClass);
+            }, animDuration);
+            
+            // Add click ripple
+            const ripple = document.createElement('span');
+            ripple.classList.add('btn-ripple');
+            
+            const rect = btn.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            ripple.style.width = ripple.style.height = `${size}px`;
+            
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+            
+            btn.appendChild(ripple);
+            
+            setTimeout(() => {
+              ripple.remove();
+            }, 500);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

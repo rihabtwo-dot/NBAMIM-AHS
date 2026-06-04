@@ -1,0 +1,2089 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Courses | NBAMIM &amp; AHS - New Bab-Al-Madina Institute</title>
+    
+    <!-- Google Fonts: Editorial & Modern Selection -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS - Pure CSS, Premium High-Contrast Palette -->
+    <style>
+      :root {
+        --primary: #0f2d5e;
+        --secondary: #5ba3d9;
+        --accent: #c8860a;
+        --accent-hover: #b07408;
+        --bg-white: #ffffff;
+        --bg-light: #f0f4f9;            /* Crisp premium gray */
+        --bg-sky-tint: #eaf4fb;         /* Fresh bright tint */
+        --bg-navy-dark: #0a1f3d;        /* Deep clean navy for footer */
+        --text-dark: #2d3748;          /* High contrast, extremely readable body */
+        --text-heading: #0f2d5e;       /* Deep sharp navy */
+        --text-muted: #536685;          /* Well-contrasted description text */
+        --text-light: #ffffff;
+        --border-color: rgba(15, 45, 94, 0.15);
+        
+        --font-heading: 'Playfair Display', Georgia, serif;
+        --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        --transition-slow: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      /* CSS Resets & Foundations */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        height: 100%;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background-color: var(--bg-white);
+        color: var(--text-dark);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        color: var(--text-heading);
+        line-height: 1.25;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+        width: 100%;
+      }
+
+      section {
+        padding: 100px 0;
+        position: relative;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      section.white-section {
+        background-color: #ffffff;
+      }
+
+      section.tint-section-english {
+        background-color: #eaf4fb;
+      }
+
+      section.tint-section-it {
+        background-color: #f0f4f9;
+      }
+
+      /* 1. TOP BAR Styles */
+      .top-bar {
+        background-color: var(--primary);
+        color: var(--text-light);
+        padding: 12px 0;
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .top-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .top-bar-left {
+        display: flex;
+        gap: 32px;
+      }
+
+      .top-bar-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        opacity: 0.95;
+      }
+
+      .top-bar-item a {
+        border-bottom: 1px solid rgba(200, 134, 10, 0.4);
+        padding-bottom: 2px;
+      }
+
+      .top-bar-item a:hover {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+      }
+
+      .top-bar-right {
+        display: flex;
+        gap: 12px;
+      }
+
+      .social-circle-btn {
+        width: 28px;
+        height: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        transition: var(--transition);
+      }
+
+      .social-circle-btn:hover {
+        background-color: var(--accent);
+        border-color: var(--accent);
+        transform: translateY(-2px);
+      }
+
+      .social-icon {
+        width: 14px;
+        height: 14px;
+        fill: currentColor;
+      }
+
+      /* 2. NAVBAR Styles */
+      .navbar {
+        background-color: var(--bg-white);
+        padding: 24px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: var(--transition);
+        border-bottom: 1px solid transparent;
+      }
+
+      .navbar.scrolled {
+        padding: 16px 0;
+        box-shadow: 0 4px 20px rgba(15, 45, 94, 0.08);
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar-logo-area {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .navbar-logo-badge {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: var(--primary);
+        border: 2px solid var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 0.85rem;
+        letter-spacing: -0.05em;
+      }
+
+      .navbar-logo-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .navbar-logo-title {
+        font-family: var(--font-heading);
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--primary);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      .navbar-logo-tagline {
+        font-family: var(--font-body);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-top: 4px;
+      }
+
+      .navbar-menu {
+        display: flex;
+        list-style: none;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .navbar-link {
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--primary);
+        padding: 6px 0;
+        position: relative;
+      }
+
+      .navbar-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--accent);
+        transition: var(--transition);
+      }
+
+      .navbar-link.active::after,
+      .navbar-link:hover::after {
+        width: 100%;
+      }
+
+      .navbar-link.active,
+      .navbar-link:hover {
+        color: var(--accent);
+      }
+
+      .hamburger-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--primary);
+        padding: 4px;
+      }
+
+
+      /* 3. HERO BANNER Styles - Rich Diagonal Gradient */
+      .page-hero {
+        background: 
+          radial-gradient(circle at 20% 50%, rgba(200, 134, 10, 0.08) 0%, transparent 60%),
+          radial-gradient(circle at 80% 80%, rgba(91, 163, 217, 0.06) 0%, transparent 60%),
+          linear-gradient(135deg, #020b18 0%, #041428 50%, #061d3a 100%);
+        color: var(--text-light);
+        height: 320px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        border-bottom: none;
+        padding: 0;
+      }
+
+      .page-hero-pattern {
+        display: none;
+      }
+
+      .page-hero .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        height: 100%;
+      }
+
+      .page-hero-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .page-hero-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        color: #f0c040;
+        margin-bottom: 8px;
+        display: inline-block;
+      }
+
+      .page-hero-title {
+        color: #ffffff;
+        font-size: 3.2rem;
+        font-family: var(--font-heading);
+        line-height: 1.1;
+        margin-bottom: 12px;
+        letter-spacing: -0.01em;
+      }
+
+      .breadcrumb {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.75);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-top: 4px;
+      }
+
+      .breadcrumb a {
+        color: rgba(255, 255, 255, 0.75);
+        font-weight: 500;
+      }
+
+      .breadcrumb a:hover {
+        color: #f0c040;
+      }
+
+      .breadcrumb-active {
+        color: #ffffff;
+        font-weight: 700;
+      }
+
+      .breadcrumb-separator {
+        color: #f0c040;
+        margin: 0 8px;
+        font-weight: bold;
+      }
+
+      .page-hero-right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+      }
+
+      /* Floating badges layout */
+      .badges-row-wrap {
+        display: flex;
+        gap: 16px;
+        position: relative;
+      }
+
+      @keyframes badgePop {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        70% {
+          transform: scale(1.08);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .mini-stat-badge {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 20px 24px;
+        box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 140px;
+        text-align: center;
+        transition: var(--transition);
+        border-radius: 4px;
+        animation: badgePop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      }
+
+      .mini-stat-badge:nth-child(1) {
+        animation-delay: 150ms;
+      }
+      .mini-stat-badge:nth-child(2) {
+        animation-delay: 300ms;
+      }
+      .mini-stat-badge:nth-child(3) {
+        animation-delay: 450ms;
+      }
+
+      .mini-stat-badge:hover {
+        transform: translateY(-6px) scale(1.02);
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.25);
+      }
+
+      .mini-badge-num-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 6px;
+      }
+
+      .mini-badge-icon {
+        width: 18px;
+        height: 18px;
+        color: #f0c040;
+      }
+
+      .mini-badge-num {
+        font-family: var(--font-body);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #ffffff;
+        line-height: 1;
+      }
+
+      .mini-badge-txt {
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+
+      /* CATEGORY HEADER Styles */
+      .category-header {
+        position: relative;
+        padding-left: 24px;
+        margin-bottom: 50px;
+      }
+
+      .category-title-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .category-heading-group {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .category-header-icon {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .category-header h2 {
+        font-size: 2.6rem;
+        color: #0f2d5e !important;
+        font-family: var(--font-heading);
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .category-badge-pill {
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #ffffff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .category-subtext {
+        font-size: 1.1rem;
+        color: #374151 !important;
+        margin-top: 12px;
+        max-width: 850px;
+        font-weight: 400;
+      }
+
+      /* Allied Health Header Specific elements */
+      .allied-health-header { border-left: 6px solid #7b0d0d; }
+      .allied-health-heading-group .category-header-icon { color: #7b0d0d; }
+      .allied-health-badge { background-color: #7b0d0d; color: #ffffff !important; font-weight: 700 !important; }
+
+      /* English Language Header Specific elements */
+      .english-header { border-left: 6px solid #0a3d6b; }
+      .english-heading-group .category-header-icon { color: #0a3d6b; }
+      .english-badge { background-color: #0a3d6b; color: #ffffff !important; font-weight: 700 !important; }
+
+      /* Safety Header Specific elements */
+      .safety-header { border-left: 6px solid #8a5c00; }
+      .safety-heading-group .category-header-icon { color: #8a5c00; }
+      .safety-badge { background-color: #8a5c00; color: #ffffff !important; font-weight: 700 !important; }
+
+      /* IT Header Specific elements */
+      .it-header { border-left: 6px solid #064e3b; }
+      .it-heading-group .category-header-icon { color: #064e3b; }
+      .it-badge { background-color: #064e3b; color: #ffffff !important; font-weight: 700 !important; }
+
+
+      /* COURSE CARD GRID STYLING */
+      .courses-grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+      }
+
+      /* Special 2+2 English Language layout when on desktop screen sizes */
+      .english-staggered-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 32px;
+      }
+
+      .english-staggered-grid .course-card {
+        grid-column: span 4;
+      }
+
+      @media screen and (min-width: 1025px) {
+        .english-staggered-grid .course-card:nth-child(4) {
+          grid-column: 5 / span 4; /* Centers the 4th item beautifully in the second row */
+        }
+      }
+
+      /* COURSE CARDS STYLE */
+      .course-card {
+        background-color: #ffffff;
+        border-radius: 6px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
+        padding: 40px 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        position: relative;
+        transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                    box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+                    border-left-width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      .course-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+        border-left-width: 6px !important;
+      }
+
+      /* Thick left borders per Category Rules */
+      .allied-health-card { border-left: 5px solid #7b0d0d; }
+      .english-card { border-left: 5px solid #0a3d6b; }
+      .safety-card { border-left: 5px solid #8a5c00; }
+      .it-card { border-left: 5px solid #064e3b; }
+
+      .course-card-meta {
+        margin-bottom: 20px;
+      }
+
+      .category-pill {
+        display: inline-block;
+        padding: 6px 16px;
+        border-radius: 50px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #ffffff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .allied-health-pill { background-color: #7b0d0d; }
+      .english-pill { background-color: #0a3d6b; }
+      .safety-pill { background-color: #8a5c00; }
+      .it-pill { background-color: #064e3b; }
+
+      .course-title {
+        font-family: var(--font-body);
+        font-size: 18px;
+        font-weight: 700;
+        color: #0f2d5e;
+        margin-bottom: 12px;
+        line-height: 1.3;
+      }
+
+      .course-description {
+        font-size: 0.95rem;
+        color: #2d3748;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+
+      /* Enroll Buttons styling */
+      .course-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 24px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        transition: var(--transition);
+        width: 100%;
+        text-align: center;
+        border: 1.5px solid transparent;
+      }
+
+      .btn-arrow {
+        width: 14px;
+        height: 14px;
+        transition: transform 0.3s ease;
+      }
+
+      .course-btn:hover .btn-arrow {
+        transform: translateX(4px);
+      }
+
+      /* Button specific colors */
+      .btn-allied-health { background-color: #7b0d0d; color: #ffffff; }
+      .btn-allied-health:hover { background-color: transparent; color: #7b0d0d; border-color: #7b0d0d; }
+
+      .btn-english { background-color: #0a3d6b; color: #ffffff; }
+      .btn-english:hover { background-color: transparent; color: #0a3d6b; border-color: #0a3d6b; }
+
+      .btn-safety { background-color: #8a5c00; color: #ffffff; }
+      .btn-safety svg { color: #ffffff !important; }
+      .btn-safety:hover { background-color: transparent; color: #8a5c00; border-color: #8a5c00; }
+      .btn-safety:hover svg { color: #8a5c00 !important; }
+
+      .btn-it { background-color: #064e3b; color: #ffffff; }
+      .btn-it:hover { background-color: transparent; color: #064e3b; border-color: #064e3b; }
+
+
+      /* 8. CTA BANNER Styles - Rich diagonal split gradient */
+      .cta-section {
+        padding: 0;
+        border-bottom: none;
+        overflow: hidden;
+      }
+
+      .cta-wrapper {
+        position: relative;
+        min-height: 280px;
+        background: linear-gradient(135deg, #0f2d5e 0%, #c8860a 100%);
+        display: flex;
+      }
+
+      .cta-bg-overlay {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M80 20L100 0h-20L60 20zM0 100l20-20H0zm20-20L0 60V80z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .cta-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 72px 24px;
+        z-index: 3;
+      }
+
+      .cta-text-left {
+        max-width: 650px;
+      }
+
+      .cta-text-left h2 {
+        font-size: 2.8rem;
+        color: var(--text-light);
+        margin-bottom: 12px;
+      }
+
+      .cta-text-left p {
+        font-size: 1.15rem;
+        color: rgba(255, 255, 255, 0.95);
+        font-weight: 300;
+      }
+
+      .cta-buttons-right {
+        display: flex;
+        gap: 16px;
+        flex-shrink: 0;
+      }
+
+      .btn {
+        padding: 16px 36px;
+        font-weight: 700;
+        font-size: 0.72rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        border-radius: 4px;
+        display: inline-block;
+        text-align: center;
+      }
+
+      .btn-cta-solid {
+        background-color: var(--text-light);
+        color: var(--primary);
+        border: 1.5px solid var(--text-light);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .btn-cta-solid:hover {
+        background-color: transparent;
+        color: var(--text-light);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-cta-outline {
+        background-color: transparent;
+        color: var(--text-light);
+        border: 1.5px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .btn-cta-outline:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: #ffffff;
+        transform: translateY(-3px);
+      }
+
+
+      /* 9. FOOTER Styles - Premium deep navy matches layout */
+      .footer {
+        background-color: var(--bg-navy-dark);
+        color: var(--text-light);
+        padding: 90px 0 0 0;
+        border-bottom: none;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr 1fr 1fr;
+        gap: 50px;
+        margin-bottom: 75px;
+      }
+
+      .footer-col-1 {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer-logo-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .footer-logo-badge {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.04);
+        border: 1.5px solid var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        font-family: var(--font-heading);
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .footer-logo-text {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-light);
+        line-height: 1;
+      }
+
+      .footer-logo-text span {
+        font-family: var(--font-body);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        color: var(--accent);
+        text-transform: uppercase;
+        display: block;
+        margin-top: 4px;
+      }
+
+      .footer .tagline {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.75);
+        margin-bottom: 28px;
+        line-height: 1.6;
+      }
+
+      .footer-social-row {
+        display: flex;
+        gap: 12px;
+      }
+
+      .footer-title {
+        font-family: var(--font-body);
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--text-light);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        margin-bottom: 28px;
+      }
+
+      .footer-title::after {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 1px;
+        background-color: var(--accent);
+        margin-top: 10px;
+      }
+
+      .footer-links-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        font-size: 0.95rem;
+      }
+
+      .footer-links-list a {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .footer-links-list a::before {
+        content: '◈';
+        color: var(--accent);
+        font-size: 0.6rem;
+        opacity: 0;
+        transform: translateX(-4px);
+        transition: var(--transition);
+        display: inline-block;
+        margin-right: 8px;
+      }
+
+      .footer-links-list a:hover {
+        color: var(--text-light);
+        padding-left: 4px;
+      }
+
+      .footer-links-list a:hover::before {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* Contact Block */
+      .footer-contact-block {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 0.95rem;
+      }
+
+      .footer-contact-row {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+
+      .footer-contact-row svg {
+        width: 18px;
+        height: 18px;
+        color: var(--accent);
+        flex-shrink: 0;
+        margin-top: 3px;
+      }
+
+      .footer-contact-label {
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.6;
+      }
+
+      .footer-googlemap-link {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-top: 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .footer-googlemap-link:hover {
+        color: var(--text-light);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 30px 0;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.2);
+        margin-top: 30px;
+      }
+
+      .footer-bottom p {
+        font-size: 0.75rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* Stellar Scroll Animation Classes */
+      .animate-header {
+        opacity: 0;
+        transform: translateX(-60px);
+        transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        will-change: opacity, transform;
+      }
+
+      .animate-header.animation-active {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .animate-card {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+        transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: opacity, transform;
+      }
+
+      .animate-card.animation-active {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      .animate-cta {
+        opacity: 0;
+        transform: scale(0.97);
+        transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: opacity, transform;
+      }
+
+      .animate-cta.animation-active {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+
+      /* --- MEDIA QUERIES (RESPONSIVENESS) --- */
+      @media screen and (max-width: 1024px) {
+        section {
+          padding: 80px 0;
+        }
+
+        .page-hero {
+          height: auto;
+          padding: 60px 0;
+        }
+
+        .page-hero .container {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          text-align: center;
+        }
+
+        .page-hero-right {
+          justify-content: center;
+        }
+
+        .badges-row-wrap {
+          justify-content: center;
+          width: 100%;
+        }
+
+        .mini-stat-badge {
+          width: 30%;
+          min-width: 110px;
+          padding: 16px 12px;
+        }
+
+        .category-header h2 {
+          font-size: 2.2rem;
+        }
+
+        .courses-grid-3 {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+        }
+
+        .english-staggered-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+        }
+
+        .english-staggered-grid .course-card {
+          grid-column: span 1 !important;
+        }
+
+        .cta-container {
+          flex-direction: column;
+          text-align: center;
+          gap: 40px;
+        }
+
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 40px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .top-bar {
+          display: none;
+        }
+
+        .hamburger-toggle {
+          display: block;
+        }
+
+        .navbar-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: var(--bg-white);
+          flex-direction: column;
+          gap: 0;
+          padding: 16px 0;
+          box-shadow: 0 10px 30px rgba(15, 45, 94, 0.08);
+          z-index: 999;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+          border-top: 1px solid var(--border-color);
+        }
+
+        .navbar-menu.menu-active {
+          max-height: 440px;
+        }
+
+        .navbar-menu li {
+          width: 100%;
+          text-align: center;
+        }
+
+        .navbar-link {
+          display: block;
+          padding: 14px 24px;
+          border-bottom: 1px solid rgba(15, 45, 94, 0.03);
+          font-size: 0.8rem;
+          letter-spacing: 0.15em;
+        }
+
+        .navbar-link::after {
+          display: none;
+        }
+
+        .page-hero-title {
+          font-size: 2.4rem;
+        }
+
+        .badges-row-wrap {
+          flex-wrap: wrap;
+        }
+
+        .mini-stat-badge {
+          width: 45%;
+        }
+
+        .category-header {
+          padding-left: 16px;
+        }
+
+        .category-header h2 {
+          font-size: 1.8rem;
+        }
+
+        .category-title-flex {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .courses-grid-3,
+        .english-staggered-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+          gap: 48px;
+        }
+
+        .footer-col-1 {
+          align-items: center;
+        }
+
+        .footer-logo-row {
+          justify-content: center;
+        }
+
+        .footer-title::after {
+          margin: 10px auto 0 auto;
+        }
+
+        .footer-contact-row {
+          justify-content: center;
+        }
+      }
+
+      /* --- PREMIUM DESIGN UPGRADE --- */
+      /* 1. Frosted Glass Navbar Background */
+      .navbar {
+        background-color: rgba(255, 255, 255, 0.92) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+      }
+      .navbar.scrolled {
+        background-color: rgba(255, 255, 255, 0.92) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+      }
+
+      /* 2. Interactive Navigation underlines */
+      .navbar-link::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: -4px !important;
+        left: 0 !important;
+        width: 0 !important;
+        height: 2px !important;
+        background-color: #c8860a !important;
+        transition: 0.3s ease !important;
+      }
+      .navbar-link.active::after,
+      .navbar-link:hover::after {
+        width: 100% !important;
+      }
+
+      /* 3. Global Pill Shaped Buttons (50px border-radius) */
+      button, 
+      .btn, 
+      .btn-enroll, 
+      .btn-explore, 
+      .filter-tab, 
+      .submit-btn, 
+      .button, 
+      .load-more-btn, 
+      .prev-btn, 
+      .next-btn,
+      .cta-button,
+      .courses-filter-btn {
+        border-radius: 50px !important;
+      }
+
+      /* 4. Two-Layer Card Shadows (default vs hover) */
+      .dept-card, 
+      .course-card, 
+      .blog-card, 
+      .blog-post-card, 
+      .facility-card, 
+      .stat-card, 
+      .feature-card, 
+      .benefit-card, 
+      .story-card, 
+      .gallery-item, 
+      .instructor-card, 
+      .contact-info-card,
+      .director-profile-box {
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.10), 0 2px 4px -1px rgba(0,0,0,0.06) !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease !important;
+      }
+      .dept-card:hover, 
+      .course-card:hover, 
+      .blog-card:hover, 
+      .blog-post-card:hover, 
+      .facility-card:hover, 
+      .stat-card:hover, 
+      .feature-card:hover, 
+      .benefit-card:hover, 
+      .story-card:hover, 
+      .gallery-item:hover, 
+      .instructor-card:hover, 
+      .contact-info-card:hover,
+      .director-profile-box:hover {
+        box-shadow: 0 20px 40px -5px rgba(0,0,0,0.20), 0 10px 15px -5px rgba(0,0,0,0.08) !important;
+      }
+
+      /* 5. Heading 2 Adjustments */
+      h2, 
+      .section-header-centered h2, 
+      section h2 {
+        letter-spacing: -0.5px !important;
+        line-height: 1.15 !important;
+      }
+
+      /* 6. Gold label pills above headings */
+      .section-label {
+        letter-spacing: 2.5px !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- 1. TOP BAR -->
+    <div class="top-bar">
+      <div class="container">
+        <div class="top-bar-left">
+          <div class="top-bar-item">
+            <!-- Mail Icon -->
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <a href="mailto:nbamimahs@gmail.com">nbamimahs@gmail.com</a>
+          </div>
+          <div class="top-bar-item">
+            <!-- Phone Icon -->
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>+923239595643</span>
+          </div>
+        </div>
+        <div class="top-bar-right">
+          <a href="#" class="social-circle-btn" aria-label="Facebook">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="YouTube">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="Instagram">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" class="social-circle-btn" aria-label="TikTok">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. NAVBAR -->
+    <nav class="navbar" id="main-navigation">
+      <div class="container">
+        <div class="navbar-logo-area">
+          <div class="navbar-logo-badge">NB</div>
+          <div class="navbar-logo-text">
+            <span class="navbar-logo-title">New Bab-Al-Madina Institute</span>
+            <span class="navbar-logo-tagline">Pioneering Professional Excellence</span>
+          </div>
+        </div>
+        
+        <ul class="navbar-menu" id="nav-dropdown">
+          <li><a href="index.html" class="navbar-link">Home</a></li>
+          <li><a href="about.html" class="navbar-link">About</a></li>
+          <li><a href="courses.html" class="navbar-link active">Courses</a></li>
+          <li><a href="faculty.html" class="navbar-link">Faculty</a></li>
+          <li><a href="gallery.html" class="navbar-link">Gallery</a></li>
+          <li><a href="blog.html" class="navbar-link">Blog</a></li>
+          <li><a href="contact.html" class="navbar-link">Contact</a></li>
+        </ul>
+
+        <button class="hamburger-toggle" id="menu-btn" aria-label="Toggle mobile menu">
+          <!-- Hamburger icon -->
+          <svg style="width: 26px; height: 26px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- 3. PAGE HERO BANNER -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-left">
+          <span class="page-hero-label">What We Offer</span>
+          <h1 class="page-hero-title">Our Courses</h1>
+          <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="breadcrumb-separator">&gt;</span>
+            <span class="breadcrumb-active">Courses</span>
+          </div>
+        </div>
+        
+        <div class="page-hero-right">
+          <div class="badges-row-wrap">
+            <!-- Badge 1 -->
+            <div class="mini-stat-badge">
+              <div class="mini-badge-num-row">
+                <!-- Book open icon -->
+                <svg class="mini-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+                <span class="mini-badge-num">25+</span>
+              </div>
+              <span class="mini-badge-txt">Courses</span>
+            </div>
+            <!-- Badge 2 -->
+            <div class="mini-stat-badge">
+              <div class="mini-badge-num-row">
+                <!-- Grid/Layers icon -->
+                <svg class="mini-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+                <span class="mini-badge-num">4</span>
+              </div>
+              <span class="mini-badge-txt">Dept.</span>
+            </div>
+            <!-- Badge 3 -->
+            <div class="mini-stat-badge">
+              <div class="mini-badge-num-row">
+                <!-- Graduate/Users icon -->
+                <svg class="mini-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span class="mini-badge-num">500+</span>
+              </div>
+              <span class="mini-badge-txt">Students</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ALLIED HEALTH SCIENCES SECTION -->
+    <section class="white-section category-section" id="allied-health">
+      <div class="container">
+        
+        <!-- Section Header -->
+        <div class="category-header allied-health-header animate-header">
+          <div class="category-title-flex">
+            <div class="category-heading-group">
+              <div class="category-header-icon">
+                <!-- Stethoscope wave icon representing clinical sciences -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 12H18L15 21L9 3L6 12H2"></path>
+                </svg>
+              </div>
+              <h2>Allied Health Sciences</h2>
+            </div>
+            <span class="category-badge-pill allied-health-badge">9 Courses</span>
+          </div>
+          <p class="category-subtext">Professional clinical and healthcare programs designed for the modern health sector.</p>
+        </div>
+
+        <!-- 3-Column Responsive Card Grid -->
+        <div class="courses-grid-3">
+          
+          <!-- Course 1 -->
+          <div class="course-card allied-health-card animate-card">
+            <div>
+              <div class="course-card-meta">
+                <span class="category-pill allied-health-pill">Allied Health</span>
+              </div>
+              <h3 class="course-title">Health Technician</h3>
+              <p class="course-description">Comprehensive clinical technician training for healthcare settings.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="course-btn btn-allied-health">
+                Enroll Now
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Course 2 -->
+          <div class="course-card allied-health-card animate-card">
+            <div>
+              <div class="course-card-meta">
+                <span class="category-pill allied-health-pill">Allied Health</span>
+              </div>
+              <h3 class="course-title">Cardiology Technician</h3>
+              <p class="course-description">Specialized cardiac diagnostics and ECG interpretation.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="course-btn btn-allied-health">
+                Enroll Now
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Course 3 -->
+          <div class="course-card allied-health-card animate-card">
+            <div>
+              <div class="course-card-meta">
+                <span class="category-pill allied-health-pill">Allied Health</span>
+              </div>
+              <h3 class="course-title">Pharmacy Technician</h3>
+              <p class="course-description">Pharmaceutical dispensing and medication management.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="course-btn btn-allied-health">
+                Enroll Now
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Course 4 -->
+          <div class="course-card allied-health-card animate-card">
+            <div>
+              <div class="course-card-meta">
+                <span class="category-pill allied-health-pill">Allied Health</span>
+              </div>
+              <h3 class="course-title">Category B (Paramedic)</h3>
+              <p class="course-description">Emergency response and advanced paramedic skills.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="course-btn btn-allied-health">
+                Enroll Now
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Course 5 -->
+          <div class="course-card allied-health-card animate-card">
+            <div>
+              <div class="course-card-meta">
+                <span class="category-pill allied-health-pill">Allied Health</span>
+              </div>
+              <h3 class="course-title">Anesthesia Technician</h3>
+              <p class="course-description">Anesthesia support and operating theater assistance.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="course-btn btn-allied-health">
+                Enroll Now
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Course 6 -->
+          <div class="course-card allied-health-card animate-card">
+            <div>
+              <div class="course-card-meta">
+                <span class="category-pill allied-health-pill">Allied Health</span>
+              </div>
+              <h3 class="course-title">CMW (Community Midwife)</h3>
+              <p class="course-description">Maternal and newborn care for community health.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="course-btn btn-allied-health">
+                Enroll Now
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Course 7 -->
+          <div class="course-card allied-health-card animate-card">
+            <div>
+              <div class="course-card-meta">
+                <span class="category-pill allied-health-pill">Allied Health</span>
+              </div>
+              <h3 class="course-title">LHV (Lady Health Visitor)</h3>
+              <p class="course-description">Preventive healthcare and community outreach.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="course-btn btn-allied-health">
+                Enroll Now
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Course 8 -->
+          <div class="course-card allied-health-card animate-card">
+            <div>
+              <div class="course-card-meta">
+                <span class="category-pill allied-health-pill">Allied Health</span>
+              </div>
+              <h3 class="course-title">Ultrasound Technician</h3>
+              <p class="course-description">Diagnostic imaging and ultrasound scanning techniques.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="course-btn btn-allied-health">
+                Enroll Now
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Course 9 -->
+          <div class="course-card allied-health-card animate-card">
+            <div>
+              <div class="course-card-meta">
+                <span class="category-pill allied-health-pill">Allied Health</span>
+              </div>
+              <h3 class="course-title">Dental Technician</h3>
+              <p class="course-description">Oral health care and dental assisting skills.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="course-btn btn-allied-health">
+                Enroll Now
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. ENGLISH LANGUAGE PROGRAMS SECTION -->
+    <section class="tint-section-english category-section" id="english">
+      <div class="container">
+        
+        <!-- Section Header -->
+        <div class="category-header english-header animate-header">
+          <div class="category-title-flex">
+            <div class="category-heading-group">
+              <div class="category-header-icon">
+                <!-- Speech Bubble Icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <h2>English Language Programs</h2>
+            </div>
+            <span class="category-badge-pill english-badge">4 Courses</span>
+          </div>
+          <p class="category-subtext">Build fluency, earn certifications, and unlock global opportunities.</p>
+        </div>
+
+        <!-- 3-Column Card Grid (4 courses - centered on row 2) -->
+        <div class="english-staggered-grid">
+          
+          <!-- Course 1 -->
+          <div class="course-card english-card animate-card">
+            <div>
+              <div class="course-card-meta">
+                <span class="category-pill english-pill">English</span>
+              </div>
+              <h3 class="course-title">IELTS Preparation</h3>
+              <p class="course-description">Expert coaching for international English language testing.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="course-btn btn-english">
+                Enroll Now
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Course 2 -->
+          <div class="course-card english-card animate-card">
+            <div>
+              <div class="course-card-meta">
+                <span class="category-pill english-pill">English</span>
+              </div>
+              <h3 class="course-title">Advanced Conversation</h3>
+              <p class="course-description">Master fluency and confidence in professional English.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="course-btn btn-english">
+                Enroll Now
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Course 3 -->
+          <div class="course-card english-card animate-card">
+            <div>
+              <div class="course-card-meta">
+                <span class="category-pill english-pill">English</span>
+              </div>
+              <h3 class="course-title">Special Grammar</h3>
+              <p class="course-description">Deep dive into English grammar for academic and professional use.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="course-btn btn-english">
+                Enroll Now
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Course 4 -->
+          <div class="course-card english-card animate-card">
+            <div>
+              <div class="course-card-meta">
+                <span class="category-pill english-pill">English</span>
+              </div>
+              <h3 class="course-title">DPEL</h3>
+              <p class="course-description">Diploma in Professional English Language comprehensive program.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="course-btn btn-english">
+                Enroll Now
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SAFETY COURSES SECTION -->
+    <section class="white-section category-section" id="safety">
+      <div class="container">
+        
+        <!-- Section Header -->
+        <div class="category-header safety-header animate-header">
+          <div class="category-title-flex">
+            <div class="category-heading-group">
+              <div class="category-header-icon">
+                <!-- Shield Icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h2>Safety &amp; Health Courses</h2>
+            </div>
+            <span class="category-badge-pill safety-badge">3 Courses</span>
+          </div>
+          <p class="category-subtext">Internationally recognized safety certifications for workplace professionals.</p>
+        </div>
+
+        <!-- 3-Column Card Grid -->
+        <div class="courses-grid-3">
+          
+          <!-- Course 1 -->
+          <div class="course-card safety-card animate-card">
+            <div>
+              <div class="course-card-meta">
+                <span class="category-pill safety-pill">Safety</span>
+              </div>
+              <h3 class="course-title">IOSH (Managing Safely)</h3>
+              <p class="course-description">Internationally recognized workplace safety management certification.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="course-btn btn-safety">
+                Enroll Now
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #0f2d5e;">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Course 2 -->
+          <div class="course-card safety-card animate-card">
+            <div>
+              <div class="course-card-meta">
+                <span class="category-pill safety-pill">Safety</span>
+              </div>
+              <h3 class="course-title">NEBOSH (General Certificate)</h3>
+              <p class="course-description">Gold standard health and safety qualification for professionals.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="course-btn btn-safety">
+                Enroll Now
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #0f2d5e;">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Course 3 -->
+          <div class="course-card safety-card animate-card">
+            <div>
+              <div class="course-card-meta">
+                <span class="category-pill safety-pill">Safety</span>
+              </div>
+              <h3 class="course-title">OSHA (Safety Standards)</h3>
+              <p class="course-description">Occupational safety and health administration certification training.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="course-btn btn-safety">
+                Enroll Now
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #0f2d5e;">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. COMPUTER & IT COURSES SECTION -->
+    <section class="tint-section-it category-section" id="it-courses">
+      <div class="container">
+        
+        <!-- Section Header -->
+        <div class="category-header it-header animate-header">
+          <div class="category-title-flex">
+            <div class="category-heading-group">
+              <div class="category-header-icon">
+                <!-- Monitor Icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h2>Computer &amp; IT Courses</h2>
+            </div>
+            <span class="category-badge-pill it-badge">3 Courses</span>
+          </div>
+          <p class="category-subtext">Future-ready technology skills for the digital economy.</p>
+        </div>
+
+        <!-- 3-Column Card Grid -->
+        <div class="courses-grid-3">
+          
+          <!-- Course 1 -->
+          <div class="course-card it-card animate-card">
+            <div>
+              <div class="course-card-meta">
+                <span class="category-pill it-pill">Computer &amp; IT</span>
+              </div>
+              <h3 class="course-title">CIT</h3>
+              <p class="course-description">Certificate in Information Technology covering essential modern workplace skills.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="course-btn btn-it">
+                Enroll Now
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Course 2 -->
+          <div class="course-card it-card animate-card">
+            <div>
+              <div class="course-card-meta">
+                <span class="category-pill it-pill">Computer &amp; IT</span>
+              </div>
+              <h3 class="course-title">DIT</h3>
+              <p class="course-description">Diploma in Information Technology covering networks, software, and systems.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="course-btn btn-it">
+                Enroll Now
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Course 3 -->
+          <div class="course-card it-card animate-card">
+            <div>
+              <div class="course-card-meta">
+                <span class="category-pill it-pill">Computer &amp; IT</span>
+              </div>
+              <h3 class="course-title">AI Fundamentals</h3>
+              <p class="course-description">Introduction to artificial intelligence, machine learning, and practical tools.</p>
+            </div>
+            <div>
+              <a href="contact.html" class="course-btn btn-it">
+                Enroll Now
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CTA BANNER -->
+    <section class="cta-section">
+      <div class="cta-wrapper animate-cta">
+        <div class="cta-bg-overlay"></div>
+        <div class="cta-container">
+          <div class="cta-text-left">
+            <h2>Ready to Enroll?</h2>
+            <p>Join NBAMIM &amp; AHS and take the first step toward a powerful career.</p>
+          </div>
+          <div class="cta-buttons-right">
+            <a href="contact.html" class="btn btn-cta-solid">Apply Now</a>
+            <a href="contact.html" class="btn btn-cta-outline">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <!-- Col 1 -->
+        <div class="footer-col-1">
+          <div class="footer-logo-row">
+            <div class="footer-logo-badge">NB</div>
+            <div class="footer-logo-text">
+              New Bab-Al-Madina Institute
+              <span>Pioneering Professional Excellence</span>
+            </div>
+          </div>
+          <p class="tagline">
+            Bringing elite clinical studies, technology advancements, and global masteries together to secure regional professional success.
+          </p>
+          <div class="footer-social-row">
+            <a href="#" class="social-circle-btn" aria-label="Facebook">
+              <svg class="social-icon" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-circle-btn" aria-label="YouTube">
+              <svg class="social-icon" viewBox="0 0 24 24">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+            <a href="#" class="social-circle-btn" aria-label="Instagram">
+              <svg class="social-icon" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-circle-btn" aria-label="TikTok">
+              <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div>
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div>
+          <h3 class="footer-title">Our Courses</h3>
+          <ul class="footer-links-list">
+            <li><a href="courses.html">Spoken English</a></li>
+            <li><a href="courses.html">English Diploma</a></li>
+            <li><a href="courses.html">IELTS Preparation</a></li>
+            <li><a href="courses.html">English Conversation</a></li>
+            <li><a href="courses.html">DIT (Information Tech)</a></li>
+            <li><a href="courses.html">Allied Health Sciences</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 -->
+        <div class="footer-contact-block">
+          <h3 class="footer-title">Contact Info</h3>
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <div class="footer-contact-label">
+              Hashtnagri BRT Station, Behind Rahim Medical Center, Peshawar, Pakistan
+            </div>
+          </div>
+          
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <div class="footer-contact-label">+923239595643</div>
+          </div>
+
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <div class="footer-contact-label">nbamimahs@gmail.com</div>
+          </div>
+
+          <a href="https://maps.google.com" target="_blank" class="footer-googlemap-link">
+            Open in Google Maps
+            <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <polyline points="9 6 18 6 18 15"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Bottom copyright bar -->
+      <div class="footer-bottom">
+        <p>© 2025 NBAMIM &amp; AHS. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts for dynamic interaction and staggered reveal scroll-observer -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const navbar = document.getElementById('main-navigation');
+        const hamburgerBtn = document.getElementById('menu-btn');
+        const navDropdown = document.getElementById('nav-dropdown');
+
+        // Sticky Navbar scroll effect
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 40) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+
+        // Hamburger mobile toggle
+        hamburgerBtn.addEventListener('click', () => {
+          navDropdown.classList.toggle('menu-active');
+        });
+
+        // 1. Observe Section Headers for Left Slide-In and Fade-In Animation
+        const headerObserverOptions = {
+          root: null,
+          threshold: 0.15,
+          rootMargin: "0px 0px -40px 0px"
+        };
+
+        const headerObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animation-active');
+              headerObserver.unobserve(entry.target);
+            }
+          });
+        }, headerObserverOptions);
+
+        document.querySelectorAll('.animate-header').forEach(header => {
+          headerObserver.observe(header);
+        });
+
+        // 2. Observe Course Cards with High Performance Staggered Viewport Entrance
+        const cardObserverOptions = {
+          root: null,
+          threshold: 0.10,
+          rootMargin: "0px 0px -50px 0px"
+        };
+
+        const cardObserver = new IntersectionObserver((entries) => {
+          const intersectingEntries = entries.filter(e => e.isIntersecting);
+          
+          intersectingEntries.forEach((entry, idx) => {
+            const card = entry.target;
+            const delay = idx * 120; // Staggered delays: 0ms, 120ms, 240ms, etc.
+            setTimeout(() => {
+              card.classList.add('animation-active');
+            }, delay);
+            cardObserver.unobserve(card);
+          });
+        }, cardObserverOptions);
+
+        document.querySelectorAll('.animate-card').forEach(card => {
+          cardObserver.observe(card);
+        });
+
+        // 3. Observe CTA Banner Zoom-In Animation
+        const ctaObserverOptions = {
+          root: null,
+          threshold: 0.15,
+          rootMargin: "0px 0px -20px 0px"
+        };
+
+        const ctaObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animation-active');
+              ctaObserver.unobserve(entry.target);
+            }
+          });
+        }, ctaObserverOptions);
+
+        document.querySelectorAll('.animate-cta').forEach(cta => {
+          ctaObserver.observe(cta);
+        });
+      });
+    </script>
+  </body>
+</html>
